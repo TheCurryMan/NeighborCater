@@ -6,69 +6,28 @@ package hackthenorth.neighborcater.models;
 
 public class Kitchen {
 
-    private double latitude;
-    private double longtitude;
-    private String ownerName;
+    private String address;
+    private String foodDescription;
     private String foodName;
     private String kitchenName;
-    private String description;
-    private String address;
-    private double price;
+    private String latitude;
+    private String longitude;
+    private String price;
+    private String user;
 
-    public double getLatitude() {
-        return latitude;
+    public Kitchen(){
+
     }
 
-    public double getLongtitude() {
-        return longtitude;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public String getKitchenName() {
-        return kitchenName;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setKitchenName(String kitchenName) {
-        this.kitchenName = kitchenName;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public void setLongtitude(double longtitude) {
-        this.longtitude = longtitude;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public void setFoodName(String foodName){
+    public Kitchen(String address, String foodDescription, String foodName, String kitchenName, String latitude, String longitude, String price, String user){
+        this.address = address;
+        this.foodDescription = foodDescription;
         this.foodName = foodName;
+        this.kitchenName = kitchenName;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.price = price;
+        this.user = user;
     }
 
     public String getAddress() {
@@ -77,5 +36,61 @@ public class Kitchen {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getFoodDescription() {
+        return foodDescription;
+    }
+
+    public void setFoodDescription(String foodDescription) {
+        this.foodDescription = foodDescription;
+    }
+
+    public String getFoodName() {
+        return foodName;
+    }
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public String getKitchenName() {
+        return kitchenName;
+    }
+
+    public void setKitchenName(String kitchenName) {
+        this.kitchenName = kitchenName;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 }

@@ -91,7 +91,8 @@ public class CreateLoginActivity extends AppCompatActivity {
                                     Toast.makeText(CreateLoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }else{
                                     Toast.makeText(CreateLoginActivity.this, "Created Account", Toast.LENGTH_SHORT).show();
-                                    //switch activity here
+                                    Intent choosingActivity = new Intent(CreateLoginActivity.this, ChoosingActivity.class);
+                                    startActivity(choosingActivity);
                                 }
 
                             }
@@ -124,11 +125,9 @@ public class CreateLoginActivity extends AppCompatActivity {
 
 
                                 }else{
-                                    Toast.makeText(CreateLoginActivity.this, "Authenticated!", Toast.LENGTH_SHORT).show();
-//
-//
-
-
+                                    Toast.makeText(getApplicationContext(), "Authenticated!", Toast.LENGTH_SHORT).show();
+                                    Intent choosingActivity = new Intent(CreateLoginActivity.this, ChoosingActivity.class);
+                                    startActivity(choosingActivity);
 
                                 }
 
