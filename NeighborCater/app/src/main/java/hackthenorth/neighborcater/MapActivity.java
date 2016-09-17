@@ -10,6 +10,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -36,6 +38,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import hackthenorth.neighborcater.adapters.KitchenAdapter;
 import hackthenorth.neighborcater.models.Kitchen;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
@@ -45,7 +48,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private DatabaseReference mDatabase;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
-    private JSONArray kitchenArray;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter recyclerViewAdapter;
+    RecyclerView.LayoutManager recyclerViewLayoutManager;
 
     ValueEventListener postListener = new ValueEventListener() {
         @Override
@@ -60,6 +65,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                     kitchenArrayList.add(newKitchen);
                 }
             placeMarkers(kitchenArrayList);
+            setupList(kitchenArrayList);
             Log.d("asdf", kitchenArrayList.toString());
 
             // ...
@@ -72,6 +78,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             // ...
         }
     };
+
+    private void setupList(ArrayList<Kitchen> kitchenArrayList) {
+        recyclerView.setAdapter(new KitchenAdapter(getApplicationContext(), kitchenArrayList));
+    }
 
     private void placeMarkers(ArrayList<Kitchen> kitchenArrayList) {
         if(mMap != null){
@@ -109,6 +119,11 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(postListener);
+
+        recyclerView = (RecyclerView) this.findViewById(R.id.kitchen_recycler_view);
+        recyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(recyclerViewLayoutManager);
+        recyclerView.setAdapter(null);
 
     }
 
