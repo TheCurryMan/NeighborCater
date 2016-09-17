@@ -51,21 +51,22 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recyclerViewLayoutManager;
+    LatLng myHome;
+    ArrayList<Kitchen> kitchenList;
 
     ValueEventListener postListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
             // Get Post object and use the values to update the UI
-            HashMap<String, Object> kitchenHashmap= (HashMap) dataSnapshot.child("kitchens").getValue();
-            Log.d("asdf", kitchenHashmap.toString());
             ArrayList<Kitchen> kitchenArrayList = new ArrayList<>();
             Iterator<DataSnapshot> iterator = dataSnapshot.child("kitchens").getChildren().iterator();
                 while(iterator.hasNext()){
                     Kitchen newKitchen = iterator.next().getValue(Kitchen.class);
                     kitchenArrayList.add(newKitchen);
                 }
+            kitchenList = kitchenArrayList;
             placeMarkers(kitchenArrayList);
-            setupList(kitchenArrayList);
+            setupList();
             Log.d("asdf", kitchenArrayList.toString());
 
             // ...
@@ -79,8 +80,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
     };
 
-    private void setupList(ArrayList<Kitchen> kitchenArrayList) {
-        recyclerView.setAdapter(new KitchenAdapter(getApplicationContext(), kitchenArrayList));
+    private void setupList() {
+        if(kitchenList!=null && kitchenList.size() >0 && myHome!=null) {
+            recyclerView.setAdapter(new KitchenAdapter(getApplicationContext(), kitchenList, myHome));
+        }
     }
 
     private void placeMarkers(ArrayList<Kitchen> kitchenArrayList) {
@@ -131,7 +134,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     public void onLocationChanged(Location location) {
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
-        LatLng myHome = new LatLng(latitude, longitude);
+        myHome = new LatLng(latitude, longitude);
+        setupList();
         mMap.addMarker(new MarkerOptions().position(myHome).title("Home"));
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(myHome, 10);
         mMap.animateCamera(cameraUpdate);
