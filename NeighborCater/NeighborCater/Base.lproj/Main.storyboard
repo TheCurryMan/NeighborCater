@@ -720,6 +720,7 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="baJ-If-02Q" id="Szp-Zk-PeK"/>
+                                    <outlet property="delegate" destination="baJ-If-02Q" id="eep-G0-KLR"/>
                                 </connections>
                             </tableView>
                         </subviews>

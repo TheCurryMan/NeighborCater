@@ -10,7 +10,7 @@ target 'NeighborCater' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'PopupController'
+  pod 'STZPopupView'
 
   target 'NeighborCaterTests' do
     inherit! :search_paths

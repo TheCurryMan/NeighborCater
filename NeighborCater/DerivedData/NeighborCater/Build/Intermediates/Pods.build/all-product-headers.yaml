@@ -28,6 +28,33 @@
           'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-NeighborCater.build/module.modulemap"
         }
       ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "STZPopupView-Swift.h",
+          'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "STZPopupView-umbrella.h",
+          'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Target Support Files/STZPopupView/STZPopupView-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Intermediates/Pods.build/Debug-iphonesimulator/STZPopupView.build/module.modulemap"
+        }
+      ]
     }
   ]
 }

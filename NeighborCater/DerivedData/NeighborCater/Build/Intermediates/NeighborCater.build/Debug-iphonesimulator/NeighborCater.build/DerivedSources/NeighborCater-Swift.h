@@ -93,6 +93,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import CoreGraphics;
 @import MapKit;
 @import CoreLocation;
 @import ObjectiveC;
@@ -152,6 +153,15 @@ SWIFT_CLASS("_TtC13NeighborCater11AppDelegate")
 - (void)applicationDidBecomeActive:(UIApplication * _Nonnull)application;
 - (void)applicationWillTerminate:(UIApplication * _Nonnull)application;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIButton;
+
+SWIFT_CLASS("_TtC13NeighborCater11BuyFoodView")
+@interface BuyFoodView : UIView
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified buyNow;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class GooglePlacesAutocompleteContainer;
@@ -217,7 +227,7 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 @class MKOverlayRenderer;
 
 SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
-@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource>
+@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified mapView;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 @property (nonatomic) CLLocationCoordinate2D userLocation;
@@ -232,6 +242,7 @@ SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (MKOverlayRenderer * _Null_unspecified)mapView:(MKMapView * _Nonnull)mapView rendererForOverlay:(id <MKOverlay> _Nonnull)overlay;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -310,6 +321,11 @@ SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 - (IBAction)signup:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface UIView (SWIFT_EXTENSION(NeighborCater))
++ (UIView * _Nullable)loadFromNibNamed:(NSString * _Nonnull)nibNamed bundle:(NSBundle * _Nullable)bundle;
 @end
 
 

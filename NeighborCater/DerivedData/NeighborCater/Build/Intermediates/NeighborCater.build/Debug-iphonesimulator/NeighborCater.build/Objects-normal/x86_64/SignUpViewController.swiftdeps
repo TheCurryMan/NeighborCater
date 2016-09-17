@@ -6,26 +6,26 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater20SignUpViewController", ""]
 provides-dynamic-lookup:
-- "viewDidAppear"
-- "signup"
-- "email"
-- "password"
-- "ref"
-- "username"
 - "viewDidLoad"
 - "didReceiveMemoryWarning"
+- "username"
+- "signup"
+- "viewDidAppear"
+- "email"
+- "ref"
+- "password"
 depends-top-level:
-- !private "FIRAuth"
-- "AnyObject"
+- "Dictionary"
+- !private "FIRDatabase"
+- !private "StringLiteralType"
+- "Bool"
+- "FIRDatabaseReference"
 - "UIViewController"
+- "AnyObject"
+- !private "FIRAuth"
 - "UITextField"
 - "SignUpViewController"
 - !private "print"
-- "Dictionary"
-- "Bool"
-- !private "StringLiteralType"
-- "FIRDatabaseReference"
-- !private "FIRDatabase"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
@@ -592,4 +592,8 @@ depends-external:
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules/STZPopupView.swiftmodule/x86_64.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
 interface-hash: "8720fa7be121bdcaef81ec0f4630198f"

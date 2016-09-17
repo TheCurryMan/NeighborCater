@@ -1,0 +1,10 @@
+framework module STZPopupView {
+  umbrella header "STZPopupView-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module STZPopupView.Swift {
+    header "STZPopupView-Swift.h"
+}

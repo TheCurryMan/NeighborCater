@@ -19,15 +19,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STZPopupView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7EC887903FD8A45E037F5A8880BE8D67</key>
+		<key>A12D9B3176B2617518F6786B62A118E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B648849B76EA90F82E11A948CE7403F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9847A18EB9384361C4E8E8CDE9D27AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

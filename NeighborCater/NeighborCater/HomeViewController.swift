@@ -11,6 +11,7 @@ import MapKit
 import CoreLocation
 import Firebase
 import FirebaseDatabase
+import STZPopupView
 
 class KitchenTableViewCell: UITableViewCell {
     
@@ -23,7 +24,7 @@ class KitchenTableViewCell: UITableViewCell {
     
 }
 
-class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource{
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -133,6 +134,20 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //myCustomView * myView = [[[NSBundle mainBundle] loadNibNamed:@"myCustomView" owner:self options:nil] objectAtIndex:0];
+        //[myView.description setText:@"description"];
+        var popup = NSBundle.mainBundle().loadNibNamed("BuyFoodView", owner: nil, options: nil)[0] as? BuyFoodView
+        popup?.setNeedsLayout()
+        popup?.layoutIfNeeded()
+        let popupView = popup
+        popupView!.frame = CGRectMake(50,50,self.view.frame.size.width - 50, self.view.frame.size.height-200)
+        let popupConfig = STZPopupViewConfig()
+        popupConfig.cornerRadius = 10
+        presentPopupView(popupView!, config: popupConfig)
+        
+    }
+    
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print ("Errors: " + error.localizedDescription)
@@ -143,11 +158,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         circleView.strokeColor = UIColor.blackColor()
         circleView.lineWidth = 2.0
         return circleView;
-        /*
-        MKCircleRenderer *circleView = [[MKCircleRenderer alloc] initWithOverlay:overlay];
-        circleView.strokeColor = [UIColor redColor];
-        circleView.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.4];
-        return circleView; */
     }
     
 
@@ -160,5 +170,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+    }
 }
