@@ -12,6 +12,7 @@ public class Kitchen {
     private String foodName;
     private String kitchenName;
     private String description;
+    private String address;
     private double price;
 
     public double getLatitude() {
@@ -68,5 +69,13 @@ public class Kitchen {
 
     public void setFoodName(String foodName){
         this.foodName = foodName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
