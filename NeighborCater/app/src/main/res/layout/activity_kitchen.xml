@@ -72,10 +72,24 @@
         android:layout_below="@+id/seekBar"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/editTextLocation"-->
+        <!--android:hint="Enter Location"-->
+        <!--android:layout_below="@+id/textView4"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginTop="15dp" />-->
+    <fragment
+        android:id="@+id/editTextLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextLocation"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
         android:hint="Enter Location"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
@@ -84,7 +98,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -94,6 +109,8 @@
         android:layout_marginTop="36dp"
         android:layout_below="@+id/editTextLocation"
         android:layout_centerHorizontal="true" />
+
+
 
 
 </RelativeLayout>
