@@ -10,6 +10,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -36,6 +38,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import hackthenorth.neighborcater.adapters.KitchenAdapter;
 import hackthenorth.neighborcater.models.Kitchen;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
@@ -45,21 +48,25 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private DatabaseReference mDatabase;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
-    private JSONArray kitchenArray;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter recyclerViewAdapter;
+    RecyclerView.LayoutManager recyclerViewLayoutManager;
+    LatLng myHome;
+    ArrayList<Kitchen> kitchenList;
 
     ValueEventListener postListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
             // Get Post object and use the values to update the UI
-            HashMap<String, Object> kitchenHashmap= (HashMap) dataSnapshot.child("kitchens").getValue();
-            Log.d("asdf", kitchenHashmap.toString());
             ArrayList<Kitchen> kitchenArrayList = new ArrayList<>();
             Iterator<DataSnapshot> iterator = dataSnapshot.child("kitchens").getChildren().iterator();
                 while(iterator.hasNext()){
                     Kitchen newKitchen = iterator.next().getValue(Kitchen.class);
                     kitchenArrayList.add(newKitchen);
                 }
+            kitchenList = kitchenArrayList;
             placeMarkers(kitchenArrayList);
+            setupList();
             Log.d("asdf", kitchenArrayList.toString());
 
             // ...
@@ -72,6 +79,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             // ...
         }
     };
+
+    private void setupList() {
+        if(kitchenList!=null && kitchenList.size() >0 && myHome!=null) {
+            recyclerView.setAdapter(new KitchenAdapter(getApplicationContext(), kitchenList, myHome));
+        }
+    }
 
     private void placeMarkers(ArrayList<Kitchen> kitchenArrayList) {
         if(mMap != null){
@@ -110,13 +123,19 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(postListener);
 
+        recyclerView = (RecyclerView) this.findViewById(R.id.kitchen_recycler_view);
+        recyclerViewLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(recyclerViewLayoutManager);
+        recyclerView.setAdapter(null);
+
     }
 
     @Override
     public void onLocationChanged(Location location) {
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
-        LatLng myHome = new LatLng(latitude, longitude);
+        myHome = new LatLng(latitude, longitude);
+        setupList();
         mMap.addMarker(new MarkerOptions().position(myHome).title("Home"));
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(myHome, 10);
         mMap.animateCamera(cameraUpdate);
