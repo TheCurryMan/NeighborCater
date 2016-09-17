@@ -102,17 +102,22 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class GooglePlacesAutocomplete;
 @class UITextField;
+@class UIStoryboardSegue;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC13NeighborCater24AddKitchenViewController")
 @interface AddKitchenViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified location;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified kitchenName;
 @property (nonatomic) double longitude;
 @property (nonatomic) double latitude;
+@property (nonatomic, copy) NSString * _Nonnull kitchenKey;
 @property (nonatomic, readonly, strong) GooglePlacesAutocomplete * _Nonnull gpaViewController;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (IBAction)complete:(id _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -219,6 +224,20 @@ SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (MKOverlayRenderer * _Null_unspecified)mapView:(MKMapView * _Nonnull)mapView rendererForOverlay:(id <MKOverlay> _Nonnull)overlay;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater25KitchenHomeViewController")
+@interface KitchenHomeViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified foodDescription;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified price;
+@property (nonatomic, copy) NSString * _Nonnull kitchenUID;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (IBAction)post:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

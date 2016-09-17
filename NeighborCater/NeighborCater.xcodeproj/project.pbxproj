@@ -15,6 +15,7 @@
 		E12644891D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12644881D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift */; };
 		E126448B1D8D2B2B00604F27 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = E126448A1D8D2B2B00604F27 /* GooglePlacesAutocomplete.xib */; };
 		E126448D1D8D2BE300604F27 /* AddKitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126448C1D8D2BE300604F27 /* AddKitchenViewController.swift */; };
+		E15685571D8D5228000CC825 /* KitchenHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15685561D8D5228000CC825 /* KitchenHomeViewController.swift */; };
 		E1F13ED91D8D058B00C31051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F13ED81D8D058B00C31051 /* AppDelegate.swift */; };
 		E1F13EDB1D8D058B00C31051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F13EDA1D8D058B00C31051 /* ViewController.swift */; };
 		E1F13EDE1D8D058B00C31051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F13EDC1D8D058B00C31051 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		E12644881D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		E126448A1D8D2B2B00604F27 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
 		E126448C1D8D2BE300604F27 /* AddKitchenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKitchenViewController.swift; sourceTree = "<group>"; };
+		E15685561D8D5228000CC825 /* KitchenHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenHomeViewController.swift; sourceTree = "<group>"; };
 		E1F13ED51D8D058B00C31051 /* NeighborCater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeighborCater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F13ED81D8D058B00C31051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F13EDA1D8D058B00C31051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				E1F13F081D8D125E00C31051 /* SignUpViewController.swift */,
 				E12644841D8D1A3400604F27 /* HomeViewController.swift */,
 				E126448C1D8D2BE300604F27 /* AddKitchenViewController.swift */,
+				E15685561D8D5228000CC825 /* KitchenHomeViewController.swift */,
 				E12644881D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift */,
 				E1F13EDA1D8D058B00C31051 /* ViewController.swift */,
 				E126448A1D8D2B2B00604F27 /* GooglePlacesAutocomplete.xib */,
@@ -454,6 +457,7 @@
 				E12644891D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift in Sources */,
 				E1F13F091D8D125E00C31051 /* SignUpViewController.swift in Sources */,
 				E1F13EDB1D8D058B00C31051 /* ViewController.swift in Sources */,
+				E15685571D8D5228000CC825 /* KitchenHomeViewController.swift in Sources */,
 				E126448D1D8D2BE300604F27 /* AddKitchenViewController.swift in Sources */,
 				E1F13ED91D8D058B00C31051 /* AppDelegate.swift in Sources */,
 				E12644851D8D1A3400604F27 /* HomeViewController.swift in Sources */,

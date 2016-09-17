@@ -949,7 +949,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="us9-ky-IcM"/>
                     <connections>
+                        <outlet property="kitchenName" destination="qvZ-1k-9fz" id="oyb-3S-ljh"/>
                         <outlet property="location" destination="Zf2-0D-5Om" id="x4E-Xd-Nju"/>
+                        <segue destination="otF-ra-M41" kind="presentation" identifier="kitchen" id="wQk-g3-Ma1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1G-Ot-NFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1154,10 +1156,10 @@
             </objects>
             <point key="canvasLocation" x="2892" y="-451"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Kitchen Home View Controller-->
         <scene sceneID="x9r-iC-OWc">
             <objects>
-                <viewController id="otF-ra-M41" customClass="HomeViewController" customModule="NeighborCater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="otF-ra-M41" customClass="KitchenHomeViewController" customModule="NeighborCater" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EFO-yY-HjH"/>
                         <viewControllerLayoutGuide type="bottom" id="svZ-Ou-ynb"/>
@@ -1194,7 +1196,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2S-Ct-MBi">
                                 <rect key="frame" x="133" y="234" width="167" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price ($)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yH-Ca-y1s">
                                 <rect key="frame" x="20" y="234" width="93" height="31"/>
@@ -1205,7 +1207,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="px4-VQ-h0x">
                                 <rect key="frame" x="133" y="234" width="167" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uG-lh-hVv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1217,6 +1219,16 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="244" width="400" height="50"/>
                                 </variation>
+                                <connections>
+                                    <action selector="post:" destination="otF-ra-M41" eventType="touchUpInside" id="qtt-Zy-sQL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9a-qT-y4L">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="mqR-kN-Pwr" kind="presentation" id="2qj-24-mJu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1227,8 +1239,10 @@
                             <constraint firstItem="oOD-3o-PS3" firstAttribute="centerX" secondItem="UoK-0M-i1E" secondAttribute="centerX" id="CLt-4b-bp1"/>
                             <constraint firstItem="VBQ-BP-eOb" firstAttribute="leading" secondItem="BKZ-7w-3s5" secondAttribute="trailing" constant="34" id="EVc-cP-VuK"/>
                             <constraint firstItem="8yH-Ca-y1s" firstAttribute="top" secondItem="px4-VQ-h0x" secondAttribute="top" id="JCf-AO-SaW"/>
+                            <constraint firstItem="k9a-qT-y4L" firstAttribute="top" secondItem="EFO-yY-HjH" secondAttribute="bottom" constant="8" symbolic="YES" id="PsQ-gY-Tg8"/>
                             <constraint firstItem="VBQ-BP-eOb" firstAttribute="trailing" secondItem="UoK-0M-i1E" secondAttribute="trailingMargin" id="Q4C-sY-daB"/>
                             <constraint firstItem="k2S-Ct-MBi" firstAttribute="leading" secondItem="dYg-up-Zxb" secondAttribute="trailing" constant="40" id="Q6P-Bj-c8s"/>
+                            <constraint firstItem="oOD-3o-PS3" firstAttribute="leading" secondItem="k9a-qT-y4L" secondAttribute="trailing" constant="44" id="Sdo-SK-g8f"/>
                             <constraint firstItem="k2S-Ct-MBi" firstAttribute="top" secondItem="VBQ-BP-eOb" secondAttribute="bottom" constant="14" id="Va2-rN-51o"/>
                             <constraint firstItem="VBQ-BP-eOb" firstAttribute="leading" secondItem="k2S-Ct-MBi" secondAttribute="leading" id="Xee-QV-BaD"/>
                             <constraint firstItem="dYg-up-Zxb" firstAttribute="leading" secondItem="8yH-Ca-y1s" secondAttribute="leading" id="ZAe-X4-jS8"/>
@@ -1254,12 +1268,15 @@
                                 <exclude reference="8yH-Ca-y1s"/>
                                 <exclude reference="px4-VQ-h0x"/>
                                 <exclude reference="7uG-lh-hVv"/>
+                                <exclude reference="k9a-qT-y4L"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="PsQ-gY-Tg8"/>
                                 <exclude reference="5xF-bf-ts1"/>
                                 <exclude reference="90p-x2-NSk"/>
                                 <exclude reference="uxw-WK-k8r"/>
                                 <exclude reference="CLt-4b-bp1"/>
+                                <exclude reference="Sdo-SK-g8f"/>
                                 <exclude reference="gYh-Z8-6bt"/>
                                 <exclude reference="tys-Fq-nXa"/>
                                 <exclude reference="ZAe-X4-jS8"/>
@@ -1290,12 +1307,15 @@
                                 <include reference="8yH-Ca-y1s"/>
                                 <include reference="px4-VQ-h0x"/>
                                 <include reference="7uG-lh-hVv"/>
+                                <include reference="k9a-qT-y4L"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="PsQ-gY-Tg8"/>
                                 <include reference="5xF-bf-ts1"/>
                                 <include reference="90p-x2-NSk"/>
                                 <include reference="uxw-WK-k8r"/>
                                 <include reference="CLt-4b-bp1"/>
+                                <include reference="Sdo-SK-g8f"/>
                                 <include reference="gYh-Z8-6bt"/>
                                 <include reference="tys-Fq-nXa"/>
                                 <include reference="ZAe-X4-jS8"/>
@@ -1317,6 +1337,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="foodDescription" destination="k2S-Ct-MBi" id="pqE-cn-6PU"/>
+                        <outlet property="foodName" destination="VBQ-BP-eOb" id="PTA-7D-pR3"/>
+                        <outlet property="price" destination="px4-VQ-h0x" id="oDf-bl-QWG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTX-E2-BPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1327,4 +1352,7 @@
         <image name="buyer" width="256" height="256"/>
         <image name="seller" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2qj-24-mJu"/>
+    </inferredMetricsTieBreakers>
 </document>
