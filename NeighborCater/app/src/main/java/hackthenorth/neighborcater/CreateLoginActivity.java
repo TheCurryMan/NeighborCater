@@ -125,21 +125,13 @@ public class CreateLoginActivity extends AppCompatActivity {
 
                                 }else{
                                     Toast.makeText(CreateLoginActivity.this, "Authenticated!", Toast.LENGTH_SHORT).show();
-                                    //switch activity here
+//
+//
 
-                                    //GONNA POPULATE RANDOM KITCHEN OBJECT HERE
-//
-//
-                                    Intent mapIntent = new Intent(CreateLoginActivity.this, MapActivity.class);
-                                    CreateLoginActivity.this.startActivity(mapIntent);
-//
-//                                    mDatabase.push().setValue(randomKitchen);
-//                                    mDatabase.push().setValue(randomKitchen2);
 
 
                                 }
 
-                                // ...
                             }
                         });
             }
