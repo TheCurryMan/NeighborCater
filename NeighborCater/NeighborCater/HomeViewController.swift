@@ -23,7 +23,7 @@ class KitchenTableViewCell: UITableViewCell {
     
 }
 
-class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UIScrollViewDelegate{
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource{
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -50,8 +50,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-        
-
         // Do any additional setup after loading the view.
     }
 
@@ -83,9 +81,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             for item in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 let kitchen = Kitchen(snapshot: item);
                 kitchen.addDistance(CLLocation(latitude: kitchen.latitude, longitude: kitchen.longitude).distanceFromLocation(CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude))/1609)
-                self.Kitchens.append(kitchen);
+                
                 print(kitchen.distance)
                 if (kitchen.distance <= 1){
+                    self.Kitchens.append(kitchen);
                     self.Annotations.append(kitchen)
                 }
             }
@@ -150,7 +149,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         circleView.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.4];
         return circleView; */
     }
-    
     
 
     /*
