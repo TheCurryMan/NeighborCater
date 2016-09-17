@@ -33,5 +33,9 @@ public class ChoosingActivity extends AppCompatActivity {
             }
         });
     }
-
+    @OnClick(R.id.choosing_layout_store_image)
+    void goToStoreHome(){
+        Intent mapIntent = new Intent(ChoosingActivity.this, MapActivity.class);
+        ChoosingActivity.this.startActivity(mapIntent);
+    }
 }
