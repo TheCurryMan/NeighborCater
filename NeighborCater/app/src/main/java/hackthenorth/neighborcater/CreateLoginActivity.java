@@ -1,5 +1,6 @@
 package hackthenorth.neighborcater;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+
+import hackthenorth.neighborcater.models.Kitchen;
 
 public class CreateLoginActivity extends AppCompatActivity {
 
@@ -39,6 +46,7 @@ public class CreateLoginActivity extends AppCompatActivity {
     Button mLoginButton;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +72,7 @@ public class CreateLoginActivity extends AppCompatActivity {
         mCreateButton = (Button) findViewById(R.id.button);
         mLoginButton = (Button) findViewById(R.id.button2);
         mAuth = FirebaseAuth.getInstance();
+
 
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +106,8 @@ public class CreateLoginActivity extends AppCompatActivity {
 
                 String username = mEmailInput.getText().toString();
                 String password = mPassword.getText().toString();
+                mDatabase = FirebaseDatabase.getInstance().getReference("kitchens");
+
 
                 mAuth.signInWithEmailAndPassword(username, password)
                         .addOnCompleteListener(CreateLoginActivity.this, new OnCompleteListener<AuthResult>() {
@@ -111,9 +122,21 @@ public class CreateLoginActivity extends AppCompatActivity {
                                     Log.w("P", "signInWithEmail:failed", task.getException());
                                     Toast.makeText(CreateLoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
+
                                 }else{
                                     Toast.makeText(CreateLoginActivity.this, "Authenticated!", Toast.LENGTH_SHORT).show();
                                     //switch activity here
+
+                                    //GONNA POPULATE RANDOM KITCHEN OBJECT HERE
+//
+//
+                                    Intent mapIntent = new Intent(CreateLoginActivity.this, MapActivity.class);
+                                    CreateLoginActivity.this.startActivity(mapIntent);
+//
+//                                    mDatabase.push().setValue(randomKitchen);
+//                                    mDatabase.push().setValue(randomKitchen2);
+
+
                                 }
 
                                 // ...

@@ -7,8 +7,10 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -17,13 +19,47 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import hackthenorth.neighborcater.models.Kitchen;
+
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     GoogleMap mMap;
     private LocationManager locationManager;
+    private DatabaseReference mDatabase;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
+    private JSONArray kitchenArray;
+
+    ValueEventListener postListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            // Get Post object and use the values to update the UI
+            ArrayList<Kitchen> kitchenArrayList= (ArrayList) dataSnapshot.child("kitchens").getValue();
+            Log.d("asdf", kitchenArrayList.toString());
+
+            // ...
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+            // Getting Post failed, log a message
+            // ...
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +82,14 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.addValueEventListener(postListener);
+
     }
 
     @Override
     public void onLocationChanged(Location location) {
         double latitude = location.getLatitude();
-
-
         double longitude = location.getLongitude();
         LatLng myHome = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(myHome).title("Home"));
@@ -69,6 +106,22 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
         locationManager.removeUpdates(this);
+        try {
+            updateKitchenUI();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updateKitchenUI() throws JSONException {
+        if (kitchenArray != null) {
+            for (int i = 0; i < this.kitchenArray.length(); i++) {
+                JSONObject kitchenObject = kitchenArray.getJSONObject(i);
+                mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(kitchenObject.getDouble("lat"), kitchenObject.getDouble("long")))
+                        .title("Hello world"));
+            }
+        }
     }
 
     @Override
@@ -92,4 +145,5 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
     }
+
 }
