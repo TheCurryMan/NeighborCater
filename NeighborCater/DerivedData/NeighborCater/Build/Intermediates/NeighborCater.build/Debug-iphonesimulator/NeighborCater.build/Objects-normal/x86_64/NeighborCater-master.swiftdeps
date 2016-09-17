@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "1d712d856eef3fdcf86ce457b27a2f56"
+build_time: [527403662, 437741000]
+inputs:
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/NeighborCater/ViewController.swift": [527403659, 0]
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/NeighborCater/AppDelegate.swift": [527403659, 0]
