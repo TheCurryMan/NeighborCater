@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/Pods_NeighborCater.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-NeighborCater-umbrella.h",
+          'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Target Support Files/Pods-NeighborCater/Pods-NeighborCater-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_NeighborCater-Swift.h",
+          'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/Pods_NeighborCater.framework/Headers/Pods_NeighborCater-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/Pods_NeighborCater.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-NeighborCater.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

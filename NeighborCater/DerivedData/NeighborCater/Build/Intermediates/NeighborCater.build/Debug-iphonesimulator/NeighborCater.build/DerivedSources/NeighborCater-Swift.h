@@ -93,6 +93,8 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import MapKit;
+@import CoreLocation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -113,8 +115,45 @@ SWIFT_CLASS("_TtC13NeighborCater11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class CLLocationManager;
+@class CLLocation;
+@class NSError;
+@class MKMapView;
+@protocol MKOverlay;
+@class MKOverlayRenderer;
 @class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
+@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified mapView;
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (MKOverlayRenderer * _Null_unspecified)mapView:(MKMapView * _Nonnull)mapView rendererForOverlay:(id <MKOverlay> _Nonnull)overlay;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITextField;
+@class FIRDatabaseReference;
+
+SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
+@interface SignUpViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified username;
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified email;
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified password;
+@property (nonatomic, strong) FIRDatabaseReference * _Null_unspecified ref;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)didReceiveMemoryWarning;
+- (IBAction)signup:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC13NeighborCater14ViewController")
 @interface ViewController : UIViewController
