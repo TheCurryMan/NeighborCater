@@ -95,10 +95,44 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import MapKit;
 @import CoreLocation;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class GooglePlacesAutocomplete;
+@class UITextField;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC13NeighborCater24AddKitchenViewController")
+@interface AddKitchenViewController : UIViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified location;
+@property (nonatomic) double longitude;
+@property (nonatomic) double latitude;
+@property (nonatomic, readonly, strong) GooglePlacesAutocomplete * _Nonnull gpaViewController;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class Place;
+
+SWIFT_PROTOCOL("_TtP13NeighborCater32GooglePlacesAutocompleteDelegate_")
+@protocol GooglePlacesAutocompleteDelegate
+@optional
+- (void)placesFound:(NSArray<Place *> * _Nonnull)places;
+- (void)placeSelected:(Place * _Nonnull)place;
+- (void)placeViewClosed;
+@end
+
+
+@interface AddKitchenViewController (SWIFT_EXTENSION(NeighborCater)) <GooglePlacesAutocompleteDelegate>
+- (void)placeSelected:(Place * _Nonnull)place;
+- (void)placeViewClosed;
+@end
+
 @class UIWindow;
 @class UIApplication;
 @class NSObject;
@@ -115,14 +149,66 @@ SWIFT_CLASS("_TtC13NeighborCater11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class GooglePlacesAutocompleteContainer;
+@class UIBarButtonItem;
+@class UINavigationItem;
+
+SWIFT_CLASS("_TtC13NeighborCater24GooglePlacesAutocomplete")
+@interface GooglePlacesAutocomplete : UINavigationController
+@property (nonatomic, strong) GooglePlacesAutocompleteContainer * _Null_unspecified gpaViewController;
+@property (nonatomic, strong) UIBarButtonItem * _Null_unspecified closeButton;
+@property (nonatomic, readonly, strong) UINavigationItem * _Nonnull navigationItem;
+@property (nonatomic, strong) id <GooglePlacesAutocompleteDelegate> _Nullable placeDelegate;
+- (void)close;
+- (void)reset;
+- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSNotification;
+@class UISearchBar;
+@class UITableView;
+@class NSLayoutConstraint;
+
+SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
+@interface GooglePlacesAutocompleteContainer : UIViewController
+@property (nonatomic, weak) IBOutlet UISearchBar * _Null_unspecified searchBar;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified topConstraint;
+@property (nonatomic, strong) id <GooglePlacesAutocompleteDelegate> _Nullable delegate;
+@property (nonatomic, copy) NSString * _Nullable apiKey;
+@property (nonatomic, copy) NSArray<Place *> * _Nonnull places;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidLoad;
+- (void)keyboardWasShown:(NSNotification * _Nonnull)notification;
+- (void)keyboardWillBeHidden:(NSNotification * _Nonnull)notification;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface GooglePlacesAutocompleteContainer (SWIFT_EXTENSION(NeighborCater)) <UISearchBarDelegate, UIBarPositioningDelegate>
+- (void)searchBar:(UISearchBar * _Nonnull)searchBar textDidChange:(NSString * _Nonnull)searchText;
+@end
+
+@class NSIndexPath;
+@class UITableViewCell;
+
+@interface GooglePlacesAutocompleteContainer (SWIFT_EXTENSION(NeighborCater)) <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
 @class CLLocationManager;
 @class CLLocation;
 @class NSError;
 @class MKMapView;
 @protocol MKOverlay;
 @class MKOverlayRenderer;
-@class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 @interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
@@ -137,7 +223,17 @@ SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
+
+SWIFT_CLASS("_TtC13NeighborCater5Place")
+@interface Place : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull id;
+@property (nonatomic, readonly, copy) NSString * _Nonnull desc;
+@property (nonatomic, copy) NSString * _Nullable apiKey;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)initWithId:(NSString * _Nonnull)id description:(NSString * _Nonnull)description OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithPrediction:(NSDictionary<NSString *, id> * _Nonnull)prediction apiKey:(NSString * _Nullable)apiKey;
+@end
+
 @class FIRDatabaseReference;
 
 SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")

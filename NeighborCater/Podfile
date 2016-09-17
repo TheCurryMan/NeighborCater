@@ -10,7 +10,6 @@ target 'NeighborCater' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'GoogleMaps'
 
   target 'NeighborCaterTests' do
     inherit! :search_paths

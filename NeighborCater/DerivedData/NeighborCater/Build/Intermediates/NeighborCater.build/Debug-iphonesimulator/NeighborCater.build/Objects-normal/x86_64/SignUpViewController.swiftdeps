@@ -6,26 +6,26 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater20SignUpViewController", ""]
 provides-dynamic-lookup:
-- "viewDidAppear"
-- "password"
 - "signup"
+- "password"
+- "viewDidAppear"
+- "email"
 - "viewDidLoad"
 - "didReceiveMemoryWarning"
-- "email"
-- "ref"
 - "username"
+- "ref"
 depends-top-level:
-- "SignUpViewController"
 - !private "FIRAuth"
 - "UITextField"
-- "FIRDatabaseReference"
-- !private "FIRDatabase"
-- !private "StringLiteralType"
+- "SignUpViewController"
 - "UIViewController"
 - !private "print"
+- "FIRDatabaseReference"
+- !private "StringLiteralType"
 - "Dictionary"
-- "Bool"
 - "AnyObject"
+- !private "FIRDatabase"
+- "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
@@ -591,4 +591,5 @@ depends-external:
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/Firebase.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 interface-hash: "8720fa7be121bdcaef81ec0f4630198f"

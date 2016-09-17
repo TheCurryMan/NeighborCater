@@ -1,0 +1,1 @@
+ const unsigned char GooglePlacesAutocompleteVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:GooglePlacesAutocomplete  PROJECT:Pods-1" "\n"; const double GooglePlacesAutocompleteVersionNumber __attribute__ ((used)) = (double)1.;
