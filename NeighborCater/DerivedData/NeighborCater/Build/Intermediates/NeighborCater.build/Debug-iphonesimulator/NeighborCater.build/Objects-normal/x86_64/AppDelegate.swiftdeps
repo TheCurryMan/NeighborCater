@@ -8,22 +8,22 @@ provides-member:
 provides-dynamic-lookup:
 - "applicationWillResignActive"
 - "applicationWillTerminate"
-- "applicationDidEnterBackground"
-- "window"
-- "application"
-- "applicationWillEnterForeground"
 - "applicationDidBecomeActive"
+- "window"
+- "applicationWillEnterForeground"
+- "application"
+- "applicationDidEnterBackground"
 depends-top-level:
-- "UIApplication"
-- "Bool"
-- "AppDelegate"
-- "UIResponder"
 - "UIWindow"
+- "AppDelegate"
 - "NSObject"
+- "UIResponder"
+- "UIApplicationDelegate"
+- "Bool"
 - !private "FIRApp"
 - !private "BooleanLiteralType"
 - "AnyObject"
-- "UIApplicationDelegate"
+- "UIApplication"
 depends-member:
 - !private ["Ps9AnyObject", "FIRApp"]
 - ["Ps9AnyObject", "application"]

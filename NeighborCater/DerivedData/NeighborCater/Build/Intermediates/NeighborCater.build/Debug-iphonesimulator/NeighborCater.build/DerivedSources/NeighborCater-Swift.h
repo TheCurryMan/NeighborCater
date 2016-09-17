@@ -210,8 +210,10 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 
 @class CLLocationManager;
 @class CLLocation;
-@class NSError;
 @class MKMapView;
+@protocol MKAnnotation;
+@class MKAnnotationView;
+@class NSError;
 @protocol MKOverlay;
 @class MKOverlayRenderer;
 
@@ -219,9 +221,11 @@ SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 @interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified mapView;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
+@property (nonatomic) CLLocationCoordinate2D userLocation;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (MKAnnotationView * _Nullable)mapView:(MKMapView * _Nonnull)mapView viewForAnnotation:(id <MKAnnotation> _Nonnull)annotation;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (MKOverlayRenderer * _Null_unspecified)mapView:(MKMapView * _Nonnull)mapView rendererForOverlay:(id <MKOverlay> _Nonnull)overlay;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
