@@ -30,7 +30,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 import hackthenorth.neighborcater.models.Kitchen;
@@ -48,14 +47,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
             // Get Post object and use the values to update the UI
-            HashMap<String, Object> kitchenHashmap= (HashMap) dataSnapshot.child("kitchens").getValue();
-            Log.d("asdf", kitchenHashmap.toString());
-            Collection<Kitchen> kitchenCollection = (Collection) kitchenHashmap.values();
+            ArrayList<Kitchen> kitchenArrayList= (ArrayList) dataSnapshot.child("kitchens").getValue();
+            Log.d("asdf", kitchenArrayList.toString());
 
             // ...
-            for(Kitchen kitchen: kitchenCollection){
-                Log.d("adsf", "kitchen name: " + kitchen.getKitchenName());
-            }
         }
 
         @Override
