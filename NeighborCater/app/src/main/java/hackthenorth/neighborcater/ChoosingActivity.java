@@ -1,9 +1,12 @@
 package hackthenorth.neighborcater;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 
 import butterknife.BindView;
@@ -16,25 +19,19 @@ import butterknife.OnClick;
 
 public class ChoosingActivity extends AppCompatActivity {
 
-    @BindView(R.id.choosing_layout_food_image)
-    ImageView foodImageView;
-    @BindView(R.id.choosing_layout_store_image)
-    ImageView storeImageView;
-
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.choosing_layout);
-        ButterKnife.bind(this);
+
+        ImageView foodImageView = (ImageView) this.findViewById(R.id.choosing_layout_food_image);
+        foodImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mapIntent = new Intent(ChoosingActivity.this, MapActivity.class);
+                startActivity(mapIntent);
+            }
+        });
     }
 
-    @OnClick(R.id.choosing_layout_food_image)
-    void goToBuyerHome(){
-        Intent mapIntent = new Intent(ChoosingActivity.this, MapActivity.class);
-        ChoosingActivity.this.startActivity(mapIntent);
-    }
-    @OnClick(R.id.choosing_layout_store_image)
-    void goToStoreHome(){
-
-    }
 }
