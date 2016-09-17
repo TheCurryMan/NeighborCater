@@ -1,10 +1,13 @@
 package hackthenorth.neighborcater;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import butterknife.OnClick;
 
 public class ChoosingActivity extends AppCompatActivity {
 
@@ -16,8 +19,8 @@ public class ChoosingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choosing);
 
-        foodImage = (ImageView)findViewById(R.id.imageView);
-        storeImage = (ImageView)findViewById(R.id.imageView2);
+        foodImage = (ImageView) findViewById(R.id.imageView);
+        storeImage = (ImageView) findViewById(R.id.imageView2);
 
         foodImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +37,7 @@ public class ChoosingActivity extends AppCompatActivity {
                 startActivity(kitchenActivity);
             }
         });
+
 
     }
 }

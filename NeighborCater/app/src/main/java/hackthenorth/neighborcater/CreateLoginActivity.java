@@ -128,6 +128,11 @@ public class CreateLoginActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Authenticated!", Toast.LENGTH_SHORT).show();
                                     Intent choosingActivity = new Intent(CreateLoginActivity.this, ChoosingActivity.class);
                                     startActivity(choosingActivity);
+                                    Toast.makeText(CreateLoginActivity.this, "Authenticated!", Toast.LENGTH_SHORT).show();
+//
+//
+                                    Intent choosingIntent = new Intent(CreateLoginActivity.this, ChoosingActivity.class);
+                                    startActivity(choosingIntent);
 
                                 }
 
