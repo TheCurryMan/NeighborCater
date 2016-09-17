@@ -7,22 +7,22 @@ provides-member:
 - ["C13NeighborCater11AppDelegate", ""]
 provides-dynamic-lookup:
 - "applicationDidBecomeActive"
-- "window"
-- "applicationWillEnterForeground"
 - "application"
-- "applicationDidEnterBackground"
 - "applicationWillTerminate"
+- "applicationWillEnterForeground"
+- "window"
+- "applicationDidEnterBackground"
 - "applicationWillResignActive"
 depends-top-level:
-- !private "BooleanLiteralType"
 - "UIApplicationDelegate"
-- "Bool"
-- "UIResponder"
-- "AnyObject"
-- "UIWindow"
 - "UIApplication"
-- "NSObject"
 - "AppDelegate"
+- "UIResponder"
+- "UIWindow"
+- "Bool"
+- "AnyObject"
+- "NSObject"
+- !private "BooleanLiteralType"
 depends-member:
 - ["Ps9AnyObject", "application"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
@@ -219,6 +219,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
