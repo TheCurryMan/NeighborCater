@@ -51,6 +51,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onLocationChanged(Location location) {
         double latitude = location.getLatitude();
+
+
         double longitude = location.getLongitude();
         LatLng myHome = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(myHome).title("Home"));
