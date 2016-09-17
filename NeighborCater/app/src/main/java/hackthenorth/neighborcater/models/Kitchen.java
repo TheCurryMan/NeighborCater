@@ -15,6 +15,23 @@ public class Kitchen {
     private String price;
     private String user;
 
+
+
+    public Kitchen(){
+
+    }
+
+    public Kitchen(String address, String foodDescription, String foodName, String kitchenName, double latitude, double longitude, String price, String user){
+        this.address = address;
+        this.foodDescription = foodDescription;
+        this.foodName = foodName;
+        this.kitchenName = kitchenName;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.price = price;
+        this.user = user;
+    }
+
     public String getAddress() {
         return address;
     }
