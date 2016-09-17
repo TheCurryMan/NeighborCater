@@ -18,6 +18,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +33,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 import hackthenorth.neighborcater.models.Kitchen;
 
@@ -50,13 +54,15 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             // Get Post object and use the values to update the UI
             HashMap<String, Object> kitchenHashmap= (HashMap) dataSnapshot.child("kitchens").getValue();
             Log.d("asdf", kitchenHashmap.toString());
-            Collection<Kitchen> kitchenCollection = (Collection) kitchenHashmap.values();
-
-            // ...
-            for(Kitchen kitchen: kitchenCollection){
-                Log.d("adsf", "kitchen name: " + kitchen.getKitchenName());
-            }
+            ArrayList<Kitchen> kitchenArrayList = new ArrayList<>();
+            Iterator<DataSnapshot> iterator = dataSnapshot.child("kitchens").getChildren().iterator();
+                while(iterator.hasNext()){
+                    Kitchen newKitchen = iterator.next().getValue(Kitchen.class);
+                    kitchenArrayList.add(newKitchen);
+                }
+            placeMarkers(kitchenArrayList);
         }
+
 
         @Override
         public void onCancelled(DatabaseError databaseError) {
@@ -64,6 +70,18 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             // ...
         }
     };
+
+    private void placeMarkers(ArrayList<Kitchen> kitchenArrayList) {
+        if(mMap != null){
+            for (Kitchen kitchen : kitchenArrayList){
+                LatLng position = new LatLng(kitchen.getLatitude(), kitchen.getLongitude());
+                Marker marker = mMap.addMarker(new MarkerOptions()
+                        .position(position)
+                        .title(kitchen.getKitchenName()));
+                marker.setTag(kitchen.getKitchenName());
+            }
+        }
+    }
 
 
     @Override
@@ -111,23 +129,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             return;
         }
         locationManager.removeUpdates(this);
-        try {
-            updateKitchenUI();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
-    private void updateKitchenUI() throws JSONException {
-        if (kitchenArray != null) {
-            for (int i = 0; i < this.kitchenArray.length(); i++) {
-                JSONObject kitchenObject = kitchenArray.getJSONObject(i);
-                mMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(kitchenObject.getDouble("lat"), kitchenObject.getDouble("long")))
-                        .title("Hello world"));
-            }
-        }
-    }
 
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {
@@ -147,8 +150,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
     }
 
 }
