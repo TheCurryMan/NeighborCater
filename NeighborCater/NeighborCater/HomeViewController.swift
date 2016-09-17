@@ -12,7 +12,18 @@ import CoreLocation
 import Firebase
 import FirebaseDatabase
 
-class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class KitchenTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var kitchenName: UILabel!
+    @IBOutlet weak var foodName: UILabel!
+    
+    @IBOutlet weak var kitchenAddress: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    
+}
+
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UIScrollViewDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -20,8 +31,20 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     var userLocation = CLLocationCoordinate2D()
     
+    var Distances = [Double]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var Kitchens = [Kitchen]()
+    
+    var Annotations = [Kitchen]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var nib = UINib(nibName: "KitchenTableViewCell", bundle: nil)
+        
+        tableView.registerNib(nib, forCellReuseIdentifier: "kitchen")
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -42,7 +65,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         let center = CLLocationCoordinate2DMake(location!.coordinate.latitude, location!.coordinate.longitude)
         userLocation = center
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         
         self.mapView.setRegion(region, animated: true)
         
@@ -55,54 +78,63 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let ref = FIRDatabase.database().reference()
         let pathRef = ref.child("kitchens")
         
-        var refHandle = pathRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
-            let postDict = snapshot.value as! [String : AnyObject]
-            for i in postDict {
-                let lat = (i.1["latitude"] as! Double)
-                let long = (i.1["longitude"] as! Double)
-                if (CLLocation(latitude: lat, longitude: long).distanceFromLocation(CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)))/1609 <= 1{
-                    var annot = MKPointAnnotation()
-                    annot.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    print(annot.coordinate)
-                    annot.title = (i.1["kitchenName"] as! String)
-                    self.mapView.addAnnotation(annot)
-                    print("Annotation added!")
+        let x = pathRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+            
+            for item in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                let kitchen = Kitchen(snapshot: item);
+                kitchen.addDistance(CLLocation(latitude: kitchen.latitude, longitude: kitchen.longitude).distanceFromLocation(CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude))/1609)
+                self.Kitchens.append(kitchen);
+                print(kitchen.distance)
+                if (kitchen.distance <= 1){
+                    self.Annotations.append(kitchen)
                 }
             }
-            // ...
+                self.tableView.reloadData()
+                self.addAnnotation()
         })
         
         
         self.locationManager.stopUpdatingLocation()
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        // Don't want to show a custom image if the annotation is the user's location.
-        guard !annotation.isKindOfClass(MKUserLocation) else {
-            return nil
+    func addAnnotation() {
+        for i in self.Annotations {
+            let annot = MKPointAnnotation()
+            annot.coordinate = CLLocationCoordinate2DMake(i.latitude, i.longitude)
+            print(annot.coordinate)
+            annot.title = i.kitchenName
+            dispatch_async(dispatch_get_main_queue()) {
+                self.mapView.addAnnotation(annot)
+            }
+            
+            print("Annotation added!")
+            print(self.mapView.annotations.count)
         }
         
-        let annotationIdentifier = "AnnotationIdentifier"
-        
-        var annotationView: MKAnnotationView?
-        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(annotationIdentifier) {
-            annotationView = dequeuedAnnotationView
-            annotationView?.annotation = annotation
-        }
-        else {
-            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            //av.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
-            annotationView = av
-        }
-        
-        if let annotationView = annotationView {
-            // Configure your annotation view here
-            annotationView.canShowCallout = true
-            annotationView.image = UIImage(named: "mappin")
-        }
-        
-        return annotationView
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.Kitchens.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("kitchen") as! KitchenTableViewCell
+        
+        let kitch = Kitchens[indexPath.row]
+        cell.kitchenAddress.text = kitch.kitchenAddress
+        cell.foodName.text = kitch.foodName
+        cell.kitchenName.text = kitch.kitchenName
+        cell.price.text = kitch.price
+        cell.distance.text = String(format: "%.2f",kitch.distance) + " mi"
+        return cell
+        
+    }
+    
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print ("Errors: " + error.localizedDescription)
     }
@@ -118,6 +150,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         circleView.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.4];
         return circleView; */
     }
+    
+    
 
     /*
     // MARK: - Navigation

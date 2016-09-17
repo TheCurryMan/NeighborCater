@@ -209,27 +209,54 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 
 
 @class CLLocationManager;
+@class Kitchen;
 @class CLLocation;
-@class MKMapView;
-@protocol MKAnnotation;
-@class MKAnnotationView;
 @class NSError;
+@class MKMapView;
 @protocol MKOverlay;
 @class MKOverlayRenderer;
 
 SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
-@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified mapView;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 @property (nonatomic) CLLocationCoordinate2D userLocation;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull Distances;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, copy) NSArray<Kitchen *> * _Nonnull Kitchens;
+@property (nonatomic, copy) NSArray<Kitchen *> * _Nonnull Annotations;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
-- (MKAnnotationView * _Nullable)mapView:(MKMapView * _Nonnull)mapView viewForAnnotation:(id <MKAnnotation> _Nonnull)annotation;
+- (void)addAnnotation;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (MKOverlayRenderer * _Null_unspecified)mapView:(MKMapView * _Nonnull)mapView rendererForOverlay:(id <MKOverlay> _Nonnull)overlay;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class FIRDatabaseReference;
+@class FIRDataSnapshot;
+
+SWIFT_CLASS("_TtC13NeighborCater7Kitchen")
+@interface Kitchen : NSObject
+@property (nonatomic, copy) NSString * _Nonnull kitchenName;
+@property (nonatomic, copy) NSString * _Nonnull kitchenAddress;
+@property (nonatomic, copy) NSString * _Nonnull foodName;
+@property (nonatomic, copy) NSString * _Nonnull foodDescription;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+@property (nonatomic, copy) NSString * _Nonnull user;
+@property (nonatomic) double distance;
+@property (nonatomic, copy) NSString * _Nonnull price;
+@property (nonatomic, readonly, strong) FIRDatabaseReference * _Nullable ref;
+- (nonnull instancetype)initWithKitchenName:(NSString * _Nonnull)kitchenName kitchenAddress:(NSString * _Nonnull)kitchenAddress foodName:(NSString * _Nonnull)foodName foodDescription:(NSString * _Nonnull)foodDescription latitude:(double)latitude longitude:(double)longitude user:(NSString * _Nonnull)user price:(NSString * _Nonnull)price ref:(FIRDatabaseReference * _Nonnull)ref OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
+- (void)addDistance:(double)distance;
+- (nonnull instancetype)init;
 @end
 
 
@@ -246,6 +273,19 @@ SWIFT_CLASS("_TtC13NeighborCater25KitchenHomeViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UILabel;
+
+SWIFT_CLASS("_TtC13NeighborCater20KitchenTableViewCell")
+@interface KitchenTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenAddress;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified price;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified distance;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC13NeighborCater5Place")
 @interface Place : NSObject
@@ -257,7 +297,6 @@ SWIFT_CLASS("_TtC13NeighborCater5Place")
 - (nonnull instancetype)initWithPrediction:(NSDictionary<NSString *, id> * _Nonnull)prediction apiKey:(NSString * _Nullable)apiKey;
 @end
 
-@class FIRDatabaseReference;
 
 SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 @interface SignUpViewController : UIViewController
