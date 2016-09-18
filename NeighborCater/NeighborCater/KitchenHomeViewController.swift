@@ -10,8 +10,21 @@ import UIKit
 import Firebase
 
 
+class OrderTableViewCell : UITableViewCell {
+    
 
-class KitchenHomeViewController: UIViewController {
+    @IBOutlet weak var foodName: UILabel!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userEmail: UILabel!
+    
+    @IBOutlet weak var userNumber: UILabel!
+    
+}
+
+
+class KitchenHomeViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var foodName: UITextField!
     
@@ -19,11 +32,31 @@ class KitchenHomeViewController: UIViewController {
     
     @IBOutlet weak var price: UITextField!
     
+    var orders = [Order]()
+    
     var kitchenUID = String()
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var nib = UINib(nibName: "OrderTableViewCell", bundle: nil)
+        
+        tableView.registerNib(nib, forCellReuseIdentifier: "order")
+        
+        let ref = FIRDatabase.database().reference()
+        let pathRef = ref.child("users").child("\(FIRAuth.auth()!.currentUser!.uid)").child("orders")
+        
+        let x = pathRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+            
+            for item in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                if let obj = item.value! as? [String:AnyObject] {
+                    let order = Order(snapshot: item);
+                    self.orders.append(order)
+                }
+            }})
         // Do any additional setup after loading the view.
     }
 
@@ -42,15 +75,33 @@ class KitchenHomeViewController: UIViewController {
         //performSegueWithIdentifier("kitchen", sender: self)
         print("Added item!")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return orders.count;
     }
-    */
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var order = orders[indexPath.row]
+        var cell : OrderTableViewCell = tableView.dequeueReusableCellWithIdentifier("order") as! OrderTableViewCell
+        cell.foodName.text = order.foodName
+        cell.userNumber.text = order.userPhoneNumber
+        cell.userEmail.text = order.userEmail
+        cell.userName.text = order.userName
+        return cell
+    }
 
+    @IBAction func switchSegment(sender: AnyObject) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            self.tableView.hidden = true;
+        default:
+            self.tableView.hidden = false;
+            self.tableView.reloadData()
+        }
+    }
+  
 }

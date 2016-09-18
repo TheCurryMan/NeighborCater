@@ -295,16 +295,25 @@ SWIFT_CLASS("_TtC13NeighborCater7Kitchen")
 - (void)addDistance:(double)distance;
 @end
 
+@class Order;
+@class UISegmentedControl;
 
 SWIFT_CLASS("_TtC13NeighborCater25KitchenHomeViewController")
-@interface KitchenHomeViewController : UIViewController
+@interface KitchenHomeViewController : UIViewController <UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified foodName;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified foodDescription;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified price;
+@property (nonatomic, copy) NSArray<Order *> * _Nonnull orders;
 @property (nonatomic, copy) NSString * _Nonnull kitchenUID;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentedControl;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)post:(id _Nonnull)sender;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (IBAction)switchSegment:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -317,6 +326,27 @@ SWIFT_CLASS("_TtC13NeighborCater20KitchenTableViewCell")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenAddress;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified price;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified distance;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater5Order")
+@interface Order : NSObject
+@property (nonatomic, copy) NSString * _Nonnull userName;
+@property (nonatomic, copy) NSString * _Nonnull userEmail;
+@property (nonatomic, copy) NSString * _Nonnull userPhoneNumber;
+@property (nonatomic, copy) NSString * _Nonnull foodName;
+- (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater18OrderTableViewCell")
+@interface OrderTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userEmail;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userNumber;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

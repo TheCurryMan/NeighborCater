@@ -1,0 +1,165 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Order"
+provides-nominal:
+- "C13NeighborCater5Order"
+provides-member:
+- ["C13NeighborCater5Order", ""]
+provides-dynamic-lookup:
+- "userName"
+- "userPhoneNumber"
+- "foodName"
+- "userEmail"
+depends-top-level:
+- "FIRDataSnapshot"
+- "Order"
+- "NSObject"
+- !private "StringLiteralType"
+- "String"
+depends-member:
+- ["Ps9AnyObject", "foodName"]
+- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "subscript"]
+- ["Ps9AnyObject", "userEmail"]
+- ["Ps9AnyObject", "userName"]
+- ["Ps9AnyObject", "userPhoneNumber"]
+- !private ["Ps9AnyObject", "value"]
+- ["Ps9AnyObject", ""]
+- ["Ps11CVarArgType", "foodName"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "userEmail"]
+- ["Ps11CVarArgType", "userName"]
+- ["Ps11CVarArgType", "userPhoneNumber"]
+- !private ["Ps11CVarArgType", "value"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "foodName"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "userEmail"]
+- ["Ps28CustomDebugStringConvertible", "userName"]
+- ["Ps28CustomDebugStringConvertible", "userPhoneNumber"]
+- !private ["Ps28CustomDebugStringConvertible", "value"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "foodName"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "userEmail"]
+- ["Ps23CustomStringConvertible", "userName"]
+- ["Ps23CustomStringConvertible", "userPhoneNumber"]
+- !private ["Ps23CustomStringConvertible", "value"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "foodName"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "userEmail"]
+- ["Ps9Equatable", "userName"]
+- ["Ps9Equatable", "userPhoneNumber"]
+- !private ["Ps9Equatable", "value"]
+- ["Ps9Equatable", ""]
+- !private ["CSo15FIRDataSnapshot", "value"]
+- ["Ps8Hashable", "foodName"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "userEmail"]
+- ["Ps8Hashable", "userName"]
+- ["Ps8Hashable", "userPhoneNumber"]
+- !private ["Ps8Hashable", "value"]
+- ["Ps8Hashable", ""]
+- !private ["SQ", "deinit"]
+- !private ["Si", "deinit"]
+- !private ["PSo9NSCopying", "deinit"]
+- ["CSo8NSObject", "FIRDataSnapshot"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "foodName"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "userEmail"]
+- ["CSo8NSObject", "userName"]
+- ["CSo8NSObject", "userPhoneNumber"]
+- !private ["CSo8NSObject", "value"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "foodName"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "userEmail"]
+- ["PSo16NSObjectProtocol", "userName"]
+- ["PSo16NSObjectProtocol", "userPhoneNumber"]
+- !private ["PSo16NSObjectProtocol", "value"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["Sq", "deinit"]
+- ["C13NeighborCater5Order", "FIRDataSnapshot"]
+- ["C13NeighborCater5Order", "String"]
+- ["C13NeighborCater5Order", "deinit"]
+- ["C13NeighborCater5Order", "foodName"]
+- ["C13NeighborCater5Order", "init"]
+- ["C13NeighborCater5Order", "userEmail"]
+- ["C13NeighborCater5Order", "userName"]
+- ["C13NeighborCater5Order", "userPhoneNumber"]
+- !private ["Vs12StaticString", "deinit"]
+- !private ["SS", "deinit"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "CSo15FIRDataSnapshot"
+- "Ps8Hashable"
+- !private "SQ"
+- !private "Si"
+- !private "PSo9NSCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "Sq"
+- "C13NeighborCater5Order"
+- !private "Vs12StaticString"
+- !private "SS"
+depends-dynamic-lookup:
+- !private "subscript"
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIREmailPasswordAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/Firebase.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules/STZPopupView.swiftmodule/x86_64.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
+interface-hash: "946674bd203105113fce085fcb1e1fcd"

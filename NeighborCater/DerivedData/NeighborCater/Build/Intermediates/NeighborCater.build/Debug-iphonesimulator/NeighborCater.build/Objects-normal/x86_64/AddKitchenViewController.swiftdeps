@@ -6,40 +6,40 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater24AddKitchenViewController", ""]
 provides-dynamic-lookup:
-- "latitude"
-- "gpaViewController"
 - "placeViewClosed"
-- "complete"
-- "viewDidAppear"
-- "kitchenName"
+- "location"
+- "longitude"
 - "textFieldDidBeginEditing"
+- "gpaViewController"
+- "viewDidAppear"
 - "kitchenKey"
+- "kitchenName"
+- "complete"
+- "latitude"
 - "placeSelected"
 - "prepareForSegue"
-- "longitude"
-- "location"
 depends-top-level:
-- "UITextField"
-- !private "FIRDatabase"
-- "UITextFieldDelegate"
-- "StringLiteralType"
-- !private "FIRAuth"
-- "AnyObject"
-- !private "KitchenHomeViewController"
-- !private "=="
-- "Place"
-- !private "print"
+- "Double"
 - "UIStoryboardSegue"
+- "Place"
 - "GooglePlacesAutocompleteDelegate"
 - "UIViewController"
-- "Bool"
-- !private "NSObject"
-- "GooglePlacesAutocomplete"
 - "String"
-- !private "BooleanLiteralType"
-- "AddKitchenViewController"
-- "Double"
+- !private "print"
+- "StringLiteralType"
+- "UITextFieldDelegate"
+- "GooglePlacesAutocomplete"
+- "AnyObject"
+- !private "=="
+- "UITextField"
+- "Bool"
+- !private "FIRDatabase"
 - !private "Dictionary"
+- "AddKitchenViewController"
+- !private "KitchenHomeViewController"
+- !private "NSObject"
+- !private "BooleanLiteralType"
+- !private "FIRAuth"
 depends-member:
 - ["C13NeighborCater24AddKitchenViewController", "AnyObject"]
 - ["C13NeighborCater24AddKitchenViewController", "Bool"]
@@ -180,6 +180,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "FIRDatabase"]
 - ["Ps28CustomDebugStringConvertible", "GooglePlacesAutocomplete"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
+- ["Ps28CustomDebugStringConvertible", "Some"]
 - ["Ps28CustomDebugStringConvertible", "String"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "auth"]
@@ -589,6 +590,8 @@ depends-member:
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["CSo8NSString", "init"]
+- ["Ps21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
 - !private ["Sq", "deinit"]
 - ["Ps16OutputStreamType", "init"]
 - !private ["C13NeighborCater5Place", "deinit"]
@@ -779,6 +782,7 @@ depends-member:
 - ["PSo16UIStateRestoring", ""]
 - !private ["CSo17UIStoryboardSegue", "destinationViewController"]
 - !private ["CSo17UIStoryboardSegue", "identifier"]
+- !private ["PSo21UITableViewDataSource", "kitchenUID"]
 - !private ["CSo11UITextField", "text"]
 - !private ["PSo19UITextFieldDelegate", "FIRAuth"]
 - !private ["PSo19UITextFieldDelegate", "FIRDatabase"]
@@ -898,6 +902,7 @@ depends-member:
 - ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps12_Reflectable", "Key"]
+- ["Ps12_Reflectable", "Some"]
 - !private ["Ps12_Reflectable", "Value"]
 - !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
 - ["Ps12_Reflectable", "init"]
@@ -945,7 +950,8 @@ depends-nominal:
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
-- !private "Sq"
+- "Ps21NilLiteralConvertible"
+- "Sq"
 - "Ps16OutputStreamType"
 - !private "C13NeighborCater5Place"
 - !private "C13NeighborCater12PlaceDetails"
@@ -968,6 +974,7 @@ depends-nominal:
 - "CSo11UIResponder"
 - "PSo16UIStateRestoring"
 - !private "CSo17UIStoryboardSegue"
+- !private "PSo21UITableViewDataSource"
 - !private "CSo11UITextField"
 - "PSo19UITextFieldDelegate"
 - !private "PSo11UITextInput"

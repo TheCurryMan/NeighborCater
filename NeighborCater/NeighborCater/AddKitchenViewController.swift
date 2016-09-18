@@ -54,7 +54,10 @@ class AddKitchenViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "kitchen" {
             var vc:KitchenHomeViewController = segue.destinationViewController as! KitchenHomeViewController
-            vc.kitchenUID = kitchenKey
+            if let key = kitchenKey as? String {
+                vc.kitchenUID = key
+            }
+            
         }
     }
     
