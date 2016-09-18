@@ -6,23 +6,23 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater7Kitchen", ""]
 provides-dynamic-lookup:
+- "longitude"
+- "kitchenName"
+- "kitchenAddress"
+- "price"
+- "foodDescription"
+- "distance"
+- "foodName"
+- "addDistance"
 - "latitude"
 - "user"
-- "foodName"
-- "distance"
-- "foodDescription"
-- "price"
-- "kitchenName"
-- "longitude"
-- "addDistance"
-- "kitchenAddress"
 depends-top-level:
-- "Kitchen"
-- "NSObject"
-- "FIRDataSnapshot"
-- "String"
-- !private "StringLiteralType"
 - "Double"
+- "String"
+- "FIRDataSnapshot"
+- !private "StringLiteralType"
+- "NSObject"
+- "Kitchen"
 depends-member:
 - ["Ps9AnyObject", "addDistance"]
 - ["Ps9AnyObject", "distance"]

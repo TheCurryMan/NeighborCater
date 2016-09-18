@@ -366,6 +366,7 @@ SWIFT_CLASS("_TtC13NeighborCater4User")
 
 SWIFT_CLASS("_TtC13NeighborCater14ViewController")
 @interface ViewController : UIViewController
+- (IBAction)goKitchen:(id _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
