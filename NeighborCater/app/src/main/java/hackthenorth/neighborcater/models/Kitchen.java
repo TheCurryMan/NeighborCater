@@ -1,10 +1,12 @@
 package hackthenorth.neighborcater.models;
 
+import java.io.Serializable;
+
 /**
  * Created by rowandempster on 9/17/16.
  */
 
-public class Kitchen {
+public class Kitchen implements Serializable {
 
     private String address;
     private String foodDescription;
