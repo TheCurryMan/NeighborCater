@@ -12,6 +12,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -71,7 +72,7 @@ public class KitchenActivity extends AppCompatActivity {
                 kObj.setAddress(address);
                 kObj.setLatitude(lat);
                 kObj.setLongitude(longi);
-                kObj.setUser("random string that we don't know where to extract from.");
+                kObj.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                 mDatabase.push().setValue(kObj);
 
