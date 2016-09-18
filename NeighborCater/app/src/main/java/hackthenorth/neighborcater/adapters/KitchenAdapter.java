@@ -1,6 +1,7 @@
 package hackthenorth.neighborcater.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import hackthenorth.neighborcater.DetailsActivity;
 import hackthenorth.neighborcater.R;
 import hackthenorth.neighborcater.models.Kitchen;
 
@@ -72,13 +74,23 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenAdapter.ViewHold
 
 
     @Override
-    public void onBindViewHolder(KitchenAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(KitchenAdapter.ViewHolder holder, final int position) {
         String distance = getDistanceInKm(currentLocation, kitchenList.get(position).getLatitude(), kitchenList.get(position).getLongitude());
         holder.titleTextView.setText(kitchenList.get(position).getKitchenName());
         holder.foodNameTextView.setText(kitchenList.get(position).getFoodName());
         holder.addressTextView.setText(kitchenList.get(position).getAddress());
         holder.priceTextView.setText("$"+kitchenList.get(position).getPrice());
         holder.distanceTextView.setText(distance + " km");
+        holder.root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent detailsIntent = new Intent(context, DetailsActivity.class);
+                detailsIntent.putExtra("Kitchen", kitchenList.get(position));
+                detailsIntent.putExtra("Distance", getDistanceInKm(currentLocation, kitchenList.get(position).getLatitude(), kitchenList.get(position).getLongitude()));
+                detailsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(detailsIntent);
+            }
+        });
 
     }
 
