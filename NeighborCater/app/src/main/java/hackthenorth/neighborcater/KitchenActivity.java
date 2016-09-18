@@ -1,5 +1,7 @@
 package hackthenorth.neighborcater;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,7 +33,7 @@ public class KitchenActivity extends AppCompatActivity {
     private double lat;
     private double longi;
     private String address;
-
+    private FloatingActionButton floatingActionButton;
 
     private Button mSubmitButton;
 
@@ -46,10 +48,19 @@ public class KitchenActivity extends AppCompatActivity {
         foodDescription = (EditText)findViewById(R.id.editTextFoodDescription);
         kitchenName = (EditText) findViewById(R.id.kitchenName);
         mSubmitButton = (Button) findViewById(R.id.submitButton);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.kitchen_fab);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ordersIntent = new Intent(KitchenActivity.this, OrdersActivity.class);
+                startActivity(ordersIntent);
+            }
+        });
 
 
 //        getActionBar().hide();
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
 
 

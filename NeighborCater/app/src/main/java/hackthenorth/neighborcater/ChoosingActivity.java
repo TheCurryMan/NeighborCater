@@ -1,5 +1,6 @@
 package hackthenorth.neighborcater;
 
+import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -66,7 +67,7 @@ public class ChoosingActivity extends AppCompatActivity {
         storeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent kitchenActivity = new Intent(ChoosingActivity.this, MyTabActivity.class);
+                Intent kitchenActivity = new Intent(ChoosingActivity.this, KitchenActivity.class);
                 startActivity(kitchenActivity);
             }
         });
