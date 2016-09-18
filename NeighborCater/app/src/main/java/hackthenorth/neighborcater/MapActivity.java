@@ -64,10 +64,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             // Get Post object and use the values to update the UI
             ArrayList<Kitchen> kitchenArrayList = new ArrayList<>();
             Iterator<DataSnapshot> iterator = dataSnapshot.child("kitchens").getChildren().iterator();
-                while(iterator.hasNext()){
-                    Kitchen newKitchen = iterator.next().getValue(Kitchen.class);
-                    kitchenArrayList.add(newKitchen);
-                }
+            while (iterator.hasNext()) {
+                Kitchen newKitchen = iterator.next().getValue(Kitchen.class);
+                kitchenArrayList.add(newKitchen);
+            }
             kitchenList = kitchenArrayList;
             placeMarkers();
             setupList();
@@ -91,26 +91,27 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
 
             //ascending order
-            return kitchenOneDistance>kitchenTwoDistance ? 1 : -1;
+            return kitchenOneDistance > kitchenTwoDistance ? 1 : -1;
 
             //descending order
             //return StudentName2.compareTo(StudentName1);
-        }};
+        }
+    };
 
     private void sortKitchenList() {
         Collections.sort(kitchenList, KitchenComparator);
     }
 
     private void setupList() {
-        if(kitchenList!=null && kitchenList.size() >0 && myHome!=null) {
+        if (kitchenList != null && kitchenList.size() > 0 && myHome != null) {
             recyclerViewAdapter = new KitchenAdapter(getApplicationContext(), kitchenList, myHome);
             recyclerView.setAdapter(recyclerViewAdapter);
         }
     }
 
     private void placeMarkers() {
-        if(mMap != null){
-            for (Kitchen kitchen : kitchenList){
+        if (mMap != null) {
+            for (Kitchen kitchen : kitchenList) {
                 LatLng position = new LatLng(kitchen.getLatitude(), kitchen.getLongitude());
                 Marker marker = mMap.addMarker(new MarkerOptions()
                         .position(position)
@@ -153,8 +154,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        clearListHilights();
+    }
+
+    @Override
     public void onLocationChanged(Location location) {
-        if(!zoomedInFirstTime) {
+        if (!zoomedInFirstTime) {
             zoomedInFirstTime = true;
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
@@ -200,7 +207,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         mMap.setOnMarkerClickListener(this);
     }
 
-    public LatLng getMyHome (){
+    public LatLng getMyHome() {
         return myHome;
     }
 
@@ -213,15 +220,24 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     }
 
     private void goToListEntry(Object tag) {
-        for(Kitchen kitchen : kitchenList){
-            if(kitchen.getKitchenName().equals(tag)){
+        for (Kitchen kitchen : kitchenList) {
+            if (kitchen.getKitchenName().equals(tag)) {
                 recyclerViewLayoutManager.scrollToPositionWithOffset(kitchenList.indexOf(kitchen), 0);
-                if(recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
+                if (recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
                     recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 }
+            } else {
+                if (recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
+                    recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)).setBackgroundColor(getResources().getColor(R.color.white));
+                }
             }
-            else{
-                if(recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
+        }
+    }
+
+    private void clearListHilights() {
+        if(kitchenList!=null && recyclerViewAdapter!=null) {
+            for (Kitchen kitchen : kitchenList) {
+                if (recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
                     recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)).setBackgroundColor(getResources().getColor(R.color.white));
                 }
             }
