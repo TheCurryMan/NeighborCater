@@ -29,6 +29,8 @@
                android:id="@+id/editTextFoodName"
                android:layout_alignParentTop="true"
                android:layout_alignParentLeft="true"
+               android:imeOptions="actionNext"
+               android:singleLine="true"
                android:layout_alignParentStart="true"
                android:layout_marginTop="25dp"
                android:layout_alignParentRight="true"
@@ -42,6 +44,8 @@
                android:layout_height="wrap_content"
                android:id="@+id/editTextFoodDescription"
                android:hint="Description"
+               android:imeOptions="actionNext"
+               android:singleLine="true"
                android:layout_below="@+id/editTextFoodName"
                android:layout_alignParentLeft="true"
                android:layout_alignParentStart="true"
@@ -54,6 +58,8 @@
                android:layout_height="wrap_content"
                android:id="@+id/kitchenName"
                android:hint="Kitchen Name"
+               android:imeOptions="actionNext"
+               android:singleLine="true"
                android:layout_marginTop="15dp"
                android:layout_below="@+id/editTextFoodDescription"
                android:layout_centerHorizontal="true"
@@ -91,6 +97,8 @@
                android:inputType="numberDecimal"
                android:hint="Price"
                android:ems="10"
+               android:imeOptions="actionDone"
+               android:singleLine="true"
                android:id="@+id/priceAmount"
                android:layout_below="@+id/kitchenName"
                android:layout_alignParentLeft="true"
@@ -99,6 +107,21 @@
                android:layout_marginTop="15dp"
                android:layout_alignRight="@+id/editTextLocation"
                android:layout_alignEnd="@+id/editTextLocation" />
+           
+           <TextView
+               android:id="@+id/find_your_location"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="20dp"
+               android:layout_below="@+id/priceAmount"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentRight="true"
+               android:layout_alignParentEnd="true"
+               android:layout_marginLeft="16dp"
+               android:layout_marginRight="16dp"
+               android:layout_marginTop="15dp"
+               android:text="Search Your Location"/>
 
            <fragment
                android:id="@+id/editTextLocation"
@@ -113,14 +136,14 @@
                android:layout_marginLeft="16dp"
                android:layout_marginRight="16dp"
                android:layout_marginTop="15dp"
-               android:layout_below="@+id/priceAmount" />
+               android:layout_below="@+id/find_your_location" />
 
            <Button
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="Submit"
                android:id="@+id/submitButton"
-               android:layout_marginTop="36dp"
+               android:layout_marginTop="20dp"
                android:layout_below="@+id/editTextLocation"
                android:layout_centerHorizontal="true"
                android:layout_gravity="center_horizontal" />
