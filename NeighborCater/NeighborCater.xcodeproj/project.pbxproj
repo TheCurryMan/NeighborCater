@@ -14,6 +14,7 @@
 		E11A16FF1D8DD9A0009CCFE8 /* KitchenClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A16FE1D8DD9A0009CCFE8 /* KitchenClass.swift */; };
 		E11A17031D8DF6D9009CCFE8 /* BuyFoodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11A17021D8DF6D9009CCFE8 /* BuyFoodView.xib */; };
 		E11A17051D8E00C4009CCFE8 /* BuyFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A17041D8E00C4009CCFE8 /* BuyFoodView.swift */; };
+		E11A17071D8E2019009CCFE8 /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A17061D8E2019009CCFE8 /* UserClass.swift */; };
 		E12644851D8D1A3400604F27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12644841D8D1A3400604F27 /* HomeViewController.swift */; };
 		E12644871D8D1DAB00604F27 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12644861D8D1DAB00604F27 /* CoreLocation.framework */; };
 		E12644891D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12644881D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift */; };
@@ -61,6 +62,7 @@
 		E11A16FE1D8DD9A0009CCFE8 /* KitchenClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenClass.swift; sourceTree = "<group>"; };
 		E11A17021D8DF6D9009CCFE8 /* BuyFoodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyFoodView.xib; sourceTree = "<group>"; };
 		E11A17041D8E00C4009CCFE8 /* BuyFoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyFoodView.swift; sourceTree = "<group>"; };
+		E11A17061D8E2019009CCFE8 /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		E12644841D8D1A3400604F27 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E12644861D8D1DAB00604F27 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E12644881D8D2B1A00604F27 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				E1F13ED81D8D058B00C31051 /* AppDelegate.swift */,
 				E1F13F081D8D125E00C31051 /* SignUpViewController.swift */,
+				E11A17061D8E2019009CCFE8 /* UserClass.swift */,
 				E11A16FE1D8DD9A0009CCFE8 /* KitchenClass.swift */,
 				E12644841D8D1A3400604F27 /* HomeViewController.swift */,
 				E11A17041D8E00C4009CCFE8 /* BuyFoodView.swift */,
@@ -473,6 +476,7 @@
 				E1F13F091D8D125E00C31051 /* SignUpViewController.swift in Sources */,
 				E1F13EDB1D8D058B00C31051 /* ViewController.swift in Sources */,
 				E15685571D8D5228000CC825 /* KitchenHomeViewController.swift in Sources */,
+				E11A17071D8E2019009CCFE8 /* UserClass.swift in Sources */,
 				E126448D1D8D2BE300604F27 /* AddKitchenViewController.swift in Sources */,
 				E1F13ED91D8D058B00C31051 /* AppDelegate.swift in Sources */,
 				E12644851D8D1A3400604F27 /* HomeViewController.swift in Sources */,

@@ -17,7 +17,6 @@ class KitchenTableViewCell: UITableViewCell {
     
     @IBOutlet weak var kitchenName: UILabel!
     @IBOutlet weak var foodName: UILabel!
-    
     @IBOutlet weak var kitchenAddress: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var distance: UILabel!
@@ -128,22 +127,23 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         cell.kitchenAddress.text = kitch.kitchenAddress
         cell.foodName.text = kitch.foodName
         cell.kitchenName.text = kitch.kitchenName
-        cell.price.text = kitch.price
+        cell.price.text = "$" + kitch.price
         cell.distance.text = String(format: "%.2f",kitch.distance) + " mi"
         return cell
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //myCustomView * myView = [[[NSBundle mainBundle] loadNibNamed:@"myCustomView" owner:self options:nil] objectAtIndex:0];
-        //[myView.description setText:@"description"];
+    
         var popup = NSBundle.mainBundle().loadNibNamed("BuyFoodView", owner: nil, options: nil)[0] as? BuyFoodView
+        popup?.kitchenSelected = Kitchens[indexPath.row]
         popup?.setNeedsLayout()
         popup?.layoutIfNeeded()
         let popupView = popup
         popupView!.frame = CGRectMake(50,50,self.view.frame.size.width - 50, self.view.frame.size.height-200)
         let popupConfig = STZPopupViewConfig()
         popupConfig.cornerRadius = 10
+        popup?.populateData()
         presentPopupView(popupView!, config: popupConfig)
         
     }

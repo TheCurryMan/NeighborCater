@@ -11,78 +11,79 @@ provides-member:
 - ["CSo6UIView", ""]
 - ["CSo6UIView", "loadFromNibNamed"]
 provides-dynamic-lookup:
+- "distance"
+- "userLocation"
+- "price"
+- "addAnnotation"
+- "foodName"
+- "Annotations"
+- "didReceiveMemoryWarning"
+- "numberOfSectionsInTableView"
+- "locationManager"
+- "locationManager"
+- "locationManager"
+- "loadFromNibNamed"
+- "kitchenAddress"
+- "viewDidLoad"
 - "mapView"
 - "mapView"
 - "Distances"
-- "loadFromNibNamed"
-- "distance"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
 - "Kitchens"
-- "addAnnotation"
-- "foodName"
-- "numberOfSectionsInTableView"
-- "Annotations"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "didReceiveMemoryWarning"
-- "locationManager"
-- "locationManager"
-- "locationManager"
-- "kitchenAddress"
 - "kitchenName"
-- "userLocation"
-- "viewDidLoad"
-- "price"
 depends-top-level:
-- "KitchenTableViewCell"
-- !private "StringLiteralType"
-- !private "MKCoordinateSpan"
-- "MKOverlayRenderer"
-- "HomeViewController"
-- !private "MKCoordinateRegion"
-- "UITableView"
-- !private "<="
-- !private "-"
-- "NSError"
+- !private "UnicodeScalarType"
+- "UILabel"
+- !private "UIColor"
 - "String"
-- !private "BuyFoodView"
-- !private "CLLocationCoordinate2DMake"
-- !private "/"
+- "UITableViewCell"
 - "CLLocationManagerDelegate"
 - "MKMapViewDelegate"
-- "UIViewController"
-- !private "FIRDataSnapshot"
-- !private "MKCircleRenderer"
-- !private "MKPointAnnotation"
-- "UITableViewDelegate"
-- !private "dispatch_async"
-- !private "dispatch_get_main_queue"
-- !private "UIColor"
-- "UILabel"
-- "MKMapView"
-- "NSBundle"
-- !private "print"
-- !private "FIRDataEventType"
-- "UITableViewDataSource"
-- "NSIndexPath"
 - !private "STZPopupViewConfig"
-- "Int"
+- !private "print"
+- !private "StringLiteralType"
 - "Kitchen"
-- "CLLocation"
-- !private "+"
-- "CLLocationManager"
-- "UIView"
-- "UITableViewCell"
-- !private "FIRDatabase"
-- !private "kCLLocationAccuracyBest"
-- !private "MKCircle"
+- !private "dispatch_async"
+- "UIViewController"
+- !private "FIRDataEventType"
+- !private "dispatch_get_main_queue"
+- "NSBundle"
+- "MKMapView"
 - "MKOverlay"
-- "Double"
+- !private "CLLocationCoordinate2DMake"
+- !private "+"
+- "Int"
 - !private "BooleanLiteralType"
+- !private "<="
+- "MKOverlayRenderer"
 - "CLLocationCoordinate2D"
-- !private "UINib"
+- "NSError"
+- !private "kCLLocationAccuracyBest"
+- !private "-"
+- "Double"
+- "UIView"
+- !private "FIRDataSnapshot"
+- "CLLocationManager"
+- !private "MKCircle"
+- "KitchenTableViewCell"
+- !private "FIRDatabase"
+- !private "MKCoordinateRegion"
+- !private "BuyFoodView"
+- !private "MKCircleRenderer"
+- "UITableViewDelegate"
+- "HomeViewController"
+- !private "MKPointAnnotation"
 - !private "CGRectMake"
+- !private "/"
+- "NSIndexPath"
+- !private "MKCoordinateSpan"
+- "UITableViewDataSource"
+- !private "UINib"
+- "CLLocation"
+- "UITableView"
 depends-member:
 - ["Ps9AnyObject", "Annotations"]
 - !private ["Ps9AnyObject", "CGRectMake"]
@@ -133,6 +134,7 @@ depends-member:
 - !private ["Ps9AnyObject", "kCLLocationAccuracyBest"]
 - ["Ps9AnyObject", "kitchenAddress"]
 - ["Ps9AnyObject", "kitchenName"]
+- !private ["Ps9AnyObject", "kitchenSelected"]
 - !private ["Ps9AnyObject", "latitude"]
 - !private ["Ps9AnyObject", "layoutIfNeeded"]
 - !private ["Ps9AnyObject", "lineWidth"]
@@ -155,6 +157,7 @@ depends-member:
 - ["Ps9AnyObject", "mapViewWillStartRenderingMap"]
 - ["Ps9AnyObject", "numberOfSectionsInTableView"]
 - !private ["Ps9AnyObject", "observeEventType"]
+- !private ["Ps9AnyObject", "populateData"]
 - !private ["Ps9AnyObject", "presentPopupView"]
 - ["Ps9AnyObject", "price"]
 - !private ["Ps9AnyObject", "print"]
@@ -220,7 +223,9 @@ depends-member:
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
 - !private ["C13NeighborCater11BuyFoodView", "frame"]
+- !private ["C13NeighborCater11BuyFoodView", "kitchenSelected"]
 - !private ["C13NeighborCater11BuyFoodView", "layoutIfNeeded"]
+- !private ["C13NeighborCater11BuyFoodView", "populateData"]
 - !private ["C13NeighborCater11BuyFoodView", "setNeedsLayout"]
 - !private ["V12CoreGraphics7CGFloat", "deinit"]
 - !private ["VSC6CGRect", "size"]
@@ -347,6 +352,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "kCLLocationAccuracyBest"]
 - ["Ps11CVarArgType", "kitchenAddress"]
 - ["Ps11CVarArgType", "kitchenName"]
+- !private ["Ps11CVarArgType", "kitchenSelected"]
 - !private ["Ps11CVarArgType", "latitude"]
 - !private ["Ps11CVarArgType", "layoutIfNeeded"]
 - !private ["Ps11CVarArgType", "lineWidth"]
@@ -369,6 +375,7 @@ depends-member:
 - ["Ps11CVarArgType", "mapViewWillStartRenderingMap"]
 - ["Ps11CVarArgType", "numberOfSectionsInTableView"]
 - !private ["Ps11CVarArgType", "observeEventType"]
+- !private ["Ps11CVarArgType", "populateData"]
 - !private ["Ps11CVarArgType", "presentPopupView"]
 - ["Ps11CVarArgType", "price"]
 - !private ["Ps11CVarArgType", "print"]
@@ -470,6 +477,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "kCLLocationAccuracyBest"]
 - ["Ps28CustomDebugStringConvertible", "kitchenAddress"]
 - ["Ps28CustomDebugStringConvertible", "kitchenName"]
+- !private ["Ps28CustomDebugStringConvertible", "kitchenSelected"]
 - !private ["Ps28CustomDebugStringConvertible", "last"]
 - !private ["Ps28CustomDebugStringConvertible", "latitude"]
 - !private ["Ps28CustomDebugStringConvertible", "layoutIfNeeded"]
@@ -493,6 +501,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "mapViewWillStartRenderingMap"]
 - ["Ps28CustomDebugStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps28CustomDebugStringConvertible", "observeEventType"]
+- !private ["Ps28CustomDebugStringConvertible", "populateData"]
 - !private ["Ps28CustomDebugStringConvertible", "presentPopupView"]
 - ["Ps28CustomDebugStringConvertible", "price"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
@@ -586,6 +595,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "kCLLocationAccuracyBest"]
 - ["Ps23CustomStringConvertible", "kitchenAddress"]
 - ["Ps23CustomStringConvertible", "kitchenName"]
+- !private ["Ps23CustomStringConvertible", "kitchenSelected"]
 - !private ["Ps23CustomStringConvertible", "last"]
 - !private ["Ps23CustomStringConvertible", "latitude"]
 - !private ["Ps23CustomStringConvertible", "layoutIfNeeded"]
@@ -609,6 +619,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "mapViewWillStartRenderingMap"]
 - ["Ps23CustomStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps23CustomStringConvertible", "observeEventType"]
+- !private ["Ps23CustomStringConvertible", "populateData"]
 - !private ["Ps23CustomStringConvertible", "presentPopupView"]
 - ["Ps23CustomStringConvertible", "price"]
 - !private ["Ps23CustomStringConvertible", "print"]
@@ -698,6 +709,7 @@ depends-member:
 - !private ["Ps9Equatable", "kCLLocationAccuracyBest"]
 - ["Ps9Equatable", "kitchenAddress"]
 - ["Ps9Equatable", "kitchenName"]
+- !private ["Ps9Equatable", "kitchenSelected"]
 - !private ["Ps9Equatable", "latitude"]
 - !private ["Ps9Equatable", "layoutIfNeeded"]
 - !private ["Ps9Equatable", "lineWidth"]
@@ -720,6 +732,7 @@ depends-member:
 - ["Ps9Equatable", "mapViewWillStartRenderingMap"]
 - ["Ps9Equatable", "numberOfSectionsInTableView"]
 - !private ["Ps9Equatable", "observeEventType"]
+- !private ["Ps9Equatable", "populateData"]
 - !private ["Ps9Equatable", "presentPopupView"]
 - ["Ps9Equatable", "price"]
 - !private ["Ps9Equatable", "print"]
@@ -822,6 +835,7 @@ depends-member:
 - !private ["Ps8Hashable", "kCLLocationAccuracyBest"]
 - ["Ps8Hashable", "kitchenAddress"]
 - ["Ps8Hashable", "kitchenName"]
+- !private ["Ps8Hashable", "kitchenSelected"]
 - !private ["Ps8Hashable", "latitude"]
 - !private ["Ps8Hashable", "layoutIfNeeded"]
 - !private ["Ps8Hashable", "lineWidth"]
@@ -844,6 +858,7 @@ depends-member:
 - ["Ps8Hashable", "mapViewWillStartRenderingMap"]
 - ["Ps8Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps8Hashable", "observeEventType"]
+- !private ["Ps8Hashable", "populateData"]
 - !private ["Ps8Hashable", "presentPopupView"]
 - ["Ps8Hashable", "price"]
 - !private ["Ps8Hashable", "print"]
@@ -1147,6 +1162,7 @@ depends-member:
 - !private ["PSo8NSCoding", "kCLLocationAccuracyBest"]
 - ["PSo8NSCoding", "kitchenAddress"]
 - ["PSo8NSCoding", "kitchenName"]
+- !private ["PSo8NSCoding", "kitchenSelected"]
 - !private ["PSo8NSCoding", "layoutIfNeeded"]
 - !private ["PSo8NSCoding", "localizedDescription"]
 - ["PSo8NSCoding", "locationManager"]
@@ -1162,6 +1178,7 @@ depends-member:
 - ["PSo8NSCoding", "mapViewWillStartLocatingUser"]
 - ["PSo8NSCoding", "mapViewWillStartRenderingMap"]
 - ["PSo8NSCoding", "numberOfSectionsInTableView"]
+- !private ["PSo8NSCoding", "populateData"]
 - !private ["PSo8NSCoding", "presentPopupView"]
 - ["PSo8NSCoding", "price"]
 - !private ["PSo8NSCoding", "print"]
@@ -1325,6 +1342,7 @@ depends-member:
 - !private ["CSo8NSObject", "kCLLocationAccuracyBest"]
 - ["CSo8NSObject", "kitchenAddress"]
 - ["CSo8NSObject", "kitchenName"]
+- !private ["CSo8NSObject", "kitchenSelected"]
 - !private ["CSo8NSObject", "latitude"]
 - !private ["CSo8NSObject", "layoutIfNeeded"]
 - !private ["CSo8NSObject", "lineWidth"]
@@ -1347,6 +1365,7 @@ depends-member:
 - ["CSo8NSObject", "mapViewWillStartRenderingMap"]
 - ["CSo8NSObject", "numberOfSectionsInTableView"]
 - !private ["CSo8NSObject", "observeEventType"]
+- !private ["CSo8NSObject", "populateData"]
 - !private ["CSo8NSObject", "presentPopupView"]
 - ["CSo8NSObject", "price"]
 - !private ["CSo8NSObject", "print"]
@@ -1429,6 +1448,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "kCLLocationAccuracyBest"]
 - ["PSo16NSObjectProtocol", "kitchenAddress"]
 - ["PSo16NSObjectProtocol", "kitchenName"]
+- !private ["PSo16NSObjectProtocol", "kitchenSelected"]
 - !private ["PSo16NSObjectProtocol", "latitude"]
 - !private ["PSo16NSObjectProtocol", "layoutIfNeeded"]
 - !private ["PSo16NSObjectProtocol", "lineWidth"]
@@ -1451,6 +1471,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "mapViewWillStartRenderingMap"]
 - ["PSo16NSObjectProtocol", "numberOfSectionsInTableView"]
 - !private ["PSo16NSObjectProtocol", "observeEventType"]
+- !private ["PSo16NSObjectProtocol", "populateData"]
 - !private ["PSo16NSObjectProtocol", "presentPopupView"]
 - ["PSo16NSObjectProtocol", "price"]
 - !private ["PSo16NSObjectProtocol", "print"]
@@ -1546,7 +1567,9 @@ depends-member:
 - ["PSo29UIAccessibilityIdentification", "init"]
 - ["PSo29UIAccessibilityIdentification", "kitchenAddress"]
 - ["PSo29UIAccessibilityIdentification", "kitchenName"]
+- !private ["PSo29UIAccessibilityIdentification", "kitchenSelected"]
 - !private ["PSo29UIAccessibilityIdentification", "layoutIfNeeded"]
+- !private ["PSo29UIAccessibilityIdentification", "populateData"]
 - ["PSo29UIAccessibilityIdentification", "price"]
 - !private ["PSo29UIAccessibilityIdentification", "registerNib"]
 - !private ["PSo29UIAccessibilityIdentification", "reloadData"]
@@ -1566,7 +1589,9 @@ depends-member:
 - ["PSo12UIAppearance", "init"]
 - ["PSo12UIAppearance", "kitchenAddress"]
 - ["PSo12UIAppearance", "kitchenName"]
+- !private ["PSo12UIAppearance", "kitchenSelected"]
 - !private ["PSo12UIAppearance", "layoutIfNeeded"]
+- !private ["PSo12UIAppearance", "populateData"]
 - ["PSo12UIAppearance", "price"]
 - !private ["PSo12UIAppearance", "registerNib"]
 - !private ["PSo12UIAppearance", "reloadData"]
@@ -1612,6 +1637,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "kCLLocationAccuracyBest"]
 - ["PSo21UIAppearanceContainer", "kitchenAddress"]
 - ["PSo21UIAppearanceContainer", "kitchenName"]
+- !private ["PSo21UIAppearanceContainer", "kitchenSelected"]
 - !private ["PSo21UIAppearanceContainer", "layoutIfNeeded"]
 - ["PSo21UIAppearanceContainer", "locationManager"]
 - ["PSo21UIAppearanceContainer", "locationManagerDidPauseLocationUpdates"]
@@ -1626,6 +1652,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "mapViewWillStartLocatingUser"]
 - ["PSo21UIAppearanceContainer", "mapViewWillStartRenderingMap"]
 - ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
+- !private ["PSo21UIAppearanceContainer", "populateData"]
 - !private ["PSo21UIAppearanceContainer", "presentPopupView"]
 - ["PSo21UIAppearanceContainer", "price"]
 - !private ["PSo21UIAppearanceContainer", "print"]
@@ -1729,7 +1756,9 @@ depends-member:
 - ["PSo17UICoordinateSpace", "init"]
 - ["PSo17UICoordinateSpace", "kitchenAddress"]
 - ["PSo17UICoordinateSpace", "kitchenName"]
+- !private ["PSo17UICoordinateSpace", "kitchenSelected"]
 - !private ["PSo17UICoordinateSpace", "layoutIfNeeded"]
+- !private ["PSo17UICoordinateSpace", "populateData"]
 - ["PSo17UICoordinateSpace", "price"]
 - !private ["PSo17UICoordinateSpace", "registerNib"]
 - !private ["PSo17UICoordinateSpace", "reloadData"]
@@ -1749,7 +1778,9 @@ depends-member:
 - ["PSo13UIDynamicItem", "init"]
 - ["PSo13UIDynamicItem", "kitchenAddress"]
 - ["PSo13UIDynamicItem", "kitchenName"]
+- !private ["PSo13UIDynamicItem", "kitchenSelected"]
 - !private ["PSo13UIDynamicItem", "layoutIfNeeded"]
+- !private ["PSo13UIDynamicItem", "populateData"]
 - ["PSo13UIDynamicItem", "price"]
 - !private ["PSo13UIDynamicItem", "registerNib"]
 - !private ["PSo13UIDynamicItem", "reloadData"]
@@ -1795,6 +1826,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "kCLLocationAccuracyBest"]
 - ["PSo18UIFocusEnvironment", "kitchenAddress"]
 - ["PSo18UIFocusEnvironment", "kitchenName"]
+- !private ["PSo18UIFocusEnvironment", "kitchenSelected"]
 - !private ["PSo18UIFocusEnvironment", "layoutIfNeeded"]
 - ["PSo18UIFocusEnvironment", "locationManager"]
 - ["PSo18UIFocusEnvironment", "locationManagerDidPauseLocationUpdates"]
@@ -1809,6 +1841,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "mapViewWillStartLocatingUser"]
 - ["PSo18UIFocusEnvironment", "mapViewWillStartRenderingMap"]
 - ["PSo18UIFocusEnvironment", "numberOfSectionsInTableView"]
+- !private ["PSo18UIFocusEnvironment", "populateData"]
 - !private ["PSo18UIFocusEnvironment", "presentPopupView"]
 - ["PSo18UIFocusEnvironment", "price"]
 - !private ["PSo18UIFocusEnvironment", "print"]
@@ -1897,6 +1930,7 @@ depends-member:
 - !private ["CSo11UIResponder", "kCLLocationAccuracyBest"]
 - ["CSo11UIResponder", "kitchenAddress"]
 - ["CSo11UIResponder", "kitchenName"]
+- !private ["CSo11UIResponder", "kitchenSelected"]
 - !private ["CSo11UIResponder", "layoutIfNeeded"]
 - ["CSo11UIResponder", "loadFromNibNamed"]
 - ["CSo11UIResponder", "locationManager"]
@@ -1912,6 +1946,7 @@ depends-member:
 - ["CSo11UIResponder", "mapViewWillStartLocatingUser"]
 - ["CSo11UIResponder", "mapViewWillStartRenderingMap"]
 - ["CSo11UIResponder", "numberOfSectionsInTableView"]
+- !private ["CSo11UIResponder", "populateData"]
 - !private ["CSo11UIResponder", "presentPopupView"]
 - ["CSo11UIResponder", "price"]
 - !private ["CSo11UIResponder", "print"]
@@ -2230,6 +2265,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "kCLLocationAccuracyBest"]
 - ["PSo18UITraitEnvironment", "kitchenAddress"]
 - ["PSo18UITraitEnvironment", "kitchenName"]
+- !private ["PSo18UITraitEnvironment", "kitchenSelected"]
 - !private ["PSo18UITraitEnvironment", "layoutIfNeeded"]
 - ["PSo18UITraitEnvironment", "locationManager"]
 - ["PSo18UITraitEnvironment", "locationManagerDidPauseLocationUpdates"]
@@ -2244,6 +2280,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "mapViewWillStartLocatingUser"]
 - ["PSo18UITraitEnvironment", "mapViewWillStartRenderingMap"]
 - ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
+- !private ["PSo18UITraitEnvironment", "populateData"]
 - !private ["PSo18UITraitEnvironment", "presentPopupView"]
 - ["PSo18UITraitEnvironment", "price"]
 - !private ["PSo18UITraitEnvironment", "print"]
@@ -2287,8 +2324,10 @@ depends-member:
 - ["CSo6UIView", "init"]
 - ["CSo6UIView", "kitchenAddress"]
 - ["CSo6UIView", "kitchenName"]
+- !private ["CSo6UIView", "kitchenSelected"]
 - !private ["CSo6UIView", "layoutIfNeeded"]
 - ["CSo6UIView", "loadFromNibNamed"]
+- !private ["CSo6UIView", "populateData"]
 - ["CSo6UIView", "price"]
 - !private ["CSo6UIView", "registerNib"]
 - !private ["CSo6UIView", "reloadData"]
@@ -2438,8 +2477,10 @@ depends-member:
 - ["Ps12_Reflectable", "init"]
 - ["Ps12_Reflectable", "kitchenAddress"]
 - ["Ps12_Reflectable", "kitchenName"]
+- !private ["Ps12_Reflectable", "kitchenSelected"]
 - !private ["Ps12_Reflectable", "last"]
 - !private ["Ps12_Reflectable", "layoutIfNeeded"]
+- !private ["Ps12_Reflectable", "populateData"]
 - ["Ps12_Reflectable", "price"]
 - !private ["Ps12_Reflectable", "registerNib"]
 - !private ["Ps12_Reflectable", "reloadData"]

@@ -19,9 +19,9 @@ class Kitchen: NSObject {
     var user: String
     var distance: Double
     var price: String
-    let ref: FIRDatabaseReference?
+    //let ref: FIRDatabaseReference?
     
-    init( kitchenName: String, kitchenAddress: String, foodName: String, foodDescription:String, latitude: Double, longitude: Double, user: String, price: String, ref: FIRDatabaseReference) {
+    init( kitchenName: String, kitchenAddress: String, foodName: String, foodDescription:String, latitude: Double, longitude: Double, user: String, price: String) {
         self.kitchenName = kitchenName
         self.kitchenAddress = kitchenAddress
         self.foodName = foodName
@@ -31,7 +31,6 @@ class Kitchen: NSObject {
         self.user = user
         self.price = price
         self.distance = 0.0
-        self.ref = nil
     }
     
     init(snapshot: FIRDataSnapshot) {
@@ -43,7 +42,6 @@ class Kitchen: NSObject {
         longitude = snapshot.value!["longitude"] as! Double
         user = snapshot.value!["user"] as! String
         price = snapshot.value!["price"] as! String
-        ref = snapshot.ref
         distance = 0.0
     }
     
@@ -51,6 +49,4 @@ class Kitchen: NSObject {
         self.distance = distance
     }
     
-    convenience override init() {
-        self.init()    }
 }

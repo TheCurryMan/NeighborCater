@@ -6,25 +6,23 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater7Kitchen", ""]
 provides-dynamic-lookup:
-- "foodName"
-- "user"
-- "ref"
-- "latitude"
 - "distance"
+- "addDistance"
 - "foodDescription"
+- "foodName"
+- "longitude"
+- "user"
+- "kitchenAddress"
+- "latitude"
 - "kitchenName"
 - "price"
-- "addDistance"
-- "kitchenAddress"
-- "longitude"
 depends-top-level:
-- "FIRDatabaseReference"
-- "Kitchen"
-- "FIRDataSnapshot"
-- "NSObject"
 - "String"
-- !private "StringLiteralType"
+- "FIRDataSnapshot"
 - "Double"
+- "Kitchen"
+- !private "StringLiteralType"
+- "NSObject"
 depends-member:
 - ["Ps9AnyObject", "addDistance"]
 - ["Ps9AnyObject", "distance"]
@@ -36,7 +34,6 @@ depends-member:
 - ["Ps9AnyObject", "latitude"]
 - ["Ps9AnyObject", "longitude"]
 - ["Ps9AnyObject", "price"]
-- ["Ps9AnyObject", "ref"]
 - !private ["Ps9AnyObject", "subscript"]
 - ["Ps9AnyObject", "user"]
 - !private ["Ps9AnyObject", "value"]
@@ -51,7 +48,6 @@ depends-member:
 - ["Ps11CVarArgType", "latitude"]
 - ["Ps11CVarArgType", "longitude"]
 - ["Ps11CVarArgType", "price"]
-- ["Ps11CVarArgType", "ref"]
 - ["Ps11CVarArgType", "user"]
 - !private ["Ps11CVarArgType", "value"]
 - ["Ps11CVarArgType", ""]
@@ -65,7 +61,6 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "latitude"]
 - ["Ps28CustomDebugStringConvertible", "longitude"]
 - ["Ps28CustomDebugStringConvertible", "price"]
-- ["Ps28CustomDebugStringConvertible", "ref"]
 - ["Ps28CustomDebugStringConvertible", "user"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
 - ["Ps28CustomDebugStringConvertible", ""]
@@ -79,7 +74,6 @@ depends-member:
 - ["Ps23CustomStringConvertible", "latitude"]
 - ["Ps23CustomStringConvertible", "longitude"]
 - ["Ps23CustomStringConvertible", "price"]
-- ["Ps23CustomStringConvertible", "ref"]
 - ["Ps23CustomStringConvertible", "user"]
 - !private ["Ps23CustomStringConvertible", "value"]
 - ["Ps23CustomStringConvertible", ""]
@@ -93,11 +87,9 @@ depends-member:
 - ["Ps9Equatable", "latitude"]
 - ["Ps9Equatable", "longitude"]
 - ["Ps9Equatable", "price"]
-- ["Ps9Equatable", "ref"]
 - ["Ps9Equatable", "user"]
 - !private ["Ps9Equatable", "value"]
 - ["Ps9Equatable", ""]
-- !private ["CSo15FIRDataSnapshot", "ref"]
 - !private ["CSo15FIRDataSnapshot", "value"]
 - ["Ps8Hashable", "addDistance"]
 - ["Ps8Hashable", "distance"]
@@ -109,7 +101,6 @@ depends-member:
 - ["Ps8Hashable", "latitude"]
 - ["Ps8Hashable", "longitude"]
 - ["Ps8Hashable", "price"]
-- ["Ps8Hashable", "ref"]
 - ["Ps8Hashable", "user"]
 - !private ["Ps8Hashable", "value"]
 - ["Ps8Hashable", ""]
@@ -117,7 +108,6 @@ depends-member:
 - !private ["Si", "deinit"]
 - ["C13NeighborCater7Kitchen", "Double"]
 - ["C13NeighborCater7Kitchen", "FIRDataSnapshot"]
-- ["C13NeighborCater7Kitchen", "FIRDatabaseReference"]
 - ["C13NeighborCater7Kitchen", "String"]
 - ["C13NeighborCater7Kitchen", "addDistance"]
 - ["C13NeighborCater7Kitchen", "deinit"]
@@ -130,12 +120,10 @@ depends-member:
 - ["C13NeighborCater7Kitchen", "latitude"]
 - ["C13NeighborCater7Kitchen", "longitude"]
 - ["C13NeighborCater7Kitchen", "price"]
-- ["C13NeighborCater7Kitchen", "ref"]
 - ["C13NeighborCater7Kitchen", "user"]
 - !private ["PSo9NSCopying", "deinit"]
 - ["CSo8NSObject", "Double"]
 - ["CSo8NSObject", "FIRDataSnapshot"]
-- ["CSo8NSObject", "FIRDatabaseReference"]
 - ["CSo8NSObject", "String"]
 - ["CSo8NSObject", "addDistance"]
 - ["CSo8NSObject", "distance"]
@@ -147,7 +135,6 @@ depends-member:
 - ["CSo8NSObject", "latitude"]
 - ["CSo8NSObject", "longitude"]
 - ["CSo8NSObject", "price"]
-- ["CSo8NSObject", "ref"]
 - ["CSo8NSObject", "user"]
 - !private ["CSo8NSObject", "value"]
 - ["CSo8NSObject", ""]
@@ -161,11 +148,11 @@ depends-member:
 - ["PSo16NSObjectProtocol", "latitude"]
 - ["PSo16NSObjectProtocol", "longitude"]
 - ["PSo16NSObjectProtocol", "price"]
-- ["PSo16NSObjectProtocol", "ref"]
 - ["PSo16NSObjectProtocol", "user"]
 - !private ["PSo16NSObjectProtocol", "value"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["Sq", "deinit"]
+- !private ["Vs12StaticString", "deinit"]
 - !private ["SS", "deinit"]
 depends-nominal:
 - "Ps9AnyObject"
@@ -182,6 +169,7 @@ depends-nominal:
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "Sq"
+- !private "Vs12StaticString"
 - !private "SS"
 depends-dynamic-lookup:
 - !private "subscript"
@@ -237,4 +225,4 @@ depends-external:
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
-interface-hash: "7655aa69e5ad920b502b4a2100938ef5"
+interface-hash: "0c6804f5b39b18dd11aab3b1867c67fc"

@@ -155,11 +155,27 @@ SWIFT_CLASS("_TtC13NeighborCater11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class Kitchen;
+@class User;
 @class UIButton;
+@class UILabel;
 
 SWIFT_CLASS("_TtC13NeighborCater11BuyFoodView")
 @interface BuyFoodView : UIView
+@property (nonatomic, strong) Kitchen * _Nonnull kitchenSelected;
+@property (nonatomic, copy) NSArray<User *> * _Nonnull finalUser;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified buyNow;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ownerName;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified kitchenAddress;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodDescription;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ownerEmail;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ownerNumber;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified priceButton;
+- (void)populateData;
+- (IBAction)openMaps:(id _Nonnull)sender;
+- (IBAction)changeCurrency:(id _Nonnull)sender;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -219,7 +235,6 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 
 
 @class CLLocationManager;
-@class Kitchen;
 @class CLLocation;
 @class NSError;
 @class MKMapView;
@@ -249,7 +264,6 @@ SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class FIRDatabaseReference;
 @class FIRDataSnapshot;
 
 SWIFT_CLASS("_TtC13NeighborCater7Kitchen")
@@ -263,11 +277,9 @@ SWIFT_CLASS("_TtC13NeighborCater7Kitchen")
 @property (nonatomic, copy) NSString * _Nonnull user;
 @property (nonatomic) double distance;
 @property (nonatomic, copy) NSString * _Nonnull price;
-@property (nonatomic, readonly, strong) FIRDatabaseReference * _Nullable ref;
-- (nonnull instancetype)initWithKitchenName:(NSString * _Nonnull)kitchenName kitchenAddress:(NSString * _Nonnull)kitchenAddress foodName:(NSString * _Nonnull)foodName foodDescription:(NSString * _Nonnull)foodDescription latitude:(double)latitude longitude:(double)longitude user:(NSString * _Nonnull)user price:(NSString * _Nonnull)price ref:(FIRDatabaseReference * _Nonnull)ref OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithKitchenName:(NSString * _Nonnull)kitchenName kitchenAddress:(NSString * _Nonnull)kitchenAddress foodName:(NSString * _Nonnull)foodName foodDescription:(NSString * _Nonnull)foodDescription latitude:(double)latitude longitude:(double)longitude user:(NSString * _Nonnull)user price:(NSString * _Nonnull)price OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
 - (void)addDistance:(double)distance;
-- (nonnull instancetype)init;
 @end
 
 
@@ -284,7 +296,6 @@ SWIFT_CLASS("_TtC13NeighborCater25KitchenHomeViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 
 SWIFT_CLASS("_TtC13NeighborCater20KitchenTableViewCell")
 @interface KitchenTableViewCell : UITableViewCell
@@ -308,6 +319,7 @@ SWIFT_CLASS("_TtC13NeighborCater5Place")
 - (nonnull instancetype)initWithPrediction:(NSDictionary<NSString *, id> * _Nonnull)prediction apiKey:(NSString * _Nullable)apiKey;
 @end
 
+@class FIRDatabaseReference;
 
 SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 @interface SignUpViewController : UIViewController
@@ -326,6 +338,15 @@ SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 
 @interface UIView (SWIFT_EXTENSION(NeighborCater))
 + (UIView * _Nullable)loadFromNibNamed:(NSString * _Nonnull)nibNamed bundle:(NSBundle * _Nullable)bundle;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater4User")
+@interface User : NSObject
+@property (nonatomic, copy) NSString * _Nonnull userName;
+@property (nonatomic, copy) NSString * _Nonnull userEmail;
+@property (nonatomic, copy) NSString * _Nonnull userPhoneNumber;
+- (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
