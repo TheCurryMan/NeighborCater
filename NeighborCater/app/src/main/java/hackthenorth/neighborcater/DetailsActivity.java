@@ -107,7 +107,6 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void populateTextFields() {
-        ImageView foodImage = (ImageView) this.findViewById(R.id.food_details_image);
         TextView kitchenTitle = (TextView) this.findViewById(R.id.food_details_kitchen_title);
         TextView ownerName = (TextView) this.findViewById(R.id.food_details_kitchen_owner_name);
         TextView address = (TextView) this.findViewById(R.id.food_details_kitchen_address);
