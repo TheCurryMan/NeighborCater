@@ -1,29 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="hackthenorth.neighborcater.ChoosingActivity">
+    tools:context="hackthenorth.neighborcater.ChoosingActivity"
+    android:background="@color/colorPrimary"
+    >
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView"
-        android:src="@drawable/food"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        card_view:cardCornerRadius="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="7.5dp"
+        >
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="36dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/food"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eat Food"
+                    android:textColor="#424242"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="75px"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find food wherever you need it! Local, wholesome food prepared by people in your community."
+                android:textColor="#424242"
+                android:layout_marginTop="10dp"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView2"
-        android:src="@drawable/store"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        card_view:cardCornerRadius="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="7.5dp"
+        >
 
-</RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="36dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/store"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make Food"
+                    android:textColor="#424242"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="75px"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use your cullinary skills to prepare homemade dishes, that will be loved by people in your community!"
+                android:textColor="#424242"
+                android:layout_marginTop="10dp"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

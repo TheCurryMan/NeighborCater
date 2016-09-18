@@ -17,7 +17,8 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="150dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -29,7 +30,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,27 +55,50 @@
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:id="@+id/button"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="5dp" />
+        android:singleLine="false"
+        android:backgroundTint="@color/colorPrimaryDark"
+        />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:text="Login"
         android:id="@+id/button2"
-        android:layout_marginLeft="51dp"
-        android:layout_alignTop="@+id/button"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button"
-        android:layout_marginStart="51dp" />
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/editText2"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_marginRight="47dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Create Account"
+        android:id="@+id/button"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/editText2"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Get ready to eat!"
+        android:id="@+id/textView5"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:typeface="sans"
+        android:textSize="110px"
+        android:fontFamily="sans-serif-light"/>
+
 </RelativeLayout>
