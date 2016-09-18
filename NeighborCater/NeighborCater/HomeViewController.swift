@@ -27,6 +27,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var popupView = BuyFoodView()
+    
     let locationManager = CLLocationManager()
     
     var userLocation = CLLocationCoordinate2D()
@@ -113,7 +115,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.tableView {
         return self.Kitchens.count
+        } else {
+            return popupView.currencyValues.count
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -121,8 +127,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if tableView == self.tableView {
         let cell = tableView.dequeueReusableCellWithIdentifier("kitchen") as! KitchenTableViewCell
-        
         let kitch = Kitchens[indexPath.row]
         cell.kitchenAddress.text = kitch.kitchenAddress
         cell.foodName.text = kitch.foodName
@@ -130,8 +136,15 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         cell.price.text = "$" + kitch.price
         cell.distance.text = String(format: "%.2f",kitch.distance) + " mi"
         return cell
+        } else {
+            var cell : CurrencyTableViewCell = tableView.dequeueReusableCellWithIdentifier("currency") as! CurrencyTableViewCell
+            cell.currencyName.text = popupView.currencyNames[indexPath.row]
+            cell.currencyValue.text = String(format: "%.2f", popupView.currencyValues[indexPath.row])
+            return cell
+        }
         
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
@@ -140,10 +153,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         popup?.setNeedsLayout()
         popup?.layoutIfNeeded()
         let popupView = popup
-        popupView!.frame = CGRectMake(50,50,self.view.frame.size.width - 50, self.view.frame.size.height-200)
+        popupView!.frame = CGRectMake(50,50,self.view.frame.size.width - 50, self.view.frame.size.height-100)
         let popupConfig = STZPopupViewConfig()
         popupConfig.cornerRadius = 10
         popup?.populateData()
+        self.popupView = popup! as BuyFoodView
+        var nib2 = UINib(nibName: "CurrencyTableViewCell", bundle: nil)
+        self.popupView.currencyTable.registerNib(nib2, forCellReuseIdentifier: "currency")
+        self.popupView.currencyTable.dataSource = self
         presentPopupView(popupView!, config: popupConfig)
         
     }

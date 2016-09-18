@@ -6,26 +6,26 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater20SignUpViewController", ""]
 provides-dynamic-lookup:
+- "email"
+- "viewDidAppear"
+- "password"
+- "signup"
+- "ref"
+- "username"
 - "viewDidLoad"
 - "didReceiveMemoryWarning"
-- "username"
-- "signup"
-- "viewDidAppear"
-- "email"
-- "ref"
-- "password"
 depends-top-level:
-- "Dictionary"
+- !private "FIRAuth"
+- "UIViewController"
+- !private "print"
+- "SignUpViewController"
 - !private "FIRDatabase"
-- !private "StringLiteralType"
 - "Bool"
 - "FIRDatabaseReference"
-- "UIViewController"
-- "AnyObject"
-- !private "FIRAuth"
 - "UITextField"
-- "SignUpViewController"
-- !private "print"
+- !private "StringLiteralType"
+- "Dictionary"
+- "AnyObject"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]

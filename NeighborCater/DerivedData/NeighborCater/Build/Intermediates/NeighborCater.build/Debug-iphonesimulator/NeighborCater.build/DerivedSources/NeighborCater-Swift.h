@@ -159,6 +159,7 @@ SWIFT_CLASS("_TtC13NeighborCater11AppDelegate")
 @class User;
 @class UIButton;
 @class UILabel;
+@class UITableView;
 
 SWIFT_CLASS("_TtC13NeighborCater11BuyFoodView")
 @interface BuyFoodView : UIView
@@ -173,10 +174,22 @@ SWIFT_CLASS("_TtC13NeighborCater11BuyFoodView")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ownerEmail;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ownerNumber;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified priceButton;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified currencyTable;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull currencyNames;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull currencyValues;
 - (void)populateData;
 - (IBAction)openMaps:(id _Nonnull)sender;
 - (IBAction)changeCurrency:(id _Nonnull)sender;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater21CurrencyTableViewCell")
+@interface CurrencyTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified currencyName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified currencyValue;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -200,7 +213,6 @@ SWIFT_CLASS("_TtC13NeighborCater24GooglePlacesAutocomplete")
 
 @class NSNotification;
 @class UISearchBar;
-@class UITableView;
 @class NSLayoutConstraint;
 
 SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
@@ -225,7 +237,6 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 @end
 
 @class NSIndexPath;
-@class UITableViewCell;
 
 @interface GooglePlacesAutocompleteContainer (SWIFT_EXTENSION(NeighborCater)) <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
@@ -244,6 +255,7 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
 @interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified mapView;
+@property (nonatomic, strong) BuyFoodView * _Nonnull popupView;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 @property (nonatomic) CLLocationCoordinate2D userLocation;
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull Distances;

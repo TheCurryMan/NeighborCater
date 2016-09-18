@@ -13,14 +13,14 @@ provides-member:
 - ["C12STZPopupView18STZPopupViewConfig", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "STZPopupDismissAnimation"
-- "BooleanLiteralType"
-- "UIColor"
-- "=="
 - "STZPopupShowAnimation"
+- "=="
 - "STZPopupViewConfig"
 - "Void"
 - "CGFloat"
+- "STZPopupDismissAnimation"
+- "UIColor"
+- "BooleanLiteralType"
 - "UIView"
 depends-member:
 - ["Ps9AnyObject", "STZPopupDismissAnimation"]

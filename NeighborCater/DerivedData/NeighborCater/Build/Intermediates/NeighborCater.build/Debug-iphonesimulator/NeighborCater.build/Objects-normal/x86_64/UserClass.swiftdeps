@@ -7,14 +7,14 @@ provides-member:
 - ["C13NeighborCater4User", ""]
 provides-dynamic-lookup:
 - "userPhoneNumber"
-- "userEmail"
 - "userName"
+- "userEmail"
 depends-top-level:
-- "User"
-- "FIRDataSnapshot"
-- "String"
 - "NSObject"
+- "User"
+- "String"
 - !private "StringLiteralType"
+- "FIRDataSnapshot"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "subscript"]

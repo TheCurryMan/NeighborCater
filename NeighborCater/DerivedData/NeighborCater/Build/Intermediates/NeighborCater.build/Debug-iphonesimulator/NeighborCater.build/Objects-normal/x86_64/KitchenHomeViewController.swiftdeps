@@ -6,23 +6,23 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater25KitchenHomeViewController", ""]
 provides-dynamic-lookup:
-- "foodDescription"
+- "didReceiveMemoryWarning"
+- "price"
+- "kitchenUID"
 - "foodName"
 - "post"
-- "didReceiveMemoryWarning"
-- "kitchenUID"
 - "viewDidLoad"
-- "price"
+- "foodDescription"
 depends-top-level:
-- "UIViewController"
 - !private "StringLiteralType"
-- "UITextField"
 - !private "print"
-- "KitchenHomeViewController"
+- !private "Dictionary"
 - "String"
 - "AnyObject"
-- !private "Dictionary"
+- "UIViewController"
+- "UITextField"
 - !private "FIRDatabase"
+- "KitchenHomeViewController"
 depends-member:
 - !private ["Ps9AnyObject", "FIRDatabase"]
 - ["Ps9AnyObject", "String"]

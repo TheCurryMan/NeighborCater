@@ -11,6 +11,13 @@ import UIKit
 import Firebase
 import MapKit
 
+class CurrencyTableViewCell : UITableViewCell {
+    
+    @IBOutlet weak var currencyName: UILabel!
+    @IBOutlet weak var currencyValue: UILabel!
+    
+}
+
 class BuyFoodView : UIView {
 
     var kitchenSelected = Kitchen(kitchenName: "", kitchenAddress: "", foodName: "", foodDescription: "", latitude: 0.0, longitude: 0.0, user: "", price: "")
@@ -32,6 +39,11 @@ class BuyFoodView : UIView {
     
     @IBOutlet weak var priceButton: UIButton!
     
+    @IBOutlet weak var currencyTable: UITableView!
+    
+    var currencyNames = [String]()
+    var currencyValues = [Double]()
+
     func populateData() {
         kitchenName.text = kitchenSelected.kitchenName
         kitchenAddress.setTitle(kitchenSelected.kitchenAddress, forState: UIControlState.Normal)
@@ -76,27 +88,35 @@ class BuyFoodView : UIView {
     }
 
     @IBAction func changeCurrency(sender: AnyObject) {
-        let url = NSURL(string: "https://hackthenorth012:Waterloo3043@xecdapi.xe.com/v1/convert_from.json/?from=CAD&to=USD,GBP&amount=110.23")
+        if self.currencyValues.count < 1 {
+   
+            let url = NSURL(string: "https://hackthenorth012:Waterloo3043@xecdapi.xe.com/v1/convert_from.json/?from=CAD&to=USD,EUR,JPY,GBP,AUD,CAD,CHF,CNY,MXC,INR&amount=\(kitchenSelected.price)")
+            print(kitchenSelected.price)
+            print(url)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            var finalJson = (NSString(data: data!, encoding: NSUTF8StringEncoding)!)
-            
             do {
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                 
-                if let blogs = json["blogs"] as? [[String: AnyObject]] {
+                if let blogs = json["to"] as? [[String: AnyObject]] {
                     for blog in blogs {
-                        if let name = blog["name"] as? String {
-                            names.append(name)
-                        }
+                        self.currencyNames.append(blog["quotecurrency"] as! String)
+                        self.currencyValues.append(blog["mid"] as! Double)
+                        self.currencyTable.reloadData()
                     }
+                    print(self.currencyNames)
+                    self.currencyTable.reloadData()
                 }
             } catch {
                 print("error serializing JSON: \(error)")
             }
             
         }
-        
+ 
         task.resume()
+        print("RESUME TASK")
+        self.currencyTable.reloadData()
+            
+        }
     }
 }

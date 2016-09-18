@@ -11,81 +11,85 @@ provides-member:
 - ["CSo6UIView", ""]
 - ["CSo6UIView", "loadFromNibNamed"]
 provides-dynamic-lookup:
-- "distance"
-- "userLocation"
-- "price"
-- "addAnnotation"
-- "foodName"
-- "Annotations"
-- "didReceiveMemoryWarning"
-- "numberOfSectionsInTableView"
-- "locationManager"
-- "locationManager"
-- "locationManager"
 - "loadFromNibNamed"
-- "kitchenAddress"
-- "viewDidLoad"
-- "mapView"
-- "mapView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "locationManager"
+- "locationManager"
+- "locationManager"
+- "foodName"
+- "distance"
+- "didReceiveMemoryWarning"
 - "Distances"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
 - "Kitchens"
+- "viewDidLoad"
+- "numberOfSectionsInTableView"
+- "price"
+- "popupView"
+- "addAnnotation"
 - "kitchenName"
+- "userLocation"
+- "mapView"
+- "mapView"
+- "Annotations"
+- "kitchenAddress"
 depends-top-level:
+- !private "<="
+- !private "-"
+- !private "dispatch_async"
 - !private "UnicodeScalarType"
-- "UILabel"
+- "Kitchen"
+- "MKOverlayRenderer"
 - !private "UIColor"
-- "String"
-- "UITableViewCell"
 - "CLLocationManagerDelegate"
 - "MKMapViewDelegate"
-- !private "STZPopupViewConfig"
-- !private "print"
-- !private "StringLiteralType"
-- "Kitchen"
-- !private "dispatch_async"
-- "UIViewController"
-- !private "FIRDataEventType"
-- !private "dispatch_get_main_queue"
-- "NSBundle"
-- "MKMapView"
-- "MKOverlay"
+- !private "CurrencyTableViewCell"
 - !private "CLLocationCoordinate2DMake"
-- !private "+"
-- "Int"
-- !private "BooleanLiteralType"
-- !private "<="
-- "MKOverlayRenderer"
-- "CLLocationCoordinate2D"
-- "NSError"
-- !private "kCLLocationAccuracyBest"
-- !private "-"
-- "Double"
-- "UIView"
-- !private "FIRDataSnapshot"
-- "CLLocationManager"
-- !private "MKCircle"
+- !private "FIRDataEventType"
+- !private "StringLiteralType"
 - "KitchenTableViewCell"
-- !private "FIRDatabase"
-- !private "MKCoordinateRegion"
-- !private "BuyFoodView"
-- !private "MKCircleRenderer"
-- "UITableViewDelegate"
 - "HomeViewController"
+- !private "print"
+- "Double"
+- "CLLocationCoordinate2D"
+- !private "FIRDataSnapshot"
+- !private "MKCircleRenderer"
+- !private "UINib"
+- "UITableViewCell"
+- "UILabel"
+- "NSBundle"
+- !private "=="
+- "Int"
+- "CLLocationManager"
+- !private "STZPopupViewConfig"
+- !private "MKCoordinateRegion"
+- !private "FIRDatabase"
+- "NSError"
 - !private "MKPointAnnotation"
+- !private "MKCircle"
+- "BuyFoodView"
+- "CLLocation"
+- !private "kCLLocationAccuracyBest"
+- "UITableView"
 - !private "CGRectMake"
+- "MKOverlay"
+- !private "+"
+- "UITableViewDataSource"
+- !private "MKCoordinateSpan"
 - !private "/"
 - "NSIndexPath"
-- !private "MKCoordinateSpan"
-- "UITableViewDataSource"
-- !private "UINib"
-- "CLLocation"
-- "UITableView"
+- "UIViewController"
+- "MKMapView"
+- "UIView"
+- !private "BooleanLiteralType"
+- "String"
+- "UITableViewDelegate"
+- !private "dispatch_get_main_queue"
 depends-member:
 - ["Ps9AnyObject", "Annotations"]
+- ["Ps9AnyObject", "BuyFoodView"]
 - !private ["Ps9AnyObject", "CGRectMake"]
 - !private ["Ps9AnyObject", "CLLocation"]
 - ["Ps9AnyObject", "CLLocationCoordinate2D"]
@@ -117,6 +121,12 @@ depends-member:
 - !private ["Ps9AnyObject", "children"]
 - !private ["Ps9AnyObject", "coordinate"]
 - !private ["Ps9AnyObject", "cornerRadius"]
+- !private ["Ps9AnyObject", "currencyName"]
+- !private ["Ps9AnyObject", "currencyNames"]
+- !private ["Ps9AnyObject", "currencyTable"]
+- !private ["Ps9AnyObject", "currencyValue"]
+- !private ["Ps9AnyObject", "currencyValues"]
+- !private ["Ps9AnyObject", "dataSource"]
 - !private ["Ps9AnyObject", "database"]
 - !private ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "dequeueReusableCellWithIdentifier"]
@@ -158,6 +168,7 @@ depends-member:
 - ["Ps9AnyObject", "numberOfSectionsInTableView"]
 - !private ["Ps9AnyObject", "observeEventType"]
 - !private ["Ps9AnyObject", "populateData"]
+- ["Ps9AnyObject", "popupView"]
 - !private ["Ps9AnyObject", "presentPopupView"]
 - ["Ps9AnyObject", "price"]
 - !private ["Ps9AnyObject", "print"]
@@ -222,7 +233,11 @@ depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["C13NeighborCater11BuyFoodView", "currencyNames"]
+- !private ["C13NeighborCater11BuyFoodView", "currencyTable"]
+- !private ["C13NeighborCater11BuyFoodView", "currencyValues"]
 - !private ["C13NeighborCater11BuyFoodView", "frame"]
+- ["C13NeighborCater11BuyFoodView", "init"]
 - !private ["C13NeighborCater11BuyFoodView", "kitchenSelected"]
 - !private ["C13NeighborCater11BuyFoodView", "layoutIfNeeded"]
 - !private ["C13NeighborCater11BuyFoodView", "populateData"]
@@ -244,6 +259,7 @@ depends-member:
 - !private ["CSo17CLLocationManager", "startUpdatingLocation"]
 - !private ["CSo17CLLocationManager", "stopUpdatingLocation"]
 - !private ["PSo25CLLocationManagerDelegate", "Annotations"]
+- ["PSo25CLLocationManagerDelegate", "BuyFoodView"]
 - !private ["PSo25CLLocationManagerDelegate", "CGRectMake"]
 - !private ["PSo25CLLocationManagerDelegate", "CLLocation"]
 - ["PSo25CLLocationManagerDelegate", "CLLocationCoordinate2D"]
@@ -282,6 +298,7 @@ depends-member:
 - ["PSo25CLLocationManagerDelegate", "mapViewWillStartLocatingUser"]
 - ["PSo25CLLocationManagerDelegate", "mapViewWillStartRenderingMap"]
 - ["PSo25CLLocationManagerDelegate", "numberOfSectionsInTableView"]
+- !private ["PSo25CLLocationManagerDelegate", "popupView"]
 - !private ["PSo25CLLocationManagerDelegate", "presentPopupView"]
 - !private ["PSo25CLLocationManagerDelegate", "print"]
 - ["PSo25CLLocationManagerDelegate", "scrollViewDidEndDecelerating"]
@@ -303,6 +320,7 @@ depends-member:
 - ["PSo25CLLocationManagerDelegate", "viewForZoomingInScrollView"]
 - ["PSo25CLLocationManagerDelegate", ""]
 - ["Ps11CVarArgType", "Annotations"]
+- ["Ps11CVarArgType", "BuyFoodView"]
 - !private ["Ps11CVarArgType", "CGRectMake"]
 - !private ["Ps11CVarArgType", "CLLocation"]
 - ["Ps11CVarArgType", "CLLocationCoordinate2D"]
@@ -335,6 +353,12 @@ depends-member:
 - !private ["Ps11CVarArgType", "child"]
 - !private ["Ps11CVarArgType", "children"]
 - !private ["Ps11CVarArgType", "coordinate"]
+- !private ["Ps11CVarArgType", "currencyName"]
+- !private ["Ps11CVarArgType", "currencyNames"]
+- !private ["Ps11CVarArgType", "currencyTable"]
+- !private ["Ps11CVarArgType", "currencyValue"]
+- !private ["Ps11CVarArgType", "currencyValues"]
+- !private ["Ps11CVarArgType", "dataSource"]
 - !private ["Ps11CVarArgType", "database"]
 - !private ["Ps11CVarArgType", "delegate"]
 - !private ["Ps11CVarArgType", "dequeueReusableCellWithIdentifier"]
@@ -376,6 +400,7 @@ depends-member:
 - ["Ps11CVarArgType", "numberOfSectionsInTableView"]
 - !private ["Ps11CVarArgType", "observeEventType"]
 - !private ["Ps11CVarArgType", "populateData"]
+- ["Ps11CVarArgType", "popupView"]
 - !private ["Ps11CVarArgType", "presentPopupView"]
 - ["Ps11CVarArgType", "price"]
 - !private ["Ps11CVarArgType", "print"]
@@ -423,7 +448,10 @@ depends-member:
 - ["Ps10Comparable", "Distance"]
 - ["Ps10Comparable", "IntegerLiteralType"]
 - !private ["Ps10Comparable", "init"]
+- !private ["C13NeighborCater21CurrencyTableViewCell", "currencyName"]
+- !private ["C13NeighborCater21CurrencyTableViewCell", "currencyValue"]
 - ["Ps28CustomDebugStringConvertible", "Annotations"]
+- ["Ps28CustomDebugStringConvertible", "BuyFoodView"]
 - !private ["Ps28CustomDebugStringConvertible", "CGRectMake"]
 - !private ["Ps28CustomDebugStringConvertible", "CLLocation"]
 - ["Ps28CustomDebugStringConvertible", "CLLocationCoordinate2D"]
@@ -460,6 +488,12 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "children"]
 - !private ["Ps28CustomDebugStringConvertible", "coordinate"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
+- !private ["Ps28CustomDebugStringConvertible", "currencyName"]
+- !private ["Ps28CustomDebugStringConvertible", "currencyNames"]
+- !private ["Ps28CustomDebugStringConvertible", "currencyTable"]
+- !private ["Ps28CustomDebugStringConvertible", "currencyValue"]
+- !private ["Ps28CustomDebugStringConvertible", "currencyValues"]
+- !private ["Ps28CustomDebugStringConvertible", "dataSource"]
 - !private ["Ps28CustomDebugStringConvertible", "database"]
 - !private ["Ps28CustomDebugStringConvertible", "delegate"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCellWithIdentifier"]
@@ -502,6 +536,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps28CustomDebugStringConvertible", "observeEventType"]
 - !private ["Ps28CustomDebugStringConvertible", "populateData"]
+- ["Ps28CustomDebugStringConvertible", "popupView"]
 - !private ["Ps28CustomDebugStringConvertible", "presentPopupView"]
 - ["Ps28CustomDebugStringConvertible", "price"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
@@ -539,6 +574,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "viewForZoomingInScrollView"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - ["Ps23CustomStringConvertible", "Annotations"]
+- ["Ps23CustomStringConvertible", "BuyFoodView"]
 - !private ["Ps23CustomStringConvertible", "CGRectMake"]
 - !private ["Ps23CustomStringConvertible", "CLLocation"]
 - ["Ps23CustomStringConvertible", "CLLocationCoordinate2D"]
@@ -578,6 +614,12 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "children"]
 - !private ["Ps23CustomStringConvertible", "coordinate"]
 - !private ["Ps23CustomStringConvertible", "count"]
+- !private ["Ps23CustomStringConvertible", "currencyName"]
+- !private ["Ps23CustomStringConvertible", "currencyNames"]
+- !private ["Ps23CustomStringConvertible", "currencyTable"]
+- !private ["Ps23CustomStringConvertible", "currencyValue"]
+- !private ["Ps23CustomStringConvertible", "currencyValues"]
+- !private ["Ps23CustomStringConvertible", "dataSource"]
 - !private ["Ps23CustomStringConvertible", "database"]
 - !private ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCellWithIdentifier"]
@@ -620,6 +662,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps23CustomStringConvertible", "observeEventType"]
 - !private ["Ps23CustomStringConvertible", "populateData"]
+- ["Ps23CustomStringConvertible", "popupView"]
 - !private ["Ps23CustomStringConvertible", "presentPopupView"]
 - ["Ps23CustomStringConvertible", "price"]
 - !private ["Ps23CustomStringConvertible", "print"]
@@ -657,6 +700,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "viewForZoomingInScrollView"]
 - ["Ps23CustomStringConvertible", ""]
 - ["Ps9Equatable", "Annotations"]
+- ["Ps9Equatable", "BuyFoodView"]
 - !private ["Ps9Equatable", "CGRectMake"]
 - !private ["Ps9Equatable", "CLLocation"]
 - ["Ps9Equatable", "CLLocationCoordinate2D"]
@@ -691,6 +735,12 @@ depends-member:
 - !private ["Ps9Equatable", "child"]
 - !private ["Ps9Equatable", "children"]
 - !private ["Ps9Equatable", "coordinate"]
+- !private ["Ps9Equatable", "currencyName"]
+- !private ["Ps9Equatable", "currencyNames"]
+- !private ["Ps9Equatable", "currencyTable"]
+- !private ["Ps9Equatable", "currencyValue"]
+- !private ["Ps9Equatable", "currencyValues"]
+- !private ["Ps9Equatable", "dataSource"]
 - !private ["Ps9Equatable", "database"]
 - !private ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "dequeueReusableCellWithIdentifier"]
@@ -733,6 +783,7 @@ depends-member:
 - ["Ps9Equatable", "numberOfSectionsInTableView"]
 - !private ["Ps9Equatable", "observeEventType"]
 - !private ["Ps9Equatable", "populateData"]
+- ["Ps9Equatable", "popupView"]
 - !private ["Ps9Equatable", "presentPopupView"]
 - ["Ps9Equatable", "price"]
 - !private ["Ps9Equatable", "print"]
@@ -784,6 +835,7 @@ depends-member:
 - ["Ps16ForwardIndexType", "IntegerLiteralType"]
 - ["Ps13GeneratorType", "Element"]
 - ["Ps8Hashable", "Annotations"]
+- ["Ps8Hashable", "BuyFoodView"]
 - !private ["Ps8Hashable", "CGRectMake"]
 - !private ["Ps8Hashable", "CLLocation"]
 - ["Ps8Hashable", "CLLocationCoordinate2D"]
@@ -818,6 +870,12 @@ depends-member:
 - !private ["Ps8Hashable", "child"]
 - !private ["Ps8Hashable", "children"]
 - !private ["Ps8Hashable", "coordinate"]
+- !private ["Ps8Hashable", "currencyName"]
+- !private ["Ps8Hashable", "currencyNames"]
+- !private ["Ps8Hashable", "currencyTable"]
+- !private ["Ps8Hashable", "currencyValue"]
+- !private ["Ps8Hashable", "currencyValues"]
+- !private ["Ps8Hashable", "dataSource"]
 - !private ["Ps8Hashable", "database"]
 - !private ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "dequeueReusableCellWithIdentifier"]
@@ -859,6 +917,7 @@ depends-member:
 - ["Ps8Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps8Hashable", "observeEventType"]
 - !private ["Ps8Hashable", "populateData"]
+- ["Ps8Hashable", "popupView"]
 - !private ["Ps8Hashable", "presentPopupView"]
 - ["Ps8Hashable", "price"]
 - !private ["Ps8Hashable", "print"]
@@ -895,12 +954,13 @@ depends-member:
 - ["Ps8Hashable", "viewForZoomingInScrollView"]
 - ["Ps8Hashable", ""]
 - ["C13NeighborCater18HomeViewController", "Annotations"]
-- !private ["C13NeighborCater18HomeViewController", "BuyFoodView"]
+- ["C13NeighborCater18HomeViewController", "BuyFoodView"]
 - !private ["C13NeighborCater18HomeViewController", "CGRectMake"]
 - ["C13NeighborCater18HomeViewController", "CLLocation"]
 - ["C13NeighborCater18HomeViewController", "CLLocationCoordinate2D"]
 - !private ["C13NeighborCater18HomeViewController", "CLLocationCoordinate2DMake"]
 - ["C13NeighborCater18HomeViewController", "CLLocationManager"]
+- !private ["C13NeighborCater18HomeViewController", "CurrencyTableViewCell"]
 - ["C13NeighborCater18HomeViewController", "Distances"]
 - ["C13NeighborCater18HomeViewController", "Double"]
 - !private ["C13NeighborCater18HomeViewController", "FIRDataEventType"]
@@ -948,6 +1008,7 @@ depends-member:
 - ["C13NeighborCater18HomeViewController", "mapViewWillStartLocatingUser"]
 - ["C13NeighborCater18HomeViewController", "mapViewWillStartRenderingMap"]
 - ["C13NeighborCater18HomeViewController", "numberOfSectionsInTableView"]
+- ["C13NeighborCater18HomeViewController", "popupView"]
 - !private ["C13NeighborCater18HomeViewController", "presentPopupView"]
 - !private ["C13NeighborCater18HomeViewController", "print"]
 - ["C13NeighborCater18HomeViewController", "scrollViewDidEndDecelerating"]
@@ -1019,6 +1080,7 @@ depends-member:
 - !private ["CSo9MKMapView", "setRegion"]
 - !private ["CSo9MKMapView", "showsUserLocation"]
 - !private ["PSo17MKMapViewDelegate", "Annotations"]
+- ["PSo17MKMapViewDelegate", "BuyFoodView"]
 - !private ["PSo17MKMapViewDelegate", "CGRectMake"]
 - !private ["PSo17MKMapViewDelegate", "CLLocation"]
 - ["PSo17MKMapViewDelegate", "CLLocationCoordinate2D"]
@@ -1057,6 +1119,7 @@ depends-member:
 - ["PSo17MKMapViewDelegate", "mapViewWillStartLocatingUser"]
 - ["PSo17MKMapViewDelegate", "mapViewWillStartRenderingMap"]
 - ["PSo17MKMapViewDelegate", "numberOfSectionsInTableView"]
+- !private ["PSo17MKMapViewDelegate", "popupView"]
 - !private ["PSo17MKMapViewDelegate", "presentPopupView"]
 - !private ["PSo17MKMapViewDelegate", "print"]
 - ["PSo17MKMapViewDelegate", "scrollViewDidEndDecelerating"]
@@ -1123,6 +1186,7 @@ depends-member:
 - !private ["CSo8NSBundle", "loadNibNamed"]
 - !private ["CSo8NSBundle", "mainBundle"]
 - ["PSo8NSCoding", "Annotations"]
+- ["PSo8NSCoding", "BuyFoodView"]
 - !private ["PSo8NSCoding", "CGRectMake"]
 - !private ["PSo8NSCoding", "CLLocation"]
 - ["PSo8NSCoding", "CLLocationCoordinate2D"]
@@ -1149,6 +1213,12 @@ depends-member:
 - !private ["PSo8NSCoding", "annotations"]
 - !private ["PSo8NSCoding", "blackColor"]
 - !private ["PSo8NSCoding", "coordinate"]
+- !private ["PSo8NSCoding", "currencyName"]
+- !private ["PSo8NSCoding", "currencyNames"]
+- !private ["PSo8NSCoding", "currencyTable"]
+- !private ["PSo8NSCoding", "currencyValue"]
+- !private ["PSo8NSCoding", "currencyValues"]
+- !private ["PSo8NSCoding", "dataSource"]
 - !private ["PSo8NSCoding", "dequeueReusableCellWithIdentifier"]
 - ["PSo8NSCoding", "didReceiveMemoryWarning"]
 - !private ["PSo8NSCoding", "dispatch_async"]
@@ -1179,6 +1249,7 @@ depends-member:
 - ["PSo8NSCoding", "mapViewWillStartRenderingMap"]
 - ["PSo8NSCoding", "numberOfSectionsInTableView"]
 - !private ["PSo8NSCoding", "populateData"]
+- ["PSo8NSCoding", "popupView"]
 - !private ["PSo8NSCoding", "presentPopupView"]
 - ["PSo8NSCoding", "price"]
 - !private ["PSo8NSCoding", "print"]
@@ -1217,6 +1288,7 @@ depends-member:
 - !private ["CSo12NSEnumerator", "allObjects"]
 - !private ["CSo7NSError", "localizedDescription"]
 - ["PSo26NSExtensionRequestHandling", "Annotations"]
+- ["PSo26NSExtensionRequestHandling", "BuyFoodView"]
 - !private ["PSo26NSExtensionRequestHandling", "CGRectMake"]
 - !private ["PSo26NSExtensionRequestHandling", "CLLocation"]
 - ["PSo26NSExtensionRequestHandling", "CLLocationCoordinate2D"]
@@ -1258,6 +1330,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "mapViewWillStartLocatingUser"]
 - ["PSo26NSExtensionRequestHandling", "mapViewWillStartRenderingMap"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSectionsInTableView"]
+- ["PSo26NSExtensionRequestHandling", "popupView"]
 - !private ["PSo26NSExtensionRequestHandling", "presentPopupView"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewDidEndDecelerating"]
@@ -1282,12 +1355,13 @@ depends-member:
 - !private ["PSo17NSFastEnumeration", "allObjects"]
 - !private ["CSo11NSIndexPath", "row"]
 - ["CSo8NSObject", "Annotations"]
-- !private ["CSo8NSObject", "BuyFoodView"]
+- ["CSo8NSObject", "BuyFoodView"]
 - !private ["CSo8NSObject", "CGRectMake"]
 - ["CSo8NSObject", "CLLocation"]
 - ["CSo8NSObject", "CLLocationCoordinate2D"]
 - !private ["CSo8NSObject", "CLLocationCoordinate2DMake"]
 - ["CSo8NSObject", "CLLocationManager"]
+- !private ["CSo8NSObject", "CurrencyTableViewCell"]
 - ["CSo8NSObject", "Distances"]
 - ["CSo8NSObject", "Double"]
 - !private ["CSo8NSObject", "FIRDataEventType"]
@@ -1325,7 +1399,14 @@ depends-member:
 - !private ["CSo8NSObject", "child"]
 - !private ["CSo8NSObject", "children"]
 - !private ["CSo8NSObject", "coordinate"]
+- !private ["CSo8NSObject", "currencyName"]
+- !private ["CSo8NSObject", "currencyNames"]
+- !private ["CSo8NSObject", "currencyTable"]
+- !private ["CSo8NSObject", "currencyValue"]
+- !private ["CSo8NSObject", "currencyValues"]
+- !private ["CSo8NSObject", "dataSource"]
 - !private ["CSo8NSObject", "database"]
+- !private ["CSo8NSObject", "deinit"]
 - !private ["CSo8NSObject", "delegate"]
 - !private ["CSo8NSObject", "dequeueReusableCellWithIdentifier"]
 - !private ["CSo8NSObject", "desiredAccuracy"]
@@ -1366,6 +1447,7 @@ depends-member:
 - ["CSo8NSObject", "numberOfSectionsInTableView"]
 - !private ["CSo8NSObject", "observeEventType"]
 - !private ["CSo8NSObject", "populateData"]
+- ["CSo8NSObject", "popupView"]
 - !private ["CSo8NSObject", "presentPopupView"]
 - ["CSo8NSObject", "price"]
 - !private ["CSo8NSObject", "print"]
@@ -1401,6 +1483,7 @@ depends-member:
 - ["CSo8NSObject", "viewDidLoad"]
 - ["CSo8NSObject", "viewForZoomingInScrollView"]
 - ["PSo16NSObjectProtocol", "Annotations"]
+- ["PSo16NSObjectProtocol", "BuyFoodView"]
 - !private ["PSo16NSObjectProtocol", "CGRectMake"]
 - !private ["PSo16NSObjectProtocol", "CLLocation"]
 - ["PSo16NSObjectProtocol", "CLLocationCoordinate2D"]
@@ -1431,6 +1514,12 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "child"]
 - !private ["PSo16NSObjectProtocol", "children"]
 - !private ["PSo16NSObjectProtocol", "coordinate"]
+- !private ["PSo16NSObjectProtocol", "currencyName"]
+- !private ["PSo16NSObjectProtocol", "currencyNames"]
+- !private ["PSo16NSObjectProtocol", "currencyTable"]
+- !private ["PSo16NSObjectProtocol", "currencyValue"]
+- !private ["PSo16NSObjectProtocol", "currencyValues"]
+- !private ["PSo16NSObjectProtocol", "dataSource"]
 - !private ["PSo16NSObjectProtocol", "database"]
 - !private ["PSo16NSObjectProtocol", "delegate"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCellWithIdentifier"]
@@ -1472,6 +1561,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "numberOfSectionsInTableView"]
 - !private ["PSo16NSObjectProtocol", "observeEventType"]
 - !private ["PSo16NSObjectProtocol", "populateData"]
+- ["PSo16NSObjectProtocol", "popupView"]
 - !private ["PSo16NSObjectProtocol", "presentPopupView"]
 - ["PSo16NSObjectProtocol", "price"]
 - !private ["PSo16NSObjectProtocol", "print"]
@@ -1560,6 +1650,12 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "addAnnotation"]
 - !private ["PSo29UIAccessibilityIdentification", "addOverlay"]
 - !private ["PSo29UIAccessibilityIdentification", "annotations"]
+- !private ["PSo29UIAccessibilityIdentification", "currencyName"]
+- !private ["PSo29UIAccessibilityIdentification", "currencyNames"]
+- !private ["PSo29UIAccessibilityIdentification", "currencyTable"]
+- !private ["PSo29UIAccessibilityIdentification", "currencyValue"]
+- !private ["PSo29UIAccessibilityIdentification", "currencyValues"]
+- !private ["PSo29UIAccessibilityIdentification", "dataSource"]
 - !private ["PSo29UIAccessibilityIdentification", "dequeueReusableCellWithIdentifier"]
 - ["PSo29UIAccessibilityIdentification", "distance"]
 - ["PSo29UIAccessibilityIdentification", "foodName"]
@@ -1582,6 +1678,12 @@ depends-member:
 - !private ["PSo12UIAppearance", "addAnnotation"]
 - !private ["PSo12UIAppearance", "addOverlay"]
 - !private ["PSo12UIAppearance", "annotations"]
+- !private ["PSo12UIAppearance", "currencyName"]
+- !private ["PSo12UIAppearance", "currencyNames"]
+- !private ["PSo12UIAppearance", "currencyTable"]
+- !private ["PSo12UIAppearance", "currencyValue"]
+- !private ["PSo12UIAppearance", "currencyValues"]
+- !private ["PSo12UIAppearance", "dataSource"]
 - !private ["PSo12UIAppearance", "dequeueReusableCellWithIdentifier"]
 - ["PSo12UIAppearance", "distance"]
 - ["PSo12UIAppearance", "foodName"]
@@ -1601,6 +1703,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "text"]
 - ["PSo12UIAppearance", ""]
 - ["PSo21UIAppearanceContainer", "Annotations"]
+- ["PSo21UIAppearanceContainer", "BuyFoodView"]
 - !private ["PSo21UIAppearanceContainer", "CGRectMake"]
 - !private ["PSo21UIAppearanceContainer", "CLLocation"]
 - ["PSo21UIAppearanceContainer", "CLLocationCoordinate2D"]
@@ -1625,6 +1728,12 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "addAnnotation"]
 - !private ["PSo21UIAppearanceContainer", "addOverlay"]
 - !private ["PSo21UIAppearanceContainer", "annotations"]
+- !private ["PSo21UIAppearanceContainer", "currencyName"]
+- !private ["PSo21UIAppearanceContainer", "currencyNames"]
+- !private ["PSo21UIAppearanceContainer", "currencyTable"]
+- !private ["PSo21UIAppearanceContainer", "currencyValue"]
+- !private ["PSo21UIAppearanceContainer", "currencyValues"]
+- !private ["PSo21UIAppearanceContainer", "dataSource"]
 - !private ["PSo21UIAppearanceContainer", "dequeueReusableCellWithIdentifier"]
 - ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
 - !private ["PSo21UIAppearanceContainer", "dispatch_async"]
@@ -1653,6 +1762,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "mapViewWillStartRenderingMap"]
 - ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
 - !private ["PSo21UIAppearanceContainer", "populateData"]
+- ["PSo21UIAppearanceContainer", "popupView"]
 - !private ["PSo21UIAppearanceContainer", "presentPopupView"]
 - ["PSo21UIAppearanceContainer", "price"]
 - !private ["PSo21UIAppearanceContainer", "print"]
@@ -1683,6 +1793,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["CSo7UIColor", "blackColor"]
 - ["PSo18UIContentContainer", "Annotations"]
+- ["PSo18UIContentContainer", "BuyFoodView"]
 - !private ["PSo18UIContentContainer", "CGRectMake"]
 - !private ["PSo18UIContentContainer", "CLLocation"]
 - ["PSo18UIContentContainer", "CLLocationCoordinate2D"]
@@ -1724,6 +1835,7 @@ depends-member:
 - ["PSo18UIContentContainer", "mapViewWillStartLocatingUser"]
 - ["PSo18UIContentContainer", "mapViewWillStartRenderingMap"]
 - ["PSo18UIContentContainer", "numberOfSectionsInTableView"]
+- ["PSo18UIContentContainer", "popupView"]
 - !private ["PSo18UIContentContainer", "presentPopupView"]
 - !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", "scrollViewDidEndDecelerating"]
@@ -1749,6 +1861,12 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "addAnnotation"]
 - !private ["PSo17UICoordinateSpace", "addOverlay"]
 - !private ["PSo17UICoordinateSpace", "annotations"]
+- !private ["PSo17UICoordinateSpace", "currencyName"]
+- !private ["PSo17UICoordinateSpace", "currencyNames"]
+- !private ["PSo17UICoordinateSpace", "currencyTable"]
+- !private ["PSo17UICoordinateSpace", "currencyValue"]
+- !private ["PSo17UICoordinateSpace", "currencyValues"]
+- !private ["PSo17UICoordinateSpace", "dataSource"]
 - !private ["PSo17UICoordinateSpace", "dequeueReusableCellWithIdentifier"]
 - ["PSo17UICoordinateSpace", "distance"]
 - ["PSo17UICoordinateSpace", "foodName"]
@@ -1771,6 +1889,12 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "addAnnotation"]
 - !private ["PSo13UIDynamicItem", "addOverlay"]
 - !private ["PSo13UIDynamicItem", "annotations"]
+- !private ["PSo13UIDynamicItem", "currencyName"]
+- !private ["PSo13UIDynamicItem", "currencyNames"]
+- !private ["PSo13UIDynamicItem", "currencyTable"]
+- !private ["PSo13UIDynamicItem", "currencyValue"]
+- !private ["PSo13UIDynamicItem", "currencyValues"]
+- !private ["PSo13UIDynamicItem", "dataSource"]
 - !private ["PSo13UIDynamicItem", "dequeueReusableCellWithIdentifier"]
 - ["PSo13UIDynamicItem", "distance"]
 - ["PSo13UIDynamicItem", "foodName"]
@@ -1790,6 +1914,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "text"]
 - ["PSo13UIDynamicItem", ""]
 - ["PSo18UIFocusEnvironment", "Annotations"]
+- ["PSo18UIFocusEnvironment", "BuyFoodView"]
 - !private ["PSo18UIFocusEnvironment", "CGRectMake"]
 - !private ["PSo18UIFocusEnvironment", "CLLocation"]
 - ["PSo18UIFocusEnvironment", "CLLocationCoordinate2D"]
@@ -1814,6 +1939,12 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "addAnnotation"]
 - !private ["PSo18UIFocusEnvironment", "addOverlay"]
 - !private ["PSo18UIFocusEnvironment", "annotations"]
+- !private ["PSo18UIFocusEnvironment", "currencyName"]
+- !private ["PSo18UIFocusEnvironment", "currencyNames"]
+- !private ["PSo18UIFocusEnvironment", "currencyTable"]
+- !private ["PSo18UIFocusEnvironment", "currencyValue"]
+- !private ["PSo18UIFocusEnvironment", "currencyValues"]
+- !private ["PSo18UIFocusEnvironment", "dataSource"]
 - !private ["PSo18UIFocusEnvironment", "dequeueReusableCellWithIdentifier"]
 - ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
 - !private ["PSo18UIFocusEnvironment", "dispatch_async"]
@@ -1842,6 +1973,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "mapViewWillStartRenderingMap"]
 - ["PSo18UIFocusEnvironment", "numberOfSectionsInTableView"]
 - !private ["PSo18UIFocusEnvironment", "populateData"]
+- ["PSo18UIFocusEnvironment", "popupView"]
 - !private ["PSo18UIFocusEnvironment", "presentPopupView"]
 - ["PSo18UIFocusEnvironment", "price"]
 - !private ["PSo18UIFocusEnvironment", "print"]
@@ -1870,6 +2002,8 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", "viewForZoomingInScrollView"]
 - ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo27UIGestureRecognizerDelegate", "currencyName"]
+- !private ["PSo27UIGestureRecognizerDelegate", "currencyValue"]
 - ["PSo27UIGestureRecognizerDelegate", "distance"]
 - ["PSo27UIGestureRecognizerDelegate", "foodName"]
 - ["PSo27UIGestureRecognizerDelegate", "init"]
@@ -1881,12 +2015,13 @@ depends-member:
 - !private ["CSo5UINib", "init"]
 - !private ["CSo5UINib", "instantiateWithOwner"]
 - ["CSo11UIResponder", "Annotations"]
-- !private ["CSo11UIResponder", "BuyFoodView"]
+- ["CSo11UIResponder", "BuyFoodView"]
 - !private ["CSo11UIResponder", "CGRectMake"]
 - ["CSo11UIResponder", "CLLocation"]
 - ["CSo11UIResponder", "CLLocationCoordinate2D"]
 - !private ["CSo11UIResponder", "CLLocationCoordinate2DMake"]
 - ["CSo11UIResponder", "CLLocationManager"]
+- !private ["CSo11UIResponder", "CurrencyTableViewCell"]
 - ["CSo11UIResponder", "Distances"]
 - ["CSo11UIResponder", "Double"]
 - !private ["CSo11UIResponder", "FIRDataEventType"]
@@ -1918,6 +2053,13 @@ depends-member:
 - ["CSo11UIResponder", "addAnnotation"]
 - !private ["CSo11UIResponder", "addOverlay"]
 - !private ["CSo11UIResponder", "annotations"]
+- !private ["CSo11UIResponder", "currencyName"]
+- !private ["CSo11UIResponder", "currencyNames"]
+- !private ["CSo11UIResponder", "currencyTable"]
+- !private ["CSo11UIResponder", "currencyValue"]
+- !private ["CSo11UIResponder", "currencyValues"]
+- !private ["CSo11UIResponder", "dataSource"]
+- !private ["CSo11UIResponder", "deinit"]
 - !private ["CSo11UIResponder", "dequeueReusableCellWithIdentifier"]
 - ["CSo11UIResponder", "didReceiveMemoryWarning"]
 - !private ["CSo11UIResponder", "dispatch_async"]
@@ -1947,6 +2089,7 @@ depends-member:
 - ["CSo11UIResponder", "mapViewWillStartRenderingMap"]
 - ["CSo11UIResponder", "numberOfSectionsInTableView"]
 - !private ["CSo11UIResponder", "populateData"]
+- ["CSo11UIResponder", "popupView"]
 - !private ["CSo11UIResponder", "presentPopupView"]
 - ["CSo11UIResponder", "price"]
 - !private ["CSo11UIResponder", "print"]
@@ -1974,10 +2117,13 @@ depends-member:
 - !private ["CSo11UIResponder", "view"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["CSo11UIResponder", "viewForZoomingInScrollView"]
+- !private ["CSo12UIScrollView", "dataSource"]
+- !private ["CSo12UIScrollView", "deinit"]
 - !private ["CSo12UIScrollView", "dequeueReusableCellWithIdentifier"]
 - !private ["CSo12UIScrollView", "registerNib"]
 - !private ["CSo12UIScrollView", "reloadData"]
 - !private ["PSo20UIScrollViewDelegate", "Annotations"]
+- ["PSo20UIScrollViewDelegate", "BuyFoodView"]
 - !private ["PSo20UIScrollViewDelegate", "CGRectMake"]
 - !private ["PSo20UIScrollViewDelegate", "CLLocation"]
 - ["PSo20UIScrollViewDelegate", "CLLocationCoordinate2D"]
@@ -2016,6 +2162,7 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "mapViewWillStartLocatingUser"]
 - ["PSo20UIScrollViewDelegate", "mapViewWillStartRenderingMap"]
 - ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
+- !private ["PSo20UIScrollViewDelegate", "popupView"]
 - !private ["PSo20UIScrollViewDelegate", "presentPopupView"]
 - !private ["PSo20UIScrollViewDelegate", "print"]
 - ["PSo20UIScrollViewDelegate", "scrollViewDidEndDecelerating"]
@@ -2037,6 +2184,7 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo20UIScrollViewDelegate", ""]
 - ["PSo16UIStateRestoring", "Annotations"]
+- ["PSo16UIStateRestoring", "BuyFoodView"]
 - !private ["PSo16UIStateRestoring", "CGRectMake"]
 - !private ["PSo16UIStateRestoring", "CLLocation"]
 - ["PSo16UIStateRestoring", "CLLocationCoordinate2D"]
@@ -2078,6 +2226,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "mapViewWillStartLocatingUser"]
 - ["PSo16UIStateRestoring", "mapViewWillStartRenderingMap"]
 - ["PSo16UIStateRestoring", "numberOfSectionsInTableView"]
+- ["PSo16UIStateRestoring", "popupView"]
 - !private ["PSo16UIStateRestoring", "presentPopupView"]
 - !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", "scrollViewDidEndDecelerating"]
@@ -2099,10 +2248,14 @@ depends-member:
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", "viewForZoomingInScrollView"]
 - ["PSo16UIStateRestoring", ""]
+- !private ["CSo11UITableView", "dataSource"]
+- !private ["CSo11UITableView", "deinit"]
 - !private ["CSo11UITableView", "dequeueReusableCellWithIdentifier"]
 - !private ["CSo11UITableView", "registerNib"]
 - !private ["CSo11UITableView", "reloadData"]
 - ["CSo15UITableViewCell", "UILabel"]
+- !private ["CSo15UITableViewCell", "currencyName"]
+- !private ["CSo15UITableViewCell", "currencyValue"]
 - ["CSo15UITableViewCell", "distance"]
 - ["CSo15UITableViewCell", "foodName"]
 - ["CSo15UITableViewCell", "init"]
@@ -2111,6 +2264,7 @@ depends-member:
 - ["CSo15UITableViewCell", "price"]
 - ["CSo15UITableViewCell", ""]
 - !private ["PSo21UITableViewDataSource", "Annotations"]
+- ["PSo21UITableViewDataSource", "BuyFoodView"]
 - !private ["PSo21UITableViewDataSource", "CGRectMake"]
 - !private ["PSo21UITableViewDataSource", "CLLocation"]
 - ["PSo21UITableViewDataSource", "CLLocationCoordinate2D"]
@@ -2149,6 +2303,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", "mapViewWillStartLocatingUser"]
 - ["PSo21UITableViewDataSource", "mapViewWillStartRenderingMap"]
 - ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
+- !private ["PSo21UITableViewDataSource", "popupView"]
 - !private ["PSo21UITableViewDataSource", "presentPopupView"]
 - !private ["PSo21UITableViewDataSource", "print"]
 - ["PSo21UITableViewDataSource", "scrollViewDidEndDecelerating"]
@@ -2170,6 +2325,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", "viewForZoomingInScrollView"]
 - ["PSo21UITableViewDataSource", ""]
 - !private ["PSo19UITableViewDelegate", "Annotations"]
+- ["PSo19UITableViewDelegate", "BuyFoodView"]
 - !private ["PSo19UITableViewDelegate", "CGRectMake"]
 - !private ["PSo19UITableViewDelegate", "CLLocation"]
 - ["PSo19UITableViewDelegate", "CLLocationCoordinate2D"]
@@ -2208,6 +2364,7 @@ depends-member:
 - ["PSo19UITableViewDelegate", "mapViewWillStartLocatingUser"]
 - ["PSo19UITableViewDelegate", "mapViewWillStartRenderingMap"]
 - ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
+- !private ["PSo19UITableViewDelegate", "popupView"]
 - !private ["PSo19UITableViewDelegate", "presentPopupView"]
 - !private ["PSo19UITableViewDelegate", "print"]
 - ["PSo19UITableViewDelegate", "scrollViewDidEndDecelerating"]
@@ -2229,6 +2386,7 @@ depends-member:
 - ["PSo19UITableViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo19UITableViewDelegate", ""]
 - ["PSo18UITraitEnvironment", "Annotations"]
+- ["PSo18UITraitEnvironment", "BuyFoodView"]
 - !private ["PSo18UITraitEnvironment", "CGRectMake"]
 - !private ["PSo18UITraitEnvironment", "CLLocation"]
 - ["PSo18UITraitEnvironment", "CLLocationCoordinate2D"]
@@ -2253,6 +2411,12 @@ depends-member:
 - ["PSo18UITraitEnvironment", "addAnnotation"]
 - !private ["PSo18UITraitEnvironment", "addOverlay"]
 - !private ["PSo18UITraitEnvironment", "annotations"]
+- !private ["PSo18UITraitEnvironment", "currencyName"]
+- !private ["PSo18UITraitEnvironment", "currencyNames"]
+- !private ["PSo18UITraitEnvironment", "currencyTable"]
+- !private ["PSo18UITraitEnvironment", "currencyValue"]
+- !private ["PSo18UITraitEnvironment", "currencyValues"]
+- !private ["PSo18UITraitEnvironment", "dataSource"]
 - !private ["PSo18UITraitEnvironment", "dequeueReusableCellWithIdentifier"]
 - ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
 - !private ["PSo18UITraitEnvironment", "dispatch_async"]
@@ -2281,6 +2445,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "mapViewWillStartRenderingMap"]
 - ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
 - !private ["PSo18UITraitEnvironment", "populateData"]
+- ["PSo18UITraitEnvironment", "popupView"]
 - !private ["PSo18UITraitEnvironment", "presentPopupView"]
 - ["PSo18UITraitEnvironment", "price"]
 - !private ["PSo18UITraitEnvironment", "print"]
@@ -2317,6 +2482,13 @@ depends-member:
 - !private ["CSo6UIView", "addAnnotation"]
 - !private ["CSo6UIView", "addOverlay"]
 - !private ["CSo6UIView", "annotations"]
+- !private ["CSo6UIView", "currencyName"]
+- !private ["CSo6UIView", "currencyNames"]
+- !private ["CSo6UIView", "currencyTable"]
+- !private ["CSo6UIView", "currencyValue"]
+- !private ["CSo6UIView", "currencyValues"]
+- !private ["CSo6UIView", "dataSource"]
+- !private ["CSo6UIView", "deinit"]
 - !private ["CSo6UIView", "dequeueReusableCellWithIdentifier"]
 - ["CSo6UIView", "distance"]
 - ["CSo6UIView", "foodName"]
@@ -2336,12 +2508,13 @@ depends-member:
 - !private ["CSo6UIView", "showsUserLocation"]
 - !private ["CSo6UIView", "text"]
 - ["CSo16UIViewController", "Annotations"]
-- !private ["CSo16UIViewController", "BuyFoodView"]
+- ["CSo16UIViewController", "BuyFoodView"]
 - !private ["CSo16UIViewController", "CGRectMake"]
 - ["CSo16UIViewController", "CLLocation"]
 - ["CSo16UIViewController", "CLLocationCoordinate2D"]
 - !private ["CSo16UIViewController", "CLLocationCoordinate2DMake"]
 - ["CSo16UIViewController", "CLLocationManager"]
+- !private ["CSo16UIViewController", "CurrencyTableViewCell"]
 - ["CSo16UIViewController", "Distances"]
 - ["CSo16UIViewController", "Double"]
 - !private ["CSo16UIViewController", "FIRDataEventType"]
@@ -2388,6 +2561,7 @@ depends-member:
 - ["CSo16UIViewController", "mapViewWillStartLocatingUser"]
 - ["CSo16UIViewController", "mapViewWillStartRenderingMap"]
 - ["CSo16UIViewController", "numberOfSectionsInTableView"]
+- ["CSo16UIViewController", "popupView"]
 - !private ["CSo16UIViewController", "presentPopupView"]
 - !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", "scrollViewDidEndDecelerating"]
@@ -2469,6 +2643,12 @@ depends-member:
 - !private ["Ps12_Reflectable", "annotations"]
 - !private ["Ps12_Reflectable", "append"]
 - !private ["Ps12_Reflectable", "count"]
+- !private ["Ps12_Reflectable", "currencyName"]
+- !private ["Ps12_Reflectable", "currencyNames"]
+- !private ["Ps12_Reflectable", "currencyTable"]
+- !private ["Ps12_Reflectable", "currencyValue"]
+- !private ["Ps12_Reflectable", "currencyValues"]
+- !private ["Ps12_Reflectable", "dataSource"]
 - !private ["Ps12_Reflectable", "dequeueReusableCellWithIdentifier"]
 - ["Ps12_Reflectable", "distance"]
 - ["Ps12_Reflectable", "foodName"]
@@ -2504,7 +2684,7 @@ depends-nominal:
 - !private "Sb"
 - !private "Ps25BooleanLiteralConvertible"
 - !private "Ps11BooleanType"
-- !private "C13NeighborCater11BuyFoodView"
+- "C13NeighborCater11BuyFoodView"
 - !private "V12CoreGraphics7CGFloat"
 - !private "VSC6CGRect"
 - !private "VSC6CGSize"
@@ -2515,6 +2695,7 @@ depends-nominal:
 - "Ps11CVarArgType"
 - "Ps14CollectionType"
 - "Ps10Comparable"
+- !private "C13NeighborCater21CurrencyTableViewCell"
 - "Ps28CustomDebugStringConvertible"
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
@@ -2673,4 +2854,4 @@ depends-external:
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphonesimulator/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
-interface-hash: "6aa305ed8fa37d399fd2b4e326d0cfa5"
+interface-hash: "f8dd0e423d6373aa633bf89e0426b3cd"
