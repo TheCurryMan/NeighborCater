@@ -9,64 +9,66 @@ provides-member:
 - ["C13NeighborCater21CurrencyTableViewCell", ""]
 - ["C13NeighborCater11BuyFoodView", ""]
 provides-dynamic-lookup:
+- "foodName"
+- "buyNow"
+- "currencyName"
+- "priceButton"
 - "currencyValue"
-- "foodDescription"
-- "ownerEmail"
+- "kitchenSelected"
 - "populateData"
 - "placeOrder"
-- "changeCurrency"
-- "currencyTable"
-- "currencyValues"
-- "foodName"
 - "finalUser"
-- "kitchenSelected"
-- "currencyName"
-- "ownerName"
-- "openMaps"
-- "priceButton"
-- "kitchenAddress"
-- "ownerNumber"
-- "buyNow"
-- "currencyNames"
+- "foodDescription"
+- "ownerEmail"
 - "kitchenName"
+- "ownerNumber"
+- "openMaps"
+- "changeCurrency"
+- "currencyValues"
+- "kitchenAddress"
+- "ownerName"
+- "currencyNames"
+- "currencyTable"
 depends-top-level:
-- !private "UnicodeScalarType"
-- "UITableView"
-- !private "FIRDataEventType"
-- "User"
-- "BuyFoodView"
-- !private "print"
-- !private "FIRDatabase"
-- !private "NSURLSession"
-- "CurrencyTableViewCell"
-- "UIButton"
-- !private "UIControlState"
-- !private "MKLaunchOptionsMapCenterKey"
-- !private "MKPlacemark"
-- !private "<"
-- "Kitchen"
-- "StringLiteralType"
-- !private "=="
-- !private "Dictionary"
-- !private "+"
-- "UITableViewCell"
-- !private "FIRDataSnapshot"
-- "AnyObject"
-- "Double"
-- "UIView"
-- !private "NSValue"
-- !private "MKMapItem"
-- !private "CLLocationCoordinate2DMake"
-- !private "NSJSONSerialization"
-- !private "NSURL"
-- "String"
-- !private "CLLocationDistance"
-- "UILabel"
 - !private "MKCoordinateRegionMakeWithDistance"
+- "UITableViewCell"
+- !private "NSJSONSerialization"
+- !private "<"
+- "UILabel"
+- !private "CLLocationDistance"
+- !private "NSURL"
+- "Double"
+- "Kitchen"
 - !private "MKLaunchOptionsMapSpanKey"
+- !private "print"
+- "User"
+- "StringLiteralType"
+- !private "CLLocationCoordinate2DMake"
+- !private "UnicodeScalarType"
+- !private "=="
+- !private "MKPlacemark"
+- "BuyFoodView"
+- "String"
+- !private "NSValue"
+- !private "MKLaunchOptionsMapCenterKey"
+- !private "FIRDatabase"
+- !private "FIRDataEventType"
+- !private "FIRAuth"
+- "CurrencyTableViewCell"
+- !private "MKMapItem"
+- !private "FIRDataSnapshot"
+- !private "+"
+- !private "NSURLSession"
+- !private "UIControlState"
+- "UIView"
+- "AnyObject"
+- "UIButton"
+- "UITableView"
+- !private "Dictionary"
 depends-member:
 - !private ["Ps9AnyObject", "CLLocationCoordinate2DMake"]
 - ["Ps9AnyObject", "Double"]
+- !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDataEventType"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
 - !private ["Ps9AnyObject", "JSONObjectWithData"]
@@ -84,6 +86,7 @@ depends-member:
 - !private ["Ps9AnyObject", "UIControlState"]
 - ["Ps9AnyObject", "User"]
 - !private ["Ps9AnyObject", "allObjects"]
+- !private ["Ps9AnyObject", "auth"]
 - ["Ps9AnyObject", "buyNow"]
 - ["Ps9AnyObject", "changeCurrency"]
 - !private ["Ps9AnyObject", "child"]
@@ -94,6 +97,7 @@ depends-member:
 - ["Ps9AnyObject", "currencyTable"]
 - ["Ps9AnyObject", "currencyValue"]
 - ["Ps9AnyObject", "currencyValues"]
+- !private ["Ps9AnyObject", "currentUser"]
 - !private ["Ps9AnyObject", "dataTaskWithURL"]
 - !private ["Ps9AnyObject", "database"]
 - !private ["Ps9AnyObject", "distance"]
@@ -126,11 +130,13 @@ depends-member:
 - !private ["Ps9AnyObject", "sharedSession"]
 - !private ["Ps9AnyObject", "subscript"]
 - !private ["Ps9AnyObject", "text"]
+- !private ["Ps9AnyObject", "uid"]
 - !private ["Ps9AnyObject", "updateChildValues"]
 - !private ["Ps9AnyObject", "user"]
 - !private ["Ps9AnyObject", "userEmail"]
 - !private ["Ps9AnyObject", "userName"]
 - !private ["Ps9AnyObject", "userPhoneNumber"]
+- !private ["Ps9AnyObject", "value"]
 - ["Ps9AnyObject", ""]
 - ["Sa", "Generator"]
 - ["Sa", "Index"]
@@ -140,7 +146,6 @@ depends-member:
 - !private ["Sa", "count"]
 - !private ["Sa", "deinit"]
 - ["Sa", "init"]
-- !private ["Sa", "subscript"]
 - !private ["Ps23ArrayLiteralConvertible", "AllowFragments"]
 - ["Ps23ArrayLiteralConvertible", "Generator"]
 - ["Ps23ArrayLiteralConvertible", "Index"]
@@ -150,7 +155,6 @@ depends-member:
 - !private ["Ps23ArrayLiteralConvertible", "append"]
 - !private ["Ps23ArrayLiteralConvertible", "count"]
 - ["Ps23ArrayLiteralConvertible", "init"]
-- !private ["Ps23ArrayLiteralConvertible", "subscript"]
 - ["Vs10ArraySlice", "Generator"]
 - ["Vs10ArraySlice", "Index"]
 - ["Ps22BidirectionalIndexType", "Distance"]
@@ -165,6 +169,7 @@ depends-member:
 - !private ["C13NeighborCater11BuyFoodView", "CLLocationCoordinate2DMake"]
 - !private ["C13NeighborCater11BuyFoodView", "CLLocationDistance"]
 - ["C13NeighborCater11BuyFoodView", "Double"]
+- !private ["C13NeighborCater11BuyFoodView", "FIRAuth"]
 - !private ["C13NeighborCater11BuyFoodView", "FIRDataEventType"]
 - !private ["C13NeighborCater11BuyFoodView", "FIRDataSnapshot"]
 - !private ["C13NeighborCater11BuyFoodView", "FIRDatabase"]
@@ -209,6 +214,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "CLLocationCoordinate2DMake"]
 - ["Ps11CVarArgType", "Distance"]
 - ["Ps11CVarArgType", "Double"]
+- !private ["Ps11CVarArgType", "FIRAuth"]
 - !private ["Ps11CVarArgType", "FIRDataEventType"]
 - !private ["Ps11CVarArgType", "FIRDatabase"]
 - ["Ps11CVarArgType", "IntegerLiteralType"]
@@ -227,6 +233,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "UIControlState"]
 - ["Ps11CVarArgType", "User"]
 - !private ["Ps11CVarArgType", "allObjects"]
+- !private ["Ps11CVarArgType", "auth"]
 - ["Ps11CVarArgType", "buyNow"]
 - ["Ps11CVarArgType", "changeCurrency"]
 - !private ["Ps11CVarArgType", "child"]
@@ -237,6 +244,7 @@ depends-member:
 - ["Ps11CVarArgType", "currencyTable"]
 - ["Ps11CVarArgType", "currencyValue"]
 - ["Ps11CVarArgType", "currencyValues"]
+- !private ["Ps11CVarArgType", "currentUser"]
 - !private ["Ps11CVarArgType", "dataTaskWithURL"]
 - !private ["Ps11CVarArgType", "database"]
 - !private ["Ps11CVarArgType", "distance"]
@@ -268,11 +276,13 @@ depends-member:
 - !private ["Ps11CVarArgType", "setTitle"]
 - !private ["Ps11CVarArgType", "sharedSession"]
 - !private ["Ps11CVarArgType", "text"]
+- !private ["Ps11CVarArgType", "uid"]
 - !private ["Ps11CVarArgType", "updateChildValues"]
 - !private ["Ps11CVarArgType", "user"]
 - !private ["Ps11CVarArgType", "userEmail"]
 - !private ["Ps11CVarArgType", "userName"]
 - !private ["Ps11CVarArgType", "userPhoneNumber"]
+- !private ["Ps11CVarArgType", "value"]
 - ["Ps11CVarArgType", ""]
 - !private ["Vs9Character", "deinit"]
 - ["Ps14CollectionType", "Generator"]
@@ -295,6 +305,7 @@ depends-member:
 - ["C13NeighborCater21CurrencyTableViewCell", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "CLLocationCoordinate2DMake"]
 - ["Ps28CustomDebugStringConvertible", "Double"]
+- !private ["Ps28CustomDebugStringConvertible", "FIRAuth"]
 - !private ["Ps28CustomDebugStringConvertible", "FIRDataEventType"]
 - !private ["Ps28CustomDebugStringConvertible", "FIRDatabase"]
 - ["Ps28CustomDebugStringConvertible", "Generator"]
@@ -320,6 +331,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "allObjects"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
+- !private ["Ps28CustomDebugStringConvertible", "auth"]
 - ["Ps28CustomDebugStringConvertible", "buyNow"]
 - ["Ps28CustomDebugStringConvertible", "changeCurrency"]
 - !private ["Ps28CustomDebugStringConvertible", "child"]
@@ -331,6 +343,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "currencyTable"]
 - ["Ps28CustomDebugStringConvertible", "currencyValue"]
 - ["Ps28CustomDebugStringConvertible", "currencyValues"]
+- !private ["Ps28CustomDebugStringConvertible", "currentUser"]
 - !private ["Ps28CustomDebugStringConvertible", "dataTaskWithURL"]
 - !private ["Ps28CustomDebugStringConvertible", "database"]
 - !private ["Ps28CustomDebugStringConvertible", "distance"]
@@ -363,15 +376,18 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "sharedSession"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
+- !private ["Ps28CustomDebugStringConvertible", "uid"]
 - !private ["Ps28CustomDebugStringConvertible", "updateChildValues"]
 - !private ["Ps28CustomDebugStringConvertible", "user"]
 - !private ["Ps28CustomDebugStringConvertible", "userEmail"]
 - !private ["Ps28CustomDebugStringConvertible", "userName"]
 - !private ["Ps28CustomDebugStringConvertible", "userPhoneNumber"]
+- !private ["Ps28CustomDebugStringConvertible", "value"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps23CustomStringConvertible", "CLLocationCoordinate2DMake"]
 - ["Ps23CustomStringConvertible", "Distance"]
 - ["Ps23CustomStringConvertible", "Double"]
+- !private ["Ps23CustomStringConvertible", "FIRAuth"]
 - !private ["Ps23CustomStringConvertible", "FIRDataEventType"]
 - !private ["Ps23CustomStringConvertible", "FIRDatabase"]
 - ["Ps23CustomStringConvertible", "Generator"]
@@ -398,6 +414,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "allObjects"]
 - !private ["Ps23CustomStringConvertible", "append"]
+- !private ["Ps23CustomStringConvertible", "auth"]
 - ["Ps23CustomStringConvertible", "buyNow"]
 - ["Ps23CustomStringConvertible", "changeCurrency"]
 - !private ["Ps23CustomStringConvertible", "child"]
@@ -409,6 +426,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "currencyTable"]
 - ["Ps23CustomStringConvertible", "currencyValue"]
 - ["Ps23CustomStringConvertible", "currencyValues"]
+- !private ["Ps23CustomStringConvertible", "currentUser"]
 - !private ["Ps23CustomStringConvertible", "dataTaskWithURL"]
 - !private ["Ps23CustomStringConvertible", "database"]
 - !private ["Ps23CustomStringConvertible", "distance"]
@@ -441,11 +459,13 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "sharedSession"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "text"]
+- !private ["Ps23CustomStringConvertible", "uid"]
 - !private ["Ps23CustomStringConvertible", "updateChildValues"]
 - !private ["Ps23CustomStringConvertible", "user"]
 - !private ["Ps23CustomStringConvertible", "userEmail"]
 - !private ["Ps23CustomStringConvertible", "userName"]
 - !private ["Ps23CustomStringConvertible", "userPhoneNumber"]
+- !private ["Ps23CustomStringConvertible", "value"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Vs10Dictionary", "Index"]
 - !private ["Vs10Dictionary", "Key"]
@@ -461,6 +481,7 @@ depends-member:
 - !private ["Ps9Equatable", "CLLocationCoordinate2DMake"]
 - ["Ps9Equatable", "Distance"]
 - ["Ps9Equatable", "Double"]
+- !private ["Ps9Equatable", "FIRAuth"]
 - !private ["Ps9Equatable", "FIRDataEventType"]
 - !private ["Ps9Equatable", "FIRDatabase"]
 - ["Ps9Equatable", "IntegerLiteralType"]
@@ -482,6 +503,7 @@ depends-member:
 - !private ["Ps9Equatable", "Value"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "allObjects"]
+- !private ["Ps9Equatable", "auth"]
 - ["Ps9Equatable", "buyNow"]
 - ["Ps9Equatable", "changeCurrency"]
 - !private ["Ps9Equatable", "child"]
@@ -492,6 +514,7 @@ depends-member:
 - ["Ps9Equatable", "currencyTable"]
 - ["Ps9Equatable", "currencyValue"]
 - ["Ps9Equatable", "currencyValues"]
+- !private ["Ps9Equatable", "currentUser"]
 - !private ["Ps9Equatable", "dataTaskWithURL"]
 - !private ["Ps9Equatable", "database"]
 - !private ["Ps9Equatable", "distance"]
@@ -523,16 +546,21 @@ depends-member:
 - !private ["Ps9Equatable", "setTitle"]
 - !private ["Ps9Equatable", "sharedSession"]
 - !private ["Ps9Equatable", "text"]
+- !private ["Ps9Equatable", "uid"]
 - !private ["Ps9Equatable", "updateChildValues"]
 - !private ["Ps9Equatable", "user"]
 - !private ["Ps9Equatable", "userEmail"]
 - !private ["Ps9Equatable", "userName"]
 - !private ["Ps9Equatable", "userPhoneNumber"]
+- !private ["Ps9Equatable", "value"]
 - ["Ps9Equatable", ""]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["CSo7FIRAuth", "auth"]
+- !private ["CSo7FIRAuth", "currentUser"]
 - !private ["OSC16FIRDataEventType", "Value"]
 - !private ["CSo15FIRDataSnapshot", "children"]
 - !private ["CSo15FIRDataSnapshot", "key"]
+- !private ["CSo15FIRDataSnapshot", "value"]
 - !private ["CSo11FIRDatabase", "database"]
 - !private ["CSo11FIRDatabase", "reference"]
 - !private ["CSo16FIRDatabaseQuery", "child"]
@@ -545,6 +573,8 @@ depends-member:
 - !private ["CSo20FIRDatabaseReference", "key"]
 - !private ["CSo20FIRDatabaseReference", "observeEventType"]
 - !private ["CSo20FIRDatabaseReference", "updateChildValues"]
+- !private ["CSo7FIRUser", "uid"]
+- !private ["PSo11FIRUserInfo", "uid"]
 - !private ["Sf", "deinit"]
 - ["Ps16ForwardIndexType", "Distance"]
 - ["Ps16ForwardIndexType", "IntegerLiteralType"]
@@ -552,6 +582,7 @@ depends-member:
 - !private ["Ps8Hashable", "CLLocationCoordinate2DMake"]
 - ["Ps8Hashable", "Distance"]
 - ["Ps8Hashable", "Double"]
+- !private ["Ps8Hashable", "FIRAuth"]
 - !private ["Ps8Hashable", "FIRDataEventType"]
 - !private ["Ps8Hashable", "FIRDatabase"]
 - ["Ps8Hashable", "IntegerLiteralType"]
@@ -572,6 +603,7 @@ depends-member:
 - !private ["Ps8Hashable", "Value"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "allObjects"]
+- !private ["Ps8Hashable", "auth"]
 - ["Ps8Hashable", "buyNow"]
 - ["Ps8Hashable", "changeCurrency"]
 - !private ["Ps8Hashable", "child"]
@@ -582,6 +614,7 @@ depends-member:
 - ["Ps8Hashable", "currencyTable"]
 - ["Ps8Hashable", "currencyValue"]
 - ["Ps8Hashable", "currencyValues"]
+- !private ["Ps8Hashable", "currentUser"]
 - !private ["Ps8Hashable", "dataTaskWithURL"]
 - !private ["Ps8Hashable", "database"]
 - !private ["Ps8Hashable", "distance"]
@@ -613,11 +646,13 @@ depends-member:
 - !private ["Ps8Hashable", "setTitle"]
 - !private ["Ps8Hashable", "sharedSession"]
 - !private ["Ps8Hashable", "text"]
+- !private ["Ps8Hashable", "uid"]
 - !private ["Ps8Hashable", "updateChildValues"]
 - !private ["Ps8Hashable", "user"]
 - !private ["Ps8Hashable", "userEmail"]
 - !private ["Ps8Hashable", "userName"]
 - !private ["Ps8Hashable", "userPhoneNumber"]
+- !private ["Ps8Hashable", "value"]
 - ["Ps8Hashable", ""]
 - !private ["SQ", "deinit"]
 - ["Ps9Indexable", "Generator"]
@@ -671,7 +706,6 @@ depends-member:
 - !private ["Ps21MutableCollectionType", "append"]
 - !private ["Ps21MutableCollectionType", "count"]
 - ["Ps21MutableCollectionType", "init"]
-- !private ["Ps21MutableCollectionType", "subscript"]
 - ["Ps16MutableIndexable", "Generator"]
 - ["Ps16MutableIndexable", "Index"]
 - ["Ps16MutableIndexable", "SubSequence"]
@@ -679,7 +713,6 @@ depends-member:
 - !private ["Ps16MutableIndexable", "append"]
 - !private ["Ps16MutableIndexable", "count"]
 - ["Ps16MutableIndexable", "init"]
-- !private ["Ps16MutableIndexable", "subscript"]
 - ["Ps16MutableSliceable", "Generator"]
 - ["Ps16MutableSliceable", "Index"]
 - ["Ps16MutableSliceable", "SubSequence"]
@@ -687,9 +720,9 @@ depends-member:
 - !private ["Ps16MutableSliceable", "append"]
 - !private ["Ps16MutableSliceable", "count"]
 - ["Ps16MutableSliceable", "init"]
-- !private ["Ps16MutableSliceable", "subscript"]
 - !private ["PSo8NSCoding", "CLLocationCoordinate2DMake"]
 - ["PSo8NSCoding", "Double"]
+- !private ["PSo8NSCoding", "FIRAuth"]
 - !private ["PSo8NSCoding", "FIRDataEventType"]
 - !private ["PSo8NSCoding", "FIRDatabase"]
 - ["PSo8NSCoding", "Kitchen"]
@@ -743,6 +776,7 @@ depends-member:
 - !private ["CSo8NSObject", "CLLocationCoordinate2DMake"]
 - !private ["CSo8NSObject", "CLLocationDistance"]
 - ["CSo8NSObject", "Double"]
+- !private ["CSo8NSObject", "FIRAuth"]
 - !private ["CSo8NSObject", "FIRDataEventType"]
 - !private ["CSo8NSObject", "FIRDataSnapshot"]
 - !private ["CSo8NSObject", "FIRDatabase"]
@@ -764,6 +798,7 @@ depends-member:
 - ["CSo8NSObject", "UITableView"]
 - ["CSo8NSObject", "User"]
 - !private ["CSo8NSObject", "allObjects"]
+- !private ["CSo8NSObject", "auth"]
 - ["CSo8NSObject", "buyNow"]
 - ["CSo8NSObject", "changeCurrency"]
 - !private ["CSo8NSObject", "child"]
@@ -774,6 +809,7 @@ depends-member:
 - ["CSo8NSObject", "currencyTable"]
 - ["CSo8NSObject", "currencyValue"]
 - ["CSo8NSObject", "currencyValues"]
+- !private ["CSo8NSObject", "currentUser"]
 - !private ["CSo8NSObject", "dataTaskWithURL"]
 - !private ["CSo8NSObject", "database"]
 - !private ["CSo8NSObject", "distance"]
@@ -805,13 +841,16 @@ depends-member:
 - !private ["CSo8NSObject", "setTitle"]
 - !private ["CSo8NSObject", "sharedSession"]
 - !private ["CSo8NSObject", "text"]
+- !private ["CSo8NSObject", "uid"]
 - !private ["CSo8NSObject", "updateChildValues"]
 - !private ["CSo8NSObject", "user"]
 - !private ["CSo8NSObject", "userEmail"]
 - !private ["CSo8NSObject", "userName"]
 - !private ["CSo8NSObject", "userPhoneNumber"]
+- !private ["CSo8NSObject", "value"]
 - !private ["PSo16NSObjectProtocol", "CLLocationCoordinate2DMake"]
 - ["PSo16NSObjectProtocol", "Double"]
+- !private ["PSo16NSObjectProtocol", "FIRAuth"]
 - !private ["PSo16NSObjectProtocol", "FIRDataEventType"]
 - !private ["PSo16NSObjectProtocol", "FIRDatabase"]
 - !private ["PSo16NSObjectProtocol", "JSONObjectWithData"]
@@ -829,6 +868,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UIControlState"]
 - ["PSo16NSObjectProtocol", "User"]
 - !private ["PSo16NSObjectProtocol", "allObjects"]
+- !private ["PSo16NSObjectProtocol", "auth"]
 - ["PSo16NSObjectProtocol", "buyNow"]
 - ["PSo16NSObjectProtocol", "changeCurrency"]
 - !private ["PSo16NSObjectProtocol", "child"]
@@ -839,6 +879,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "currencyTable"]
 - ["PSo16NSObjectProtocol", "currencyValue"]
 - ["PSo16NSObjectProtocol", "currencyValues"]
+- !private ["PSo16NSObjectProtocol", "currentUser"]
 - !private ["PSo16NSObjectProtocol", "dataTaskWithURL"]
 - !private ["PSo16NSObjectProtocol", "database"]
 - !private ["PSo16NSObjectProtocol", "distance"]
@@ -870,11 +911,13 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "setTitle"]
 - !private ["PSo16NSObjectProtocol", "sharedSession"]
 - !private ["PSo16NSObjectProtocol", "text"]
+- !private ["PSo16NSObjectProtocol", "uid"]
 - !private ["PSo16NSObjectProtocol", "updateChildValues"]
 - !private ["PSo16NSObjectProtocol", "user"]
 - !private ["PSo16NSObjectProtocol", "userEmail"]
 - !private ["PSo16NSObjectProtocol", "userName"]
 - !private ["PSo16NSObjectProtocol", "userPhoneNumber"]
+- !private ["PSo16NSObjectProtocol", "value"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["CSo8NSString", "deinit"]
@@ -900,7 +943,6 @@ depends-member:
 - !private ["Ps30RangeReplaceableCollectionType", "append"]
 - !private ["Ps30RangeReplaceableCollectionType", "count"]
 - ["Ps30RangeReplaceableCollectionType", "init"]
-- !private ["Ps30RangeReplaceableCollectionType", "subscript"]
 - !private ["Ps16RawRepresentable", "AllowFragments"]
 - !private ["Ps16RawRepresentable", "Normal"]
 - !private ["Ps16RawRepresentable", "Value"]
@@ -935,6 +977,7 @@ depends-member:
 - !private ["Ps24StringLiteralConvertible", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "CLLocationCoordinate2DMake"]
 - ["PSo29UIAccessibilityIdentification", "Double"]
+- !private ["PSo29UIAccessibilityIdentification", "FIRAuth"]
 - !private ["PSo29UIAccessibilityIdentification", "FIRDataEventType"]
 - !private ["PSo29UIAccessibilityIdentification", "FIRDatabase"]
 - ["PSo29UIAccessibilityIdentification", "Kitchen"]
@@ -978,6 +1021,7 @@ depends-member:
 - ["PSo29UIAccessibilityIdentification", ""]
 - !private ["PSo12UIAppearance", "CLLocationCoordinate2DMake"]
 - ["PSo12UIAppearance", "Double"]
+- !private ["PSo12UIAppearance", "FIRAuth"]
 - !private ["PSo12UIAppearance", "FIRDataEventType"]
 - !private ["PSo12UIAppearance", "FIRDatabase"]
 - ["PSo12UIAppearance", "Kitchen"]
@@ -1021,6 +1065,7 @@ depends-member:
 - ["PSo12UIAppearance", ""]
 - !private ["PSo21UIAppearanceContainer", "CLLocationCoordinate2DMake"]
 - ["PSo21UIAppearanceContainer", "Double"]
+- !private ["PSo21UIAppearanceContainer", "FIRAuth"]
 - !private ["PSo21UIAppearanceContainer", "FIRDataEventType"]
 - !private ["PSo21UIAppearanceContainer", "FIRDatabase"]
 - ["PSo21UIAppearanceContainer", "Kitchen"]
@@ -1067,6 +1112,7 @@ depends-member:
 - !private ["VSC14UIControlState", "Normal"]
 - !private ["PSo17UICoordinateSpace", "CLLocationCoordinate2DMake"]
 - ["PSo17UICoordinateSpace", "Double"]
+- !private ["PSo17UICoordinateSpace", "FIRAuth"]
 - !private ["PSo17UICoordinateSpace", "FIRDataEventType"]
 - !private ["PSo17UICoordinateSpace", "FIRDatabase"]
 - ["PSo17UICoordinateSpace", "Kitchen"]
@@ -1110,6 +1156,7 @@ depends-member:
 - ["PSo17UICoordinateSpace", ""]
 - !private ["PSo13UIDynamicItem", "CLLocationCoordinate2DMake"]
 - ["PSo13UIDynamicItem", "Double"]
+- !private ["PSo13UIDynamicItem", "FIRAuth"]
 - !private ["PSo13UIDynamicItem", "FIRDataEventType"]
 - !private ["PSo13UIDynamicItem", "FIRDatabase"]
 - ["PSo13UIDynamicItem", "Kitchen"]
@@ -1153,6 +1200,7 @@ depends-member:
 - ["PSo13UIDynamicItem", ""]
 - !private ["PSo18UIFocusEnvironment", "CLLocationCoordinate2DMake"]
 - ["PSo18UIFocusEnvironment", "Double"]
+- !private ["PSo18UIFocusEnvironment", "FIRAuth"]
 - !private ["PSo18UIFocusEnvironment", "FIRDataEventType"]
 - !private ["PSo18UIFocusEnvironment", "FIRDatabase"]
 - ["PSo18UIFocusEnvironment", "Kitchen"]
@@ -1203,6 +1251,7 @@ depends-member:
 - !private ["CSo11UIResponder", "CLLocationCoordinate2DMake"]
 - !private ["CSo11UIResponder", "CLLocationDistance"]
 - ["CSo11UIResponder", "Double"]
+- !private ["CSo11UIResponder", "FIRAuth"]
 - !private ["CSo11UIResponder", "FIRDataEventType"]
 - !private ["CSo11UIResponder", "FIRDataSnapshot"]
 - !private ["CSo11UIResponder", "FIRDatabase"]
@@ -1256,6 +1305,7 @@ depends-member:
 - ["CSo15UITableViewCell", ""]
 - !private ["PSo18UITraitEnvironment", "CLLocationCoordinate2DMake"]
 - ["PSo18UITraitEnvironment", "Double"]
+- !private ["PSo18UITraitEnvironment", "FIRAuth"]
 - !private ["PSo18UITraitEnvironment", "FIRDataEventType"]
 - !private ["PSo18UITraitEnvironment", "FIRDatabase"]
 - ["PSo18UITraitEnvironment", "Kitchen"]
@@ -1301,6 +1351,7 @@ depends-member:
 - !private ["CSo6UIView", "CLLocationCoordinate2DMake"]
 - !private ["CSo6UIView", "CLLocationDistance"]
 - ["CSo6UIView", "Double"]
+- !private ["CSo6UIView", "FIRAuth"]
 - !private ["CSo6UIView", "FIRDataEventType"]
 - !private ["CSo6UIView", "FIRDataSnapshot"]
 - !private ["CSo6UIView", "FIRDatabase"]
@@ -1364,7 +1415,6 @@ depends-member:
 - !private ["Ps10_ArrayType", "append"]
 - !private ["Ps10_ArrayType", "count"]
 - ["Ps10_ArrayType", "init"]
-- !private ["Ps10_ArrayType", "subscript"]
 - !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
 - ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
@@ -1379,7 +1429,6 @@ depends-member:
 - !private ["Ps24_DestructorSafeContainer", "append"]
 - !private ["Ps24_DestructorSafeContainer", "count"]
 - ["Ps24_DestructorSafeContainer", "init"]
-- !private ["Ps24_DestructorSafeContainer", "subscript"]
 - !private ["Ps32_FileReferenceLiteralConvertible", "init"]
 - ["Ps14_Incrementable", "Distance"]
 - ["Ps14_Incrementable", "IntegerLiteralType"]
@@ -1405,6 +1454,7 @@ depends-member:
 - !private ["Ps12_Reflectable", "CLLocationCoordinate2DMake"]
 - ["Ps12_Reflectable", "Distance"]
 - ["Ps12_Reflectable", "Double"]
+- !private ["Ps12_Reflectable", "FIRAuth"]
 - !private ["Ps12_Reflectable", "FIRDataEventType"]
 - !private ["Ps12_Reflectable", "FIRDatabase"]
 - ["Ps12_Reflectable", "Generator"]
@@ -1484,11 +1534,14 @@ depends-nominal:
 - !private "Sd"
 - "Ps9Equatable"
 - !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "CSo7FIRAuth"
 - !private "OSC16FIRDataEventType"
 - !private "CSo15FIRDataSnapshot"
 - !private "CSo11FIRDatabase"
 - !private "CSo16FIRDatabaseQuery"
 - !private "CSo20FIRDatabaseReference"
+- !private "CSo7FIRUser"
+- !private "PSo11FIRUserInfo"
 - !private "Sf"
 - "Ps16ForwardIndexType"
 - "Ps13GeneratorType"

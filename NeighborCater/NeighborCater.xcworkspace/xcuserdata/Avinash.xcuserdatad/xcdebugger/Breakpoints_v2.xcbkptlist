@@ -9,38 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NeighborCater/BuyFoodView.swift"
-            timestampString = "495865745.737214"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "changeCurrency(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NeighborCater/BuyFoodView.swift"
-            timestampString = "495865745.737214"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "changeCurrency(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "NeighborCater/ViewController.swift"
             timestampString = "495871159.169596"
             startingColumnNumber = "9223372036854775807"
@@ -74,7 +42,7 @@
                   moduleName = "NeighborCater"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Documents/Code/NeighborCater/NeighborCater/NeighborCater/ViewController.swift"
-                  timestampString = "495874188.427159"
+                  timestampString = "495879144.910781"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -89,7 +57,7 @@
                   moduleName = "NeighborCater"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Documents/Code/NeighborCater/NeighborCater/NeighborCater/ViewController.swift"
-                  timestampString = "495874188.427256"
+                  timestampString = "495879144.910873"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"

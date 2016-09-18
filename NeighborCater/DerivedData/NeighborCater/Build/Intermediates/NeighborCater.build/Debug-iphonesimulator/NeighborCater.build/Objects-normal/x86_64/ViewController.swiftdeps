@@ -10,16 +10,16 @@ provides-dynamic-lookup:
 - "didReceiveMemoryWarning"
 - "viewDidLoad"
 depends-top-level:
-- "UIViewController"
 - !private "FIRDataSnapshot"
 - !private "FIRAuth"
 - "ViewController"
-- "AnyObject"
-- !private "StringLiteralType"
-- !private "FIRDataEventType"
-- !private "=="
 - !private "String"
 - !private "FIRDatabase"
+- "AnyObject"
+- !private "FIRDataEventType"
+- !private "StringLiteralType"
+- !private "=="
+- "UIViewController"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDataEventType"]

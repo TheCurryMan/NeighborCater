@@ -121,14 +121,23 @@ class BuyFoodView : UIView {
     }
     
     @IBAction func placeOrder(sender: AnyObject) {
+        var name = String()
+        var email = String()
+        var number = String()
+        var postRef = FIRDatabase.database().reference().child("users").child("\(FIRAuth.auth()!.currentUser!.uid)")
+        var refHandle = postRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+            
+        name = snapshot.value!["name"] as! String
+        email = snapshot.value!["email"] as! String
+        number = snapshot.value!["number"] as! String
         var ref = FIRDatabase.database().reference()
-        let key = ref.child("users").child("\(kitchenSelected.user)").child("orders").childByAutoId().key
+        let key = ref.child("users").child("\(self.kitchenSelected.user)").child("orders").childByAutoId().key
         let data : [String:AnyObject] = ["foodName": self.foodName.text!,
-                    "userName": finalUser[0].userName,
-                    "email": finalUser[0].userEmail,
-                    "number": finalUser[0].userPhoneNumber]
-        let childUpdates = ["/users/\(kitchenSelected.user)/orders/\(key)": data]
+                    "name": name,
+                    "email": email,
+                    "number": number]
+        let childUpdates = ["/users/\(self.kitchenSelected.user)/orders/\(key)": data]
         ref.updateChildValues(childUpdates)
-    }
+        })}
     
 }
