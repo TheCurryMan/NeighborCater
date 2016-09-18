@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import hackthenorth.neighborcater.R;
 import hackthenorth.neighborcater.models.Kitchen;
 
+import static hackthenorth.neighborcater.utils.DistanceUtils.getDistanceInKm;
 import static java.lang.Math.round;
 
 /**
@@ -25,6 +27,7 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenAdapter.ViewHold
     Context context;
     ArrayList<Kitchen> kitchenList;
     LatLng currentLocation;
+    ArrayList<View> viewArrayList = new ArrayList<>();
 
     public KitchenAdapter(Context applicationContext, ArrayList<Kitchen> kitchenArray, LatLng currentLocation) {
         this.context = applicationContext;
@@ -39,6 +42,7 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenAdapter.ViewHold
         public TextView addressTextView;
         public TextView priceTextView;
         public TextView distanceTextView;
+        public RelativeLayout root;
 
         public ViewHolder(View v) {
 
@@ -49,6 +53,7 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenAdapter.ViewHold
             addressTextView = (TextView) v.findViewById(R.id.kitchen_cell_address_text_view);
             priceTextView = (TextView) v.findViewById(R.id.kitchen_cell_price_text_view);
             distanceTextView = (TextView) v.findViewById(R.id.kitchen_cell_distance_text_view);
+            root = (RelativeLayout) v.findViewById(R.id.kitchen_cell_root);
 
         }
     }
@@ -58,6 +63,8 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenAdapter.ViewHold
         View view1 = LayoutInflater.from(context).inflate(R.layout.kitchen_list_cell, parent, false);
 
         ViewHolder viewHolder1 = new ViewHolder(view1);
+
+        viewArrayList.add(view1);
 
         return viewHolder1;
     }
@@ -75,14 +82,16 @@ public class KitchenAdapter extends RecyclerView.Adapter<KitchenAdapter.ViewHold
 
     }
 
-    private String getDistanceInKm(LatLng currentLocation, double latitude, double longitude) {
-        float[] results = new float[1];
-        Location.distanceBetween(currentLocation.latitude, currentLocation.longitude,
-                latitude, longitude, results);
-        double km = results[0]/1000;
-        DecimalFormat df = new DecimalFormat("#.##");
-        return String.valueOf(df.format(km));
+    public View getKitchenRootByIndex(int i){
+        if(i<viewArrayList.size()) {
+            return viewArrayList.get(i);
+        }
+        else{
+            return null;
+        }
     }
+
+
 
     @Override
     public int getItemCount() {

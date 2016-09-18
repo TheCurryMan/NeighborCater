@@ -33,6 +33,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -40,8 +42,9 @@ import java.util.Set;
 
 import hackthenorth.neighborcater.adapters.KitchenAdapter;
 import hackthenorth.neighborcater.models.Kitchen;
+import hackthenorth.neighborcater.utils.DistanceUtils;
 
-public class MapActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     GoogleMap mMap;
     private LocationManager locationManager;
@@ -49,10 +52,11 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
     RecyclerView recyclerView;
-    RecyclerView.Adapter recyclerViewAdapter;
-    RecyclerView.LayoutManager recyclerViewLayoutManager;
-    LatLng myHome;
+    KitchenAdapter recyclerViewAdapter;
+    LinearLayoutManager recyclerViewLayoutManager;
+    public LatLng myHome;
     ArrayList<Kitchen> kitchenList;
+    boolean zoomedInFirstTime;
 
     ValueEventListener postListener = new ValueEventListener() {
         @Override
@@ -65,9 +69,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                     kitchenArrayList.add(newKitchen);
                 }
             kitchenList = kitchenArrayList;
-            placeMarkers(kitchenArrayList);
+            placeMarkers();
             setupList();
-            Log.d("asdf", kitchenArrayList.toString());
 
             // ...
         }
@@ -80,15 +83,34 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
     };
 
+    Comparator<Kitchen> KitchenComparator = new Comparator<Kitchen>() {
+
+        public int compare(Kitchen s1, Kitchen s2) {
+            double kitchenOneDistance = Double.valueOf(DistanceUtils.getDistanceInKm(getMyHome(), s1.getLatitude(), s1.getLongitude()));
+            double kitchenTwoDistance = Double.valueOf(DistanceUtils.getDistanceInKm(getMyHome(), s2.getLatitude(), s2.getLongitude()));
+
+
+            //ascending order
+            return kitchenOneDistance>kitchenTwoDistance ? 1 : -1;
+
+            //descending order
+            //return StudentName2.compareTo(StudentName1);
+        }};
+
+    private void sortKitchenList() {
+        Collections.sort(kitchenList, KitchenComparator);
+    }
+
     private void setupList() {
         if(kitchenList!=null && kitchenList.size() >0 && myHome!=null) {
-            recyclerView.setAdapter(new KitchenAdapter(getApplicationContext(), kitchenList, myHome));
+            recyclerViewAdapter = new KitchenAdapter(getApplicationContext(), kitchenList, myHome);
+            recyclerView.setAdapter(recyclerViewAdapter);
         }
     }
 
-    private void placeMarkers(ArrayList<Kitchen> kitchenArrayList) {
+    private void placeMarkers() {
         if(mMap != null){
-            for (Kitchen kitchen : kitchenArrayList){
+            for (Kitchen kitchen : kitchenList){
                 LatLng position = new LatLng(kitchen.getLatitude(), kitchen.getLongitude());
                 Marker marker = mMap.addMarker(new MarkerOptions()
                         .position(position)
@@ -132,24 +154,28 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
     @Override
     public void onLocationChanged(Location location) {
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
-        myHome = new LatLng(latitude, longitude);
-        setupList();
-        mMap.addMarker(new MarkerOptions().position(myHome).title("Home"));
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(myHome, 10);
-        mMap.animateCamera(cameraUpdate);
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
+        if(!zoomedInFirstTime) {
+            zoomedInFirstTime = true;
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+            myHome = new LatLng(latitude, longitude);
+            sortKitchenList();
+            setupList();
+            mMap.addMarker(new MarkerOptions().position(myHome).title("Home"));
+            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(myHome, 15);
+            mMap.animateCamera(cameraUpdate);
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            locationManager.removeUpdates(this);
         }
-        locationManager.removeUpdates(this);
     }
 
 
@@ -171,6 +197,34 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setOnMarkerClickListener(this);
     }
 
+    public LatLng getMyHome (){
+        return myHome;
+    }
+
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Log.d("asdf", "marker tag = " + marker.getTag());
+        goToListEntry(marker.getTag());
+        return false;
+    }
+
+    private void goToListEntry(Object tag) {
+        for(Kitchen kitchen : kitchenList){
+            if(kitchen.getKitchenName().equals(tag)){
+                recyclerViewLayoutManager.scrollToPositionWithOffset(kitchenList.indexOf(kitchen), 0);
+                if(recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
+                    recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                }
+            }
+            else{
+                if(recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)) != null) {
+                    recyclerViewAdapter.getKitchenRootByIndex(kitchenList.indexOf(kitchen)).setBackgroundColor(getResources().getColor(R.color.white));
+                }
+            }
+        }
+    }
 }
