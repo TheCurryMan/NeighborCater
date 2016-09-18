@@ -62,6 +62,6 @@ public class OrdersActivity extends AppCompatActivity {
         setContentView(R.layout.orders_layout);
         FirebaseDatabase.getInstance().getReference().addValueEventListener(postListener);
         container = (LinearLayout) this.findViewById(R.id.orders_container);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
     }
 }
