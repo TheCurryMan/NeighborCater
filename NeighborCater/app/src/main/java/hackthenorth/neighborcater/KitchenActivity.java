@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
@@ -34,6 +35,7 @@ public class KitchenActivity extends AppCompatActivity {
     private double longi;
     private String address;
     private FloatingActionButton floatingActionButton;
+    PlaceAutocompleteFragment autocompleteFragment;
 
     private Button mSubmitButton;
 
@@ -88,6 +90,8 @@ public class KitchenActivity extends AppCompatActivity {
 
                 mDatabase.push().setValue(kObj);
 
+                clearEditTexts();
+
 
             }
         });
@@ -95,8 +99,9 @@ public class KitchenActivity extends AppCompatActivity {
 
 
 
-        PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
+         autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.editTextLocation);
+        autocompleteFragment.setHint("Search Your Location");
 
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
@@ -117,6 +122,16 @@ public class KitchenActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void clearEditTexts() {
+        foodName.setText("");
+        priceAmount.setText("");
+        foodDescription.setText("");
+        kitchenName.setText("");
+        address = "";
+        autocompleteFragment.setText("");
+        Toast.makeText(getApplicationContext(), "Created Kitchen!", Toast.LENGTH_SHORT);
     }
 
 
