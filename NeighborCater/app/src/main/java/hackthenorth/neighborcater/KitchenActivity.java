@@ -50,7 +50,7 @@ public class KitchenActivity extends AppCompatActivity {
 
 
 
-        
+
 
 
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
