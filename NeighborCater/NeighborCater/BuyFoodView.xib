@@ -70,7 +70,7 @@
                         <constraint firstAttribute="height" constant="50" id="jDG-Pw-mp2"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                    <state key="normal" title="Buy Now">
+                    <state key="normal" title="Place Order">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">

@@ -19,6 +19,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet var password: UITextField!
     
+    @IBOutlet weak var number: UITextField!
+    
     var ref: FIRDatabaseReference!
     
     
@@ -53,7 +55,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signup(sender: AnyObject) {
-        if let em = email.text, pass = password.text, name = username.text{
+        if let em = email.text, pass = password.text, name = username.text, num = number.text{
             FIRAuth.auth()?.createUserWithEmail(email.text!, password: password.text!) {(user, error) in
                 if let error = error {
                     print(error.localizedDescription)
@@ -61,7 +63,7 @@ class SignUpViewController: UIViewController {
                 else {
                     print("User signed in!")
                     
-                    self.ref.child("users").updateChildValues(["\(FIRAuth.auth()!.currentUser!.uid)":["name": name, "email": em]])
+                    self.ref.child("users").updateChildValues(["\(FIRAuth.auth()!.currentUser!.uid)":["name": name, "email": em, "number": num]])
                     
                     self.performSegueWithIdentifier("home", sender: self)
                 }
