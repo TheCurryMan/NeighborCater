@@ -42,7 +42,6 @@ public class CreateLoginActivity extends AppCompatActivity {
 
     EditText mEmailInput;
     EditText mPassword;
-    Button mCreateButton;
     Button mLoginButton;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -69,36 +68,8 @@ public class CreateLoginActivity extends AppCompatActivity {
 
         mEmailInput = (EditText) findViewById(R.id.editText);
         mPassword = (EditText) findViewById(R.id.editText2);
-        mCreateButton = (Button) findViewById(R.id.button);
         mLoginButton = (Button) findViewById(R.id.button2);
         mAuth = FirebaseAuth.getInstance();
-
-
-        mCreateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String username = mEmailInput.getText().toString();
-                String password = mPassword.getText().toString();
-
-                mAuth.createUserWithEmailAndPassword(username, password)
-                        .addOnCompleteListener(CreateLoginActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                Log.d("P", "createUserWithEmail:onComplete:" + task.isSuccessful());
-
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(CreateLoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                }else{
-                                    Toast.makeText(CreateLoginActivity.this, "Created Account", Toast.LENGTH_SHORT).show();
-                                    Intent choosingActivity = new Intent(CreateLoginActivity.this, ChoosingActivity.class);
-                                    startActivity(choosingActivity);
-                                }
-
-                            }
-                        });
-            }
-        });
 
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {

@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import hackthenorth.neighborcater.models.Kitchen;
@@ -45,15 +49,18 @@ public class DetailsActivity extends AppCompatActivity {
 
     Kitchen kitchen;
     User user;
+    User currentUser;
     private DatabaseReference mDatabase;
     Retrofit retrofit;
+    TextView placeOrderButton;
 
     ValueEventListener postListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
             user = dataSnapshot.child("users").child(kitchen.getUser()).getValue(User.class);
             populateTextFields();
-
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            currentUser = dataSnapshot.child("users").child(user.getUid()).getValue(User.class);
             // ...
         }
 
@@ -80,6 +87,21 @@ public class DetailsActivity extends AppCompatActivity {
                 .baseUrl("https://xecdapi.xe.com/v1/convert_from.json/")
                 .build();
 
+        placeOrderButton = (TextView) this.findViewById(R.id.food_details_buy_now);
+        placeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HashMap<String, Object> orderToPost = new HashMap<String, Object>();
+
+                orderToPost.put("foodName", kitchen.getFoodName());
+                orderToPost.put("email", currentUser.getEmail());
+                orderToPost.put("number", currentUser.getNumber());
+                orderToPost.put("name", currentUser.getName());
+
+                mDatabase.child("users").child(kitchen.getUser()).child("orders").push().updateChildren(orderToPost);
+            }
+        });
+
 
 
     }
@@ -95,15 +117,30 @@ public class DetailsActivity extends AppCompatActivity {
         TextView phoneAndDistance = (TextView) this.findViewById(R.id.food_details_food_phone_number_and_distance);
         TextView price = (TextView) this.findViewById(R.id.food_details_price);
 
-
-        kitchenTitle.setText(kitchen.getKitchenName());
-        ownerName.setText(user.getName());
-        address.setText(kitchen.getAddress());
-        foodName.setText(kitchen.getFoodName());
-        foodDescription.setText(kitchen.getFoodDescription());
-        email.setText("Email: " + user.getEmail());
-        phoneAndDistance.setText(user.getNumber() + " | " + getIntent().getSerializableExtra("Distance") + " km");
-        price.setText("$"+kitchen.getPrice());
+        if(kitchen.getKitchenName()!=null) {
+            kitchenTitle.setText(kitchen.getKitchenName());
+        }
+        if(user.getName()!=null) {
+            ownerName.setText(user.getName());
+        }
+        if(kitchen.getAddress()!=null) {
+            address.setText(kitchen.getAddress());
+        }
+        if(kitchen.getFoodName()!=null) {
+            foodName.setText(kitchen.getFoodName());
+        }
+        if(kitchen.getFoodDescription()!=null) {
+            foodDescription.setText(kitchen.getFoodDescription());
+        }
+        if(user.getEmail()!=null) {
+            email.setText("Email: " + user.getEmail());
+        }
+        if(user.getNumber()!=null) {
+            phoneAndDistance.setText(user.getNumber() + " | " + getIntent().getSerializableExtra("Distance") + " km");
+        }
+        if(kitchen.getPrice()!=null) {
+            price.setText("$" + kitchen.getPrice());
+        }
         price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
