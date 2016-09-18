@@ -13,7 +13,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".CreateLoginActivity" >
+
+
+        <activity android:name=".CreateLoginActivity" android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +24,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MapActivity"/>
-        <activity android:name=".ChoosingActivity"/>
-        <activity android:name=".KitchenActivity" />
+        <activity android:name=".MapActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ChoosingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".KitchenActivity" android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
