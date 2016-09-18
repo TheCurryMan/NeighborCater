@@ -92,12 +92,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="NEIGHBOR CATER"
+        android:text="Get ready to eat!"
         android:id="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="68dp"
         android:typeface="sans"
-        android:textSize="110px" />
+        android:textSize="110px"
+        android:fontFamily="sans-serif-light"/>
 
 </RelativeLayout>
