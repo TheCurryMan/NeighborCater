@@ -18,11 +18,10 @@ class ViewController: UIViewController {
                 if let user = i.value!["user"] as? String {
                 if user == (FIRAuth.auth()?.currentUser?.uid)! {
                     self.performSegueWithIdentifier("makeFood", sender: self)
-                } else {
-                    self.performSegueWithIdentifier("makeKitchen", sender: self)
                 }
                 }
             }
+            self.performSegueWithIdentifier("makeKitchen", sender: self)
             // ...
         })
         

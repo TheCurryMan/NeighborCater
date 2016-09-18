@@ -58,22 +58,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NeighborCater/ViewController.swift"
-            timestampString = "495871159.976914"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "goKitchen(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NeighborCater/ViewController.swift"
             timestampString = "495871166.326163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -90,7 +74,7 @@
                   moduleName = "NeighborCater"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Documents/Code/NeighborCater/NeighborCater/NeighborCater/ViewController.swift"
-                  timestampString = "495871217.660964"
+                  timestampString = "495874188.427159"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -105,7 +89,7 @@
                   moduleName = "NeighborCater"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Documents/Code/NeighborCater/NeighborCater/NeighborCater/ViewController.swift"
-                  timestampString = "495871217.661063"
+                  timestampString = "495874188.427256"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"

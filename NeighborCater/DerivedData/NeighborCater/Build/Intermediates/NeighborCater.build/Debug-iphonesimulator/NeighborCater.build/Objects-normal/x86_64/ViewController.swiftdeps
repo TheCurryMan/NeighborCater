@@ -7,19 +7,19 @@ provides-member:
 - ["C13NeighborCater14ViewController", ""]
 provides-dynamic-lookup:
 - "goKitchen"
-- "viewDidLoad"
 - "didReceiveMemoryWarning"
+- "viewDidLoad"
 depends-top-level:
-- !private "FIRDatabase"
-- !private "FIRDataEventType"
-- !private "FIRAuth"
-- !private "=="
-- !private "StringLiteralType"
-- !private "String"
-- "AnyObject"
-- "ViewController"
-- !private "FIRDataSnapshot"
 - "UIViewController"
+- !private "FIRDataSnapshot"
+- !private "FIRAuth"
+- "ViewController"
+- "AnyObject"
+- !private "StringLiteralType"
+- !private "FIRDataEventType"
+- !private "=="
+- !private "String"
+- !private "FIRDatabase"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDataEventType"]
