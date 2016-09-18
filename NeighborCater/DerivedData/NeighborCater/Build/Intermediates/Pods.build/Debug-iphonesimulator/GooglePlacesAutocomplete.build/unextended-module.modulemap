@@ -1,0 +1,10 @@
+framework module GooglePlacesAutocomplete {
+  umbrella header "GooglePlacesAutocomplete-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module GooglePlacesAutocomplete.__Swift {
+    exclude header "GooglePlacesAutocomplete-Swift.h"
+}

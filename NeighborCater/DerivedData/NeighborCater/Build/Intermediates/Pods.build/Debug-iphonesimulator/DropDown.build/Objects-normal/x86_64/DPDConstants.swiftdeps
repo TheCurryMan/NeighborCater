@@ -1,0 +1,209 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "DPDConstant"
+provides-nominal:
+- "V8DropDown11DPDConstant"
+- "VV8DropDown11DPDConstant7KeyPath"
+- "VV8DropDown11DPDConstant18ReusableIdentifier"
+- "VV8DropDown11DPDConstant2UI"
+- "VVV8DropDown11DPDConstant2UI6Shadow"
+- "VV8DropDown11DPDConstant9Animation"
+provides-member:
+- ["V8DropDown11DPDConstant", ""]
+- ["VV8DropDown11DPDConstant7KeyPath", ""]
+- ["VV8DropDown11DPDConstant18ReusableIdentifier", ""]
+- ["VV8DropDown11DPDConstant2UI", ""]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", ""]
+- ["VV8DropDown11DPDConstant9Animation", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Float"
+- "DPDConstant"
+- "UIViewAnimationOptions"
+- "UIFont"
+- "UIColor"
+- "CGAffineTransformMakeScale"
+- "Array"
+- "StringLiteralType"
+- "CGFloat"
+- "CGSize"
+depends-member:
+- ["VV8DropDown11DPDConstant9Animation", "CGAffineTransformMakeScale"]
+- ["VV8DropDown11DPDConstant9Animation", "DownScaleTransform"]
+- ["VV8DropDown11DPDConstant9Animation", "Duration"]
+- ["VV8DropDown11DPDConstant9Animation", "EntranceOptions"]
+- ["VV8DropDown11DPDConstant9Animation", "ExitOptions"]
+- ["VV8DropDown11DPDConstant9Animation", "UIViewAnimationOptions"]
+- ["VV8DropDown11DPDConstant9Animation", "init"]
+- ["Ps9AnyObject", "blackColor"]
+- ["Ps9AnyObject", "clearColor"]
+- ["Ps9AnyObject", "darkGrayColor"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "systemFontOfSize"]
+- ["Ps23ArrayLiteralConvertible", "AllowUserInteraction"]
+- ["Ps23ArrayLiteralConvertible", "CurveEaseIn"]
+- ["Ps23ArrayLiteralConvertible", "CurveEaseOut"]
+- ["Ps23ArrayLiteralConvertible", "Element"]
+- ["V12CoreGraphics7CGFloat", "deinit"]
+- ["VSC6CGSize", "zero"]
+- ["Ps11CVarArgType", "blackColor"]
+- ["Ps11CVarArgType", "clearColor"]
+- ["Ps11CVarArgType", "darkGrayColor"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "systemFontOfSize"]
+- ["Ps28CustomDebugStringConvertible", "blackColor"]
+- ["Ps28CustomDebugStringConvertible", "clearColor"]
+- ["Ps28CustomDebugStringConvertible", "darkGrayColor"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "systemFontOfSize"]
+- ["Ps23CustomStringConvertible", "blackColor"]
+- ["Ps23CustomStringConvertible", "clearColor"]
+- ["Ps23CustomStringConvertible", "darkGrayColor"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "systemFontOfSize"]
+- ["V8DropDown11DPDConstant", "Animation"]
+- ["V8DropDown11DPDConstant", "CGAffineTransformMakeScale"]
+- ["V8DropDown11DPDConstant", "CGFloat"]
+- ["V8DropDown11DPDConstant", "CGSize"]
+- ["V8DropDown11DPDConstant", "Float"]
+- ["V8DropDown11DPDConstant", "KeyPath"]
+- ["V8DropDown11DPDConstant", "ReusableIdentifier"]
+- ["V8DropDown11DPDConstant", "UI"]
+- ["V8DropDown11DPDConstant", "UIColor"]
+- ["V8DropDown11DPDConstant", "UIFont"]
+- ["V8DropDown11DPDConstant", "UIViewAnimationOptions"]
+- ["V8DropDown11DPDConstant", "init"]
+- ["Ps9Equatable", "AllowUserInteraction"]
+- ["Ps9Equatable", "CurveEaseIn"]
+- ["Ps9Equatable", "CurveEaseOut"]
+- ["Ps9Equatable", "Element"]
+- ["Ps9Equatable", "blackColor"]
+- ["Ps9Equatable", "clearColor"]
+- ["Ps9Equatable", "darkGrayColor"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "systemFontOfSize"]
+- ["Ps9Equatable", "zero"]
+- ["Ps8Hashable", "blackColor"]
+- ["Ps8Hashable", "clearColor"]
+- ["Ps8Hashable", "darkGrayColor"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "systemFontOfSize"]
+- ["VV8DropDown11DPDConstant7KeyPath", "Frame"]
+- ["VV8DropDown11DPDConstant7KeyPath", "init"]
+- ["PSo8NSCoding", "blackColor"]
+- ["PSo8NSCoding", "clearColor"]
+- ["PSo8NSCoding", "darkGrayColor"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "blackColor"]
+- ["PSo9NSCopying", "clearColor"]
+- ["PSo9NSCopying", "darkGrayColor"]
+- ["PSo9NSCopying", "init"]
+- ["PSo9NSCopying", "systemFontOfSize"]
+- ["CSo8NSObject", "blackColor"]
+- ["CSo8NSObject", "clearColor"]
+- ["CSo8NSObject", "darkGrayColor"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "systemFontOfSize"]
+- ["PSo16NSObjectProtocol", "blackColor"]
+- ["PSo16NSObjectProtocol", "clearColor"]
+- ["PSo16NSObjectProtocol", "darkGrayColor"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "systemFontOfSize"]
+- ["PSo14NSSecureCoding", "blackColor"]
+- ["PSo14NSSecureCoding", "clearColor"]
+- ["PSo14NSSecureCoding", "darkGrayColor"]
+- ["PSo14NSSecureCoding", "init"]
+- ["Ps13OptionSetType", "AllowUserInteraction"]
+- ["Ps13OptionSetType", "CurveEaseIn"]
+- ["Ps13OptionSetType", "CurveEaseOut"]
+- ["Ps13OptionSetType", "Element"]
+- ["Ps16RawRepresentable", "AllowUserInteraction"]
+- ["Ps16RawRepresentable", "CurveEaseIn"]
+- ["Ps16RawRepresentable", "CurveEaseOut"]
+- ["Ps16RawRepresentable", "Element"]
+- ["VV8DropDown11DPDConstant18ReusableIdentifier", "DropDownCell"]
+- ["VV8DropDown11DPDConstant18ReusableIdentifier", "init"]
+- ["Ps14SetAlgebraType", "AllowUserInteraction"]
+- ["Ps14SetAlgebraType", "CurveEaseIn"]
+- ["Ps14SetAlgebraType", "CurveEaseOut"]
+- ["Ps14SetAlgebraType", "Element"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "CGFloat"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "CGSize"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "Color"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "Float"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "Offset"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "Opacity"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "Radius"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "UIColor"]
+- ["VVV8DropDown11DPDConstant2UI6Shadow", "init"]
+- ["VV8DropDown11DPDConstant2UI", "BackgroundColor"]
+- ["VV8DropDown11DPDConstant2UI", "CGFloat"]
+- ["VV8DropDown11DPDConstant2UI", "CGSize"]
+- ["VV8DropDown11DPDConstant2UI", "CornerRadius"]
+- ["VV8DropDown11DPDConstant2UI", "Float"]
+- ["VV8DropDown11DPDConstant2UI", "HeightPadding"]
+- ["VV8DropDown11DPDConstant2UI", "RowHeight"]
+- ["VV8DropDown11DPDConstant2UI", "SelectionBackgroundColor"]
+- ["VV8DropDown11DPDConstant2UI", "SeparatorColor"]
+- ["VV8DropDown11DPDConstant2UI", "Shadow"]
+- ["VV8DropDown11DPDConstant2UI", "TextColor"]
+- ["VV8DropDown11DPDConstant2UI", "TextFont"]
+- ["VV8DropDown11DPDConstant2UI", "UIColor"]
+- ["VV8DropDown11DPDConstant2UI", "UIFont"]
+- ["VV8DropDown11DPDConstant2UI", "init"]
+- ["CSo7UIColor", "blackColor"]
+- ["CSo7UIColor", "clearColor"]
+- ["CSo7UIColor", "darkGrayColor"]
+- ["CSo7UIColor", "init"]
+- ["CSo6UIFont", "systemFontOfSize"]
+- ["VSC22UIViewAnimationOptions", "AllowUserInteraction"]
+- ["VSC22UIViewAnimationOptions", "CurveEaseIn"]
+- ["VSC22UIViewAnimationOptions", "CurveEaseOut"]
+- ["VSC22UIViewAnimationOptions", "Element"]
+- ["Ps24_ColorLiteralConvertible", "blackColor"]
+- ["Ps24_ColorLiteralConvertible", "clearColor"]
+- ["Ps24_ColorLiteralConvertible", "darkGrayColor"]
+- ["Ps24_ColorLiteralConvertible", "init"]
+- ["Ps12_Reflectable", "zero"]
+depends-nominal:
+- "VV8DropDown11DPDConstant9Animation"
+- "Ps9AnyObject"
+- "Ps23ArrayLiteralConvertible"
+- "V12CoreGraphics7CGFloat"
+- "VSC6CGSize"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "V8DropDown11DPDConstant"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- "VV8DropDown11DPDConstant7KeyPath"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "Ps13OptionSetType"
+- "Ps16RawRepresentable"
+- "VV8DropDown11DPDConstant18ReusableIdentifier"
+- "Ps14SetAlgebraType"
+- "VVV8DropDown11DPDConstant2UI6Shadow"
+- "VV8DropDown11DPDConstant2UI"
+- "CSo7UIColor"
+- "CSo6UIFont"
+- "VSC22UIViewAnimationOptions"
+- "Ps24_ColorLiteralConvertible"
+- "Ps12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Target Support Files/DropDown/DropDown-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Intermediates/Pods.build/Debug-iphonesimulator/DropDown.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "0d7e2652c7c6923f863079eb6dc8d9e7"

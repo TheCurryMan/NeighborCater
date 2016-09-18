@@ -1,0 +1,161 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "STZPopupShowAnimation"
+- "STZPopupDismissAnimation"
+- "STZPopupViewConfig"
+provides-nominal:
+- "O12STZPopupView21STZPopupShowAnimation"
+- "O12STZPopupView24STZPopupDismissAnimation"
+- "C12STZPopupView18STZPopupViewConfig"
+provides-member:
+- ["O12STZPopupView21STZPopupShowAnimation", ""]
+- ["O12STZPopupView24STZPopupDismissAnimation", ""]
+- ["C12STZPopupView18STZPopupViewConfig", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "STZPopupShowAnimation"
+- "=="
+- "STZPopupViewConfig"
+- "Void"
+- "CGFloat"
+- "STZPopupDismissAnimation"
+- "UIColor"
+- "BooleanLiteralType"
+- "UIView"
+depends-member:
+- ["Ps9AnyObject", "STZPopupDismissAnimation"]
+- ["Ps9AnyObject", "STZPopupShowAnimation"]
+- ["Ps9AnyObject", "UIColor"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps22BidirectionalIndexType", "hashValue"]
+- !private ["Ps21BitwiseOperationsType", "hashValue"]
+- ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["Ps11CVarArgType", "hashValue"]
+- ["Ps11CVarArgType", "init"]
+- !private ["Ps10Comparable", "hashValue"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "hashValue"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps9Equatable", "FadeIn"]
+- ["Ps9Equatable", "FadeOut"]
+- ["Ps9Equatable", "hashValue"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", ""]
+- !private ["Ps16ForwardIndexType", "hashValue"]
+- ["Ps8Hashable", "FadeIn"]
+- ["Ps8Hashable", "FadeOut"]
+- ["Ps8Hashable", "hashValue"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", ""]
+- !private ["Si", "hashValue"]
+- !private ["Ps21IntegerArithmeticType", "hashValue"]
+- !private ["Ps25IntegerLiteralConvertible", "hashValue"]
+- !private ["Ps11IntegerType", "hashValue"]
+- !private ["Ps14MirrorPathType", "hashValue"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["CSo8NSObject", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- !private ["Ps21RandomAccessIndexType", "hashValue"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "Custom"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "FadeOut"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "None"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "SlideOutToBottom"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "SlideOutToLeft"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "SlideOutToRight"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "SlideOutToTop"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "deinit"]
+- ["O12STZPopupView24STZPopupDismissAnimation", "hashValue"]
+- ["O12STZPopupView21STZPopupShowAnimation", "Custom"]
+- ["O12STZPopupView21STZPopupShowAnimation", "FadeIn"]
+- ["O12STZPopupView21STZPopupShowAnimation", "None"]
+- ["O12STZPopupView21STZPopupShowAnimation", "SlideInFromBottom"]
+- ["O12STZPopupView21STZPopupShowAnimation", "SlideInFromLeft"]
+- ["O12STZPopupView21STZPopupShowAnimation", "SlideInFromRight"]
+- ["O12STZPopupView21STZPopupShowAnimation", "SlideInFromTop"]
+- ["O12STZPopupView21STZPopupShowAnimation", "deinit"]
+- ["O12STZPopupView21STZPopupShowAnimation", "hashValue"]
+- ["C12STZPopupView18STZPopupViewConfig", "CGFloat"]
+- ["C12STZPopupView18STZPopupViewConfig", "STZPopupDismissAnimation"]
+- ["C12STZPopupView18STZPopupViewConfig", "STZPopupShowAnimation"]
+- ["C12STZPopupView18STZPopupViewConfig", "UIColor"]
+- ["C12STZPopupView18STZPopupViewConfig", "UIView"]
+- ["C12STZPopupView18STZPopupViewConfig", "Void"]
+- ["C12STZPopupView18STZPopupViewConfig", "cornerRadius"]
+- ["C12STZPopupView18STZPopupViewConfig", "deinit"]
+- ["C12STZPopupView18STZPopupViewConfig", "dismissAnimation"]
+- ["C12STZPopupView18STZPopupViewConfig", "dismissCompletion"]
+- ["C12STZPopupView18STZPopupViewConfig", "dismissCustomAnimation"]
+- ["C12STZPopupView18STZPopupViewConfig", "dismissTouchBackground"]
+- ["C12STZPopupView18STZPopupViewConfig", "init"]
+- ["C12STZPopupView18STZPopupViewConfig", "overlayColor"]
+- ["C12STZPopupView18STZPopupViewConfig", "showAnimation"]
+- ["C12STZPopupView18STZPopupViewConfig", "showCompletion"]
+- ["C12STZPopupView18STZPopupViewConfig", "showCustomAnimation"]
+- !private ["Ps17SignedIntegerType", "hashValue"]
+- !private ["Ps16SignedNumberType", "hashValue"]
+- !private ["Ps10Strideable", "hashValue"]
+- ["CSo7UIColor", "init"]
+- !private ["Ps33_BuiltinIntegerLiteralConvertible", "hashValue"]
+- ["Ps24_ColorLiteralConvertible", "init"]
+- !private ["Ps14_Incrementable", "hashValue"]
+- !private ["Ps22_IntegerArithmeticType", "hashValue"]
+- !private ["Ps12_IntegerType", "hashValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
+- !private ["Ps22_RandomAccessAmbiguity", "hashValue"]
+- !private ["Ps12_Reflectable", "hashValue"]
+- !private ["Ps18_SignedIntegerType", "hashValue"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps22BidirectionalIndexType"
+- !private "Ps21BitwiseOperationsType"
+- "V12CoreGraphics7CGFloat"
+- "Ps11CVarArgType"
+- !private "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "Ps16ForwardIndexType"
+- "Ps8Hashable"
+- !private "Si"
+- !private "Ps21IntegerArithmeticType"
+- !private "Ps25IntegerLiteralConvertible"
+- !private "Ps11IntegerType"
+- !private "Ps14MirrorPathType"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- !private "Ps21RandomAccessIndexType"
+- "O12STZPopupView24STZPopupDismissAnimation"
+- "O12STZPopupView21STZPopupShowAnimation"
+- "C12STZPopupView18STZPopupViewConfig"
+- !private "Ps17SignedIntegerType"
+- !private "Ps16SignedNumberType"
+- !private "Ps10Strideable"
+- "CSo7UIColor"
+- !private "Ps33_BuiltinIntegerLiteralConvertible"
+- "Ps24_ColorLiteralConvertible"
+- !private "Ps14_Incrementable"
+- !private "Ps22_IntegerArithmeticType"
+- !private "Ps12_IntegerType"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps22_RandomAccessAmbiguity"
+- !private "Ps12_Reflectable"
+- !private "Ps18_SignedIntegerType"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Target Support Files/STZPopupView/STZPopupView-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Intermediates/Pods.build/Debug-iphonesimulator/STZPopupView.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "47105a9bbd1a024950ae22d046e64792"

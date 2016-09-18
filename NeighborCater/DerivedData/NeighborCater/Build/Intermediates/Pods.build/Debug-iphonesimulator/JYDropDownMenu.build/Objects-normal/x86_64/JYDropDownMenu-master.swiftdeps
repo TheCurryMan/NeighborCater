@@ -1,0 +1,8 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "8594e8d85c37804b9fa8007387c7fcbc"
+build_time: [527484220, 211650000]
+inputs:
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/JYDropDownMenu/Source/JYConfiguration.swift": [527483667, 0]
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/JYDropDownMenu/Source/JYDropDownMenu.swift": [527483667, 0]
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/JYDropDownMenu/Source/JYTableView.swift": [527483667, 0]
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/JYDropDownMenu/Source/JYTableViewCell.swift": [527483667, 0]
