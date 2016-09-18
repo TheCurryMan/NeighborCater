@@ -107,21 +107,6 @@
                android:layout_marginTop="15dp"
                android:layout_alignRight="@+id/editTextLocation"
                android:layout_alignEnd="@+id/editTextLocation" />
-           
-           <TextView
-               android:id="@+id/find_your_location"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textSize="20dp"
-               android:layout_below="@+id/priceAmount"
-               android:layout_alignParentLeft="true"
-               android:layout_alignParentStart="true"
-               android:layout_alignParentRight="true"
-               android:layout_alignParentEnd="true"
-               android:layout_marginLeft="16dp"
-               android:layout_marginRight="16dp"
-               android:layout_marginTop="15dp"
-               android:text="Search Your Location"/>
 
            <fragment
                android:id="@+id/editTextLocation"
@@ -133,10 +118,9 @@
                android:layout_alignParentStart="true"
                android:layout_alignParentRight="true"
                android:layout_alignParentEnd="true"
-               android:layout_marginLeft="16dp"
                android:layout_marginRight="16dp"
                android:layout_marginTop="15dp"
-               android:layout_below="@+id/find_your_location" />
+               android:layout_below="@+id/priceAmount" />
 
            <Button
                android:layout_width="wrap_content"
