@@ -2,106 +2,152 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
-    <LinearLayout
-        android:id="@+id/food_details_top_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical">
 
-        <ImageView
-            android:id="@+id/food_details_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@color/colorAccent" />
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardView"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        card_view:cardCornerRadius="0dp"
+        card_view:cardElevation="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        >
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/food_details_kitchen_title"
+
+            <LinearLayout
+                android:id="@+id/food_details_top_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="20dp" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/food_details_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/colorAccent"
+                    android:background="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/food_details_kitchen_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:text="Paarth&apos;s Pizzeria" />
+
+                    <TextView
+                        android:id="@+id/food_details_kitchen_owner_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:text="Paarth Madan" />
+
+                    <TextView
+                        android:id="@+id/food_details_kitchen_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:text="24 Harsimran Rd." />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/food_details_kitchen_owner_name"
+                android:id="@+id/food_details_food_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="15dp" />
+                android:layout_below="@id/food_details_top_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:text="Pizza"
+                android:layout_gravity="center_horizontal" />
+
+
 
             <TextView
-                android:id="@+id/food_details_kitchen_address"
+                android:id="@+id/food_details_food_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="15dp" />
+                android:layout_below="@id/food_details_food_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="A gourmet 16&apos; pizza"
+                android:layout_gravity="center_horizontal"
+                android:textIsSelectable="false" />
+
+            <TextView
+                android:id="@+id/food_details_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/food_details_food_description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="pizza@email.com" />
+
+            <TextView
+                android:id="@+id/food_details_food_phone_number_and_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/food_details_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15dp"
+                android:text="000-000-0000"
+                />
+
 
         </LinearLayout>
 
 
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 
-    <TextView
-        android:id="@+id/food_details_food_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/food_details_top_container"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
-        android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/food_details_food_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/food_details_food_name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/food_details_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/food_details_food_description"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/food_details_food_phone_number_and_distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/food_details_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
-        android:textSize="15dp" />
 
     <LinearLayout
         android:id="@+id/food_details_buy_now_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/food_details_food_phone_number_and_distance"
+        android:layout_below="@+id/cardView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp">
 
@@ -109,20 +155,21 @@
             android:id="@+id/food_details_buy_now"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:background="#ff9800"
+            android:background="@color/colorAccent"
             android:gravity="center"
             android:text="Buy Now"
-            android:textColor="@android:color/black"
+            android:textColor="@color/white"
             android:textSize="25dp" />
 
         <TextView
             android:id="@+id/food_details_price"
             android:layout_width="50dp"
             android:layout_height="40dp"
-            android:background="#ff7B00"
+            android:background="@color/colorAccentDark"
             android:gravity="center"
-            android:textColor="@android:color/black"
-            android:textSize="25dp" />
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:text="5" />
 
     </LinearLayout>
 
