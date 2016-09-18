@@ -119,4 +119,16 @@ class BuyFoodView : UIView {
             
         }
     }
+    
+    @IBAction func placeOrder(sender: AnyObject) {
+        var ref = FIRDatabase.database().reference()
+        let key = ref.child("users").child("\(kitchenSelected.user)").child("orders").childByAutoId().key
+        let data : [String:AnyObject] = ["foodName": self.foodName.text!,
+                    "userName": finalUser[0].userName,
+                    "email": finalUser[0].userEmail,
+                    "number": finalUser[0].userPhoneNumber]
+        let childUpdates = ["/users/\(kitchenSelected.user)/orders/\(key)": data]
+        ref.updateChildValues(childUpdates)
+    }
+    
 }

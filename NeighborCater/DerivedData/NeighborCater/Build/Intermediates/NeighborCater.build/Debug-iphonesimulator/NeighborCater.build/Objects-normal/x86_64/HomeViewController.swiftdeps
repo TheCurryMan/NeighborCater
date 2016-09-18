@@ -11,82 +11,82 @@ provides-member:
 - ["CSo6UIView", ""]
 - ["CSo6UIView", "loadFromNibNamed"]
 provides-dynamic-lookup:
-- "loadFromNibNamed"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "locationManager"
-- "locationManager"
-- "locationManager"
-- "foodName"
+- "userLocation"
 - "distance"
-- "didReceiveMemoryWarning"
-- "Distances"
-- "Kitchens"
-- "viewDidLoad"
-- "numberOfSectionsInTableView"
+- "mapView"
+- "mapView"
 - "price"
 - "popupView"
-- "addAnnotation"
-- "kitchenName"
-- "userLocation"
-- "mapView"
-- "mapView"
+- "Distances"
+- "foodName"
+- "Kitchens"
 - "Annotations"
+- "didReceiveMemoryWarning"
+- "viewDidLoad"
+- "loadFromNibNamed"
 - "kitchenAddress"
+- "locationManager"
+- "locationManager"
+- "locationManager"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "addAnnotation"
+- "numberOfSectionsInTableView"
+- "kitchenName"
 depends-top-level:
-- !private "<="
-- !private "-"
-- !private "dispatch_async"
-- !private "UnicodeScalarType"
-- "Kitchen"
-- "MKOverlayRenderer"
-- !private "UIColor"
-- "CLLocationManagerDelegate"
-- "MKMapViewDelegate"
 - !private "CurrencyTableViewCell"
-- !private "CLLocationCoordinate2DMake"
-- !private "FIRDataEventType"
+- "NSError"
+- "MKMapView"
+- !private "-"
 - !private "StringLiteralType"
-- "KitchenTableViewCell"
-- "HomeViewController"
-- !private "print"
+- "Kitchen"
 - "Double"
-- "CLLocationCoordinate2D"
-- !private "FIRDataSnapshot"
+- "BuyFoodView"
+- !private "MKCoordinateSpan"
+- !private "<="
+- "UITableViewDelegate"
+- !private "CLLocationCoordinate2DMake"
+- "CLLocationManager"
+- "KitchenTableViewCell"
+- "UITableView"
+- !private "/"
+- "UIView"
+- "UITableViewDataSource"
+- "NSIndexPath"
+- !private "BooleanLiteralType"
+- !private "FIRDatabase"
+- !private "MKPointAnnotation"
+- "MKOverlay"
 - !private "MKCircleRenderer"
+- "String"
+- !private "STZPopupViewConfig"
 - !private "UINib"
 - "UITableViewCell"
+- !private "UIColor"
 - "UILabel"
+- !private "+"
 - "NSBundle"
+- "CLLocationCoordinate2D"
+- !private "print"
+- !private "dispatch_async"
+- !private "FIRDataSnapshot"
+- "UIViewController"
+- "HomeViewController"
 - !private "=="
-- "Int"
-- "CLLocationManager"
-- !private "STZPopupViewConfig"
+- "MKOverlayRenderer"
+- !private "UnicodeScalarType"
 - !private "MKCoordinateRegion"
-- !private "FIRDatabase"
-- "NSError"
-- !private "MKPointAnnotation"
-- !private "MKCircle"
-- "BuyFoodView"
+- !private "dispatch_get_main_queue"
+- "MKMapViewDelegate"
+- !private "FIRDataEventType"
+- !private "CGRectMake"
+- "CLLocationManagerDelegate"
+- "Int"
 - "CLLocation"
 - !private "kCLLocationAccuracyBest"
-- "UITableView"
-- !private "CGRectMake"
-- "MKOverlay"
-- !private "+"
-- "UITableViewDataSource"
-- !private "MKCoordinateSpan"
-- !private "/"
-- "NSIndexPath"
-- "UIViewController"
-- "MKMapView"
-- "UIView"
-- !private "BooleanLiteralType"
-- "String"
-- "UITableViewDelegate"
-- !private "dispatch_get_main_queue"
+- !private "MKCircle"
 depends-member:
 - ["Ps9AnyObject", "Annotations"]
 - ["Ps9AnyObject", "BuyFoodView"]
@@ -117,6 +117,7 @@ depends-member:
 - !private ["Ps9AnyObject", "allObjects"]
 - !private ["Ps9AnyObject", "annotations"]
 - !private ["Ps9AnyObject", "blackColor"]
+- !private ["Ps9AnyObject", "changeCurrency"]
 - !private ["Ps9AnyObject", "child"]
 - !private ["Ps9AnyObject", "children"]
 - !private ["Ps9AnyObject", "coordinate"]
@@ -233,6 +234,7 @@ depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["C13NeighborCater11BuyFoodView", "changeCurrency"]
 - !private ["C13NeighborCater11BuyFoodView", "currencyNames"]
 - !private ["C13NeighborCater11BuyFoodView", "currencyTable"]
 - !private ["C13NeighborCater11BuyFoodView", "currencyValues"]
@@ -350,6 +352,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "allObjects"]
 - !private ["Ps11CVarArgType", "annotations"]
 - !private ["Ps11CVarArgType", "blackColor"]
+- !private ["Ps11CVarArgType", "changeCurrency"]
 - !private ["Ps11CVarArgType", "child"]
 - !private ["Ps11CVarArgType", "children"]
 - !private ["Ps11CVarArgType", "coordinate"]
@@ -484,6 +487,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "annotations"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
 - !private ["Ps28CustomDebugStringConvertible", "blackColor"]
+- !private ["Ps28CustomDebugStringConvertible", "changeCurrency"]
 - !private ["Ps28CustomDebugStringConvertible", "child"]
 - !private ["Ps28CustomDebugStringConvertible", "children"]
 - !private ["Ps28CustomDebugStringConvertible", "coordinate"]
@@ -610,6 +614,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "annotations"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "blackColor"]
+- !private ["Ps23CustomStringConvertible", "changeCurrency"]
 - !private ["Ps23CustomStringConvertible", "child"]
 - !private ["Ps23CustomStringConvertible", "children"]
 - !private ["Ps23CustomStringConvertible", "coordinate"]
@@ -732,6 +737,7 @@ depends-member:
 - !private ["Ps9Equatable", "allObjects"]
 - !private ["Ps9Equatable", "annotations"]
 - !private ["Ps9Equatable", "blackColor"]
+- !private ["Ps9Equatable", "changeCurrency"]
 - !private ["Ps9Equatable", "child"]
 - !private ["Ps9Equatable", "children"]
 - !private ["Ps9Equatable", "coordinate"]
@@ -867,6 +873,7 @@ depends-member:
 - !private ["Ps8Hashable", "allObjects"]
 - !private ["Ps8Hashable", "annotations"]
 - !private ["Ps8Hashable", "blackColor"]
+- !private ["Ps8Hashable", "changeCurrency"]
 - !private ["Ps8Hashable", "child"]
 - !private ["Ps8Hashable", "children"]
 - !private ["Ps8Hashable", "coordinate"]
@@ -1212,6 +1219,7 @@ depends-member:
 - !private ["PSo8NSCoding", "addOverlay"]
 - !private ["PSo8NSCoding", "annotations"]
 - !private ["PSo8NSCoding", "blackColor"]
+- !private ["PSo8NSCoding", "changeCurrency"]
 - !private ["PSo8NSCoding", "coordinate"]
 - !private ["PSo8NSCoding", "currencyName"]
 - !private ["PSo8NSCoding", "currencyNames"]
@@ -1396,6 +1404,7 @@ depends-member:
 - !private ["CSo8NSObject", "allObjects"]
 - !private ["CSo8NSObject", "annotations"]
 - !private ["CSo8NSObject", "blackColor"]
+- !private ["CSo8NSObject", "changeCurrency"]
 - !private ["CSo8NSObject", "child"]
 - !private ["CSo8NSObject", "children"]
 - !private ["CSo8NSObject", "coordinate"]
@@ -1511,6 +1520,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "allObjects"]
 - !private ["PSo16NSObjectProtocol", "annotations"]
 - !private ["PSo16NSObjectProtocol", "blackColor"]
+- !private ["PSo16NSObjectProtocol", "changeCurrency"]
 - !private ["PSo16NSObjectProtocol", "child"]
 - !private ["PSo16NSObjectProtocol", "children"]
 - !private ["PSo16NSObjectProtocol", "coordinate"]
@@ -1650,6 +1660,7 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "addAnnotation"]
 - !private ["PSo29UIAccessibilityIdentification", "addOverlay"]
 - !private ["PSo29UIAccessibilityIdentification", "annotations"]
+- !private ["PSo29UIAccessibilityIdentification", "changeCurrency"]
 - !private ["PSo29UIAccessibilityIdentification", "currencyName"]
 - !private ["PSo29UIAccessibilityIdentification", "currencyNames"]
 - !private ["PSo29UIAccessibilityIdentification", "currencyTable"]
@@ -1678,6 +1689,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "addAnnotation"]
 - !private ["PSo12UIAppearance", "addOverlay"]
 - !private ["PSo12UIAppearance", "annotations"]
+- !private ["PSo12UIAppearance", "changeCurrency"]
 - !private ["PSo12UIAppearance", "currencyName"]
 - !private ["PSo12UIAppearance", "currencyNames"]
 - !private ["PSo12UIAppearance", "currencyTable"]
@@ -1728,6 +1740,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "addAnnotation"]
 - !private ["PSo21UIAppearanceContainer", "addOverlay"]
 - !private ["PSo21UIAppearanceContainer", "annotations"]
+- !private ["PSo21UIAppearanceContainer", "changeCurrency"]
 - !private ["PSo21UIAppearanceContainer", "currencyName"]
 - !private ["PSo21UIAppearanceContainer", "currencyNames"]
 - !private ["PSo21UIAppearanceContainer", "currencyTable"]
@@ -1861,6 +1874,7 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "addAnnotation"]
 - !private ["PSo17UICoordinateSpace", "addOverlay"]
 - !private ["PSo17UICoordinateSpace", "annotations"]
+- !private ["PSo17UICoordinateSpace", "changeCurrency"]
 - !private ["PSo17UICoordinateSpace", "currencyName"]
 - !private ["PSo17UICoordinateSpace", "currencyNames"]
 - !private ["PSo17UICoordinateSpace", "currencyTable"]
@@ -1889,6 +1903,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "addAnnotation"]
 - !private ["PSo13UIDynamicItem", "addOverlay"]
 - !private ["PSo13UIDynamicItem", "annotations"]
+- !private ["PSo13UIDynamicItem", "changeCurrency"]
 - !private ["PSo13UIDynamicItem", "currencyName"]
 - !private ["PSo13UIDynamicItem", "currencyNames"]
 - !private ["PSo13UIDynamicItem", "currencyTable"]
@@ -1939,6 +1954,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "addAnnotation"]
 - !private ["PSo18UIFocusEnvironment", "addOverlay"]
 - !private ["PSo18UIFocusEnvironment", "annotations"]
+- !private ["PSo18UIFocusEnvironment", "changeCurrency"]
 - !private ["PSo18UIFocusEnvironment", "currencyName"]
 - !private ["PSo18UIFocusEnvironment", "currencyNames"]
 - !private ["PSo18UIFocusEnvironment", "currencyTable"]
@@ -2053,6 +2069,7 @@ depends-member:
 - ["CSo11UIResponder", "addAnnotation"]
 - !private ["CSo11UIResponder", "addOverlay"]
 - !private ["CSo11UIResponder", "annotations"]
+- !private ["CSo11UIResponder", "changeCurrency"]
 - !private ["CSo11UIResponder", "currencyName"]
 - !private ["CSo11UIResponder", "currencyNames"]
 - !private ["CSo11UIResponder", "currencyTable"]
@@ -2411,6 +2428,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "addAnnotation"]
 - !private ["PSo18UITraitEnvironment", "addOverlay"]
 - !private ["PSo18UITraitEnvironment", "annotations"]
+- !private ["PSo18UITraitEnvironment", "changeCurrency"]
 - !private ["PSo18UITraitEnvironment", "currencyName"]
 - !private ["PSo18UITraitEnvironment", "currencyNames"]
 - !private ["PSo18UITraitEnvironment", "currencyTable"]
@@ -2482,6 +2500,7 @@ depends-member:
 - !private ["CSo6UIView", "addAnnotation"]
 - !private ["CSo6UIView", "addOverlay"]
 - !private ["CSo6UIView", "annotations"]
+- !private ["CSo6UIView", "changeCurrency"]
 - !private ["CSo6UIView", "currencyName"]
 - !private ["CSo6UIView", "currencyNames"]
 - !private ["CSo6UIView", "currencyTable"]
@@ -2642,6 +2661,7 @@ depends-member:
 - !private ["Ps12_Reflectable", "addOverlay"]
 - !private ["Ps12_Reflectable", "annotations"]
 - !private ["Ps12_Reflectable", "append"]
+- !private ["Ps12_Reflectable", "changeCurrency"]
 - !private ["Ps12_Reflectable", "count"]
 - !private ["Ps12_Reflectable", "currencyName"]
 - !private ["Ps12_Reflectable", "currencyNames"]

@@ -100,6 +100,9 @@
                                         <include reference="HwW-Wb-67P"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="K4y-pR-ehU" kind="presentation" id="JEN-KW-hX6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpm-ta-lwz">
                                 <rect key="frame" x="20" y="146" width="93" height="20"/>
@@ -834,6 +837,15 @@
                                     <action selector="complete:" destination="mqR-kN-Pwr" eventType="touchUpInside" id="8cY-rx-0bL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXV-Ij-2VN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QJE-zw-KG7" kind="presentation" id="SMc-PQ-gpZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -847,12 +859,19 @@
                             <constraint firstItem="qvZ-1k-9fz" firstAttribute="trailing" secondItem="Zf2-0D-5Om" secondAttribute="trailing" id="VcV-Nc-K9o"/>
                             <constraint firstItem="qvZ-1k-9fz" firstAttribute="top" secondItem="0PS-SR-x7K" secondAttribute="bottom" constant="74" id="aMV-dn-niB"/>
                             <constraint firstItem="qvZ-1k-9fz" firstAttribute="trailing" secondItem="Mne-bH-Zgm" secondAttribute="trailingMargin" id="dVq-26-tfR"/>
-                            <constraint firstItem="hs4-04-SWq" firstAttribute="top" secondItem="dVz-9u-hNS" secondAttribute="bottom" constant="39" id="ewZ-VT-SQ9"/>
+                            <constraint firstItem="hs4-04-SWq" firstAttribute="top" secondItem="dVz-9u-hNS" secondAttribute="bottom" constant="39" id="ewZ-VT-SQ9">
+                                <variation key="widthClass=compact" constant="38"/>
+                            </constraint>
                             <constraint firstItem="0PS-SR-x7K" firstAttribute="centerX" secondItem="lze-Lc-1RA" secondAttribute="centerX" id="hTx-pR-Gvl"/>
-                            <constraint firstItem="dVz-9u-hNS" firstAttribute="centerY" secondItem="qvZ-1k-9fz" secondAttribute="centerY" id="lVo-9f-BEi"/>
+                            <constraint firstItem="dVz-9u-hNS" firstAttribute="top" secondItem="QXV-Ij-2VN" secondAttribute="bottom" constant="74" id="hjg-qa-aoi"/>
+                            <constraint firstItem="dVz-9u-hNS" firstAttribute="centerY" secondItem="qvZ-1k-9fz" secondAttribute="centerY" id="lVo-9f-BEi">
+                                <variation key="widthClass=compact" constant="1"/>
+                            </constraint>
                             <constraint firstItem="wN4-iL-bbQ" firstAttribute="top" secondItem="lze-Lc-1RA" secondAttribute="bottom" constant="305" id="lpW-AB-jqi"/>
                             <constraint firstItem="lze-Lc-1RA" firstAttribute="leading" secondItem="Mne-bH-Zgm" secondAttribute="leading" id="mtX-ci-aF9"/>
                             <constraint firstItem="lze-Lc-1RA" firstAttribute="top" secondItem="hs4-04-SWq" secondAttribute="bottom" constant="65" id="qIB-3Q-81v"/>
+                            <constraint firstItem="QXV-Ij-2VN" firstAttribute="centerY" secondItem="0PS-SR-x7K" secondAttribute="centerY" id="uoL-Z2-qTw"/>
+                            <constraint firstItem="0PS-SR-x7K" firstAttribute="leading" secondItem="QXV-Ij-2VN" secondAttribute="trailing" constant="64" id="vYQ-1P-2py"/>
                             <constraint firstItem="qvZ-1k-9fz" firstAttribute="leading" secondItem="Zf2-0D-5Om" secondAttribute="leading" id="x0p-VY-KzO"/>
                         </constraints>
                         <variation key="default">
@@ -863,25 +882,29 @@
                                 <exclude reference="qvZ-1k-9fz"/>
                                 <exclude reference="0PS-SR-x7K"/>
                                 <exclude reference="lze-Lc-1RA"/>
+                                <exclude reference="QXV-Ij-2VN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="lpW-AB-jqi"/>
-                                <exclude reference="E31-b2-GK2"/>
-                                <exclude reference="mtX-ci-aF9"/>
-                                <exclude reference="qIB-3Q-81v"/>
+                                <exclude reference="uoL-Z2-qTw"/>
                                 <exclude reference="JH3-dv-DVV"/>
                                 <exclude reference="hTx-pR-Gvl"/>
-                                <exclude reference="7yT-vB-gbL"/>
-                                <exclude reference="ewZ-VT-SQ9"/>
+                                <exclude reference="vYQ-1P-2py"/>
                                 <exclude reference="Kem-aa-iJo"/>
                                 <exclude reference="MMx-qU-Bqd"/>
+                                <exclude reference="hjg-qa-aoi"/>
                                 <exclude reference="lVo-9f-BEi"/>
-                                <exclude reference="RLU-qf-YRI"/>
+                                <exclude reference="7yT-vB-gbL"/>
+                                <exclude reference="ewZ-VT-SQ9"/>
                                 <exclude reference="T4N-d9-KPZ"/>
                                 <exclude reference="VcV-Nc-K9o"/>
                                 <exclude reference="aMV-dn-niB"/>
                                 <exclude reference="dVq-26-tfR"/>
                                 <exclude reference="x0p-VY-KzO"/>
+                                <exclude reference="RLU-qf-YRI"/>
+                                <exclude reference="E31-b2-GK2"/>
+                                <exclude reference="mtX-ci-aF9"/>
+                                <exclude reference="qIB-3Q-81v"/>
+                                <exclude reference="lpW-AB-jqi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -892,25 +915,29 @@
                                 <include reference="qvZ-1k-9fz"/>
                                 <include reference="0PS-SR-x7K"/>
                                 <include reference="lze-Lc-1RA"/>
+                                <include reference="QXV-Ij-2VN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="lpW-AB-jqi"/>
-                                <include reference="E31-b2-GK2"/>
-                                <include reference="mtX-ci-aF9"/>
-                                <include reference="qIB-3Q-81v"/>
+                                <include reference="uoL-Z2-qTw"/>
                                 <include reference="JH3-dv-DVV"/>
                                 <include reference="hTx-pR-Gvl"/>
-                                <include reference="7yT-vB-gbL"/>
-                                <include reference="ewZ-VT-SQ9"/>
+                                <include reference="vYQ-1P-2py"/>
                                 <include reference="Kem-aa-iJo"/>
                                 <include reference="MMx-qU-Bqd"/>
+                                <include reference="hjg-qa-aoi"/>
                                 <include reference="lVo-9f-BEi"/>
-                                <include reference="RLU-qf-YRI"/>
+                                <include reference="7yT-vB-gbL"/>
+                                <include reference="ewZ-VT-SQ9"/>
                                 <include reference="T4N-d9-KPZ"/>
                                 <include reference="VcV-Nc-K9o"/>
                                 <include reference="aMV-dn-niB"/>
                                 <include reference="dVq-26-tfR"/>
                                 <include reference="x0p-VY-KzO"/>
+                                <include reference="RLU-qf-YRI"/>
+                                <include reference="E31-b2-GK2"/>
+                                <include reference="mtX-ci-aF9"/>
+                                <include reference="qIB-3Q-81v"/>
+                                <exclude reference="lpW-AB-jqi"/>
                             </mask>
                         </variation>
                     </view>
@@ -986,7 +1013,7 @@
                                 <rect key="frame" x="-60" y="-14" width="121" height="29"/>
                                 <segments>
                                     <segment title="Post"/>
-                                    <segment title="Nearby "/>
+                                    <segment title="Orders"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="0.59607843140000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
@@ -1039,7 +1066,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9a-qT-y4L">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="mqR-kN-Pwr" kind="presentation" id="2qj-24-mJu"/>
                                 </connections>
@@ -1167,6 +1196,7 @@
         <image name="seller" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yHS-hN-BAX"/>
+        <segue reference="2qj-24-mJu"/>
+        <segue reference="SMc-PQ-gpZ"/>
     </inferredMetricsTieBreakers>
 </document>

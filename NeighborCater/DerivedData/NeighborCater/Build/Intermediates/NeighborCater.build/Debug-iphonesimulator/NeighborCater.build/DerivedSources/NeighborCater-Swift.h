@@ -180,6 +180,7 @@ SWIFT_CLASS("_TtC13NeighborCater11BuyFoodView")
 - (void)populateData;
 - (IBAction)openMaps:(id _Nonnull)sender;
 - (IBAction)changeCurrency:(id _Nonnull)sender;
+- (IBAction)placeOrder:(id _Nonnull)sender;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -338,6 +339,7 @@ SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 @property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified username;
 @property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified email;
 @property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified password;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified number;
 @property (nonatomic, strong) FIRDatabaseReference * _Null_unspecified ref;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;

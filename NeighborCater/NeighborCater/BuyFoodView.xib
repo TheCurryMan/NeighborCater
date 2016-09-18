@@ -83,6 +83,9 @@
                             <include reference="jDG-Pw-mp2"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="placeOrder:" destination="iN0-l3-epB" eventType="touchUpInside" id="dX4-a3-0bK"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N57-eZ-wnO">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>

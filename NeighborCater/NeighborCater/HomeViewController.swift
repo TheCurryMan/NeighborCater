@@ -157,6 +157,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let popupConfig = STZPopupViewConfig()
         popupConfig.cornerRadius = 10
         popup?.populateData()
+        popup?.changeCurrency(self)
         self.popupView = popup! as BuyFoodView
         var nib2 = UINib(nibName: "CurrencyTableViewCell", bundle: nil)
         self.popupView.currencyTable.registerNib(nib2, forCellReuseIdentifier: "currency")
