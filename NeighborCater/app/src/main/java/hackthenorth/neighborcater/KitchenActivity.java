@@ -48,7 +48,8 @@ public class KitchenActivity extends AppCompatActivity {
         mSubmitButton = (Button) findViewById(R.id.submitButton);
 
 
-
+//        getActionBar().hide();
+        getSupportActionBar().hide();
 
 
 

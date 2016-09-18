@@ -66,27 +66,10 @@
         android:text="Login"
         android:id="@+id/button2"
         android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryDark"
         android:layout_below="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
-        android:layout_marginRight="47dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginTop="10dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:text="Create Account"
-        android:id="@+id/button"
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
-        android:layout_below="@+id/editText2"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"

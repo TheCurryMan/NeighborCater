@@ -74,7 +74,7 @@ public class CreateUserActivity extends AppCompatActivity {
                                     userInfo.put("name", nameEditText.getText().toString());
                                     userInfo.put("number", phoneEditText.getText().toString());
                                     userInfo.put("email", emailEditText.getText().toString());
-                                    databaseRef.updateChildren(userInfo);
+                                    databaseRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(userInfo);
                                     Toast.makeText(CreateUserActivity.this, "Created Account", Toast.LENGTH_SHORT).show();
                                     Intent choosingActivity = new Intent(CreateUserActivity.this, ChoosingActivity.class);
                                     startActivity(choosingActivity);

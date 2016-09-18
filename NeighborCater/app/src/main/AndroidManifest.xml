@@ -14,7 +14,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".CreateUserActivity" android:screenOrientation="portrait">
+        <activity android:name=".LauncherActivity" android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,11 @@
         <activity android:name=".KitchenActivity" android:screenOrientation="portrait"/>
         <activity android:name=".DetailsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".CreateLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".CreateUserActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MyTabActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".OrdersActivity" android:screenOrientation="portrait"/>
+
+
 
 
     </application>
