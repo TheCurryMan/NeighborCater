@@ -45,7 +45,7 @@ class AddKitchenViewController: UIViewController, UITextFieldDelegate {
                     "address": location.text!,
                     "latitude": latitude,
                     "longitude": longitude]
-        let childUpdates : [NSObject: AnyObject] = ["/kitchens/\(key)":kitchen as! AnyObject]
+        let childUpdates : [NSObject: AnyObject] = ["/kitchens/\(key)":kitchen]
         ref.updateChildValues(childUpdates)
         kitchenKey = key
         performSegueWithIdentifier("kitchen", sender: self)

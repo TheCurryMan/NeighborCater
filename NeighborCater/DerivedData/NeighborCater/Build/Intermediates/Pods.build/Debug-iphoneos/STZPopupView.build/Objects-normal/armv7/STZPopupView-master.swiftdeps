@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "a9d41d24df4e8f5bfc215f52b821220e"
+build_time: [527522954, 803892000]
+inputs:
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/STZPopupView/Source/STZPopupViewConfig.swift": [527484217, 0]
+  "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/STZPopupView/Source/UIViewController+STZPopupView.swift": [527484217, 0]

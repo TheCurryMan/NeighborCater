@@ -6,26 +6,27 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater20SignUpViewController", ""]
 provides-dynamic-lookup:
+- "password"
+- "signup"
+- "didReceiveMemoryWarning"
+- "ref"
 - "email"
 - "username"
-- "signup"
-- "ref"
-- "password"
-- "didReceiveMemoryWarning"
 - "viewDidAppear"
+- "number"
 - "viewDidLoad"
 depends-top-level:
-- !private "StringLiteralType"
-- !private "print"
-- "Dictionary"
-- !private "FIRDatabase"
+- !private "FIRAuth"
 - "FIRDatabaseReference"
+- !private "FIRDatabase"
+- !private "print"
+- !private "StringLiteralType"
+- "UIViewController"
+- "AnyObject"
+- "SignUpViewController"
+- "Dictionary"
 - "Bool"
 - "UITextField"
-- !private "FIRAuth"
-- "UIViewController"
-- "SignUpViewController"
-- "AnyObject"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
@@ -40,6 +41,7 @@ depends-member:
 - ["Ps9AnyObject", "email"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "localizedDescription"]
+- ["Ps9AnyObject", "number"]
 - ["Ps9AnyObject", "password"]
 - !private ["Ps9AnyObject", "performSegueWithIdentifier"]
 - !private ["Ps9AnyObject", "print"]
@@ -65,6 +67,7 @@ depends-member:
 - ["Ps11CVarArgType", "email"]
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "localizedDescription"]
+- ["Ps11CVarArgType", "number"]
 - ["Ps11CVarArgType", "password"]
 - !private ["Ps11CVarArgType", "performSegueWithIdentifier"]
 - !private ["Ps11CVarArgType", "print"]
@@ -96,6 +99,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "email"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "localizedDescription"]
+- ["Ps28CustomDebugStringConvertible", "number"]
 - ["Ps28CustomDebugStringConvertible", "password"]
 - !private ["Ps28CustomDebugStringConvertible", "performSegueWithIdentifier"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
@@ -122,6 +126,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "email"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "localizedDescription"]
+- ["Ps23CustomStringConvertible", "number"]
 - ["Ps23CustomStringConvertible", "password"]
 - !private ["Ps23CustomStringConvertible", "performSegueWithIdentifier"]
 - !private ["Ps23CustomStringConvertible", "print"]
@@ -152,6 +157,7 @@ depends-member:
 - ["Ps9Equatable", "email"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "localizedDescription"]
+- ["Ps9Equatable", "number"]
 - ["Ps9Equatable", "password"]
 - !private ["Ps9Equatable", "performSegueWithIdentifier"]
 - !private ["Ps9Equatable", "print"]
@@ -190,6 +196,7 @@ depends-member:
 - ["Ps8Hashable", "email"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "localizedDescription"]
+- ["Ps8Hashable", "number"]
 - ["Ps8Hashable", "password"]
 - !private ["Ps8Hashable", "performSegueWithIdentifier"]
 - !private ["Ps8Hashable", "print"]
@@ -217,6 +224,7 @@ depends-member:
 - ["PSo8NSCoding", "email"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "localizedDescription"]
+- ["PSo8NSCoding", "number"]
 - ["PSo8NSCoding", "password"]
 - !private ["PSo8NSCoding", "performSegueWithIdentifier"]
 - !private ["PSo8NSCoding", "print"]
@@ -235,6 +243,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
 - ["PSo26NSExtensionRequestHandling", "email"]
 - ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "number"]
 - ["PSo26NSExtensionRequestHandling", "password"]
 - !private ["PSo26NSExtensionRequestHandling", "performSegueWithIdentifier"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
@@ -261,6 +270,7 @@ depends-member:
 - ["CSo8NSObject", "email"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "localizedDescription"]
+- ["CSo8NSObject", "number"]
 - ["CSo8NSObject", "password"]
 - !private ["CSo8NSObject", "performSegueWithIdentifier"]
 - !private ["CSo8NSObject", "print"]
@@ -284,6 +294,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "email"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "localizedDescription"]
+- ["PSo16NSObjectProtocol", "number"]
 - ["PSo16NSObjectProtocol", "password"]
 - !private ["PSo16NSObjectProtocol", "performSegueWithIdentifier"]
 - !private ["PSo16NSObjectProtocol", "print"]
@@ -315,6 +326,7 @@ depends-member:
 - ["C13NeighborCater20SignUpViewController", "didReceiveMemoryWarning"]
 - ["C13NeighborCater20SignUpViewController", "email"]
 - ["C13NeighborCater20SignUpViewController", "init"]
+- ["C13NeighborCater20SignUpViewController", "number"]
 - ["C13NeighborCater20SignUpViewController", "password"]
 - !private ["C13NeighborCater20SignUpViewController", "performSegueWithIdentifier"]
 - !private ["C13NeighborCater20SignUpViewController", "print"]
@@ -334,6 +346,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
 - ["PSo21UIAppearanceContainer", "email"]
 - ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "number"]
 - ["PSo21UIAppearanceContainer", "password"]
 - !private ["PSo21UIAppearanceContainer", "performSegueWithIdentifier"]
 - !private ["PSo21UIAppearanceContainer", "print"]
@@ -349,6 +362,7 @@ depends-member:
 - ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
 - ["PSo18UIContentContainer", "email"]
 - ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "number"]
 - ["PSo18UIContentContainer", "password"]
 - !private ["PSo18UIContentContainer", "performSegueWithIdentifier"]
 - !private ["PSo18UIContentContainer", "print"]
@@ -366,6 +380,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
 - ["PSo18UIFocusEnvironment", "email"]
 - ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "number"]
 - ["PSo18UIFocusEnvironment", "password"]
 - !private ["PSo18UIFocusEnvironment", "performSegueWithIdentifier"]
 - !private ["PSo18UIFocusEnvironment", "print"]
@@ -386,6 +401,7 @@ depends-member:
 - ["CSo11UIResponder", "didReceiveMemoryWarning"]
 - ["CSo11UIResponder", "email"]
 - ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "number"]
 - ["CSo11UIResponder", "password"]
 - !private ["CSo11UIResponder", "performSegueWithIdentifier"]
 - !private ["CSo11UIResponder", "print"]
@@ -400,6 +416,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
 - ["PSo16UIStateRestoring", "email"]
 - ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "number"]
 - ["PSo16UIStateRestoring", "password"]
 - !private ["PSo16UIStateRestoring", "performSegueWithIdentifier"]
 - !private ["PSo16UIStateRestoring", "print"]
@@ -417,6 +434,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
 - ["PSo18UITraitEnvironment", "email"]
 - ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "number"]
 - ["PSo18UITraitEnvironment", "password"]
 - !private ["PSo18UITraitEnvironment", "performSegueWithIdentifier"]
 - !private ["PSo18UITraitEnvironment", "print"]
@@ -437,6 +455,7 @@ depends-member:
 - ["CSo16UIViewController", "didReceiveMemoryWarning"]
 - ["CSo16UIViewController", "email"]
 - ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "number"]
 - ["CSo16UIViewController", "password"]
 - !private ["CSo16UIViewController", "performSegueWithIdentifier"]
 - !private ["CSo16UIViewController", "print"]
@@ -592,4 +611,8 @@ depends-external:
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
-interface-hash: "8720fa7be121bdcaef81ec0f4630198f"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Modules/STZPopupView.swiftmodule/arm64.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
+interface-hash: "404e679d5afe48aa6e9780a46204cf9b"

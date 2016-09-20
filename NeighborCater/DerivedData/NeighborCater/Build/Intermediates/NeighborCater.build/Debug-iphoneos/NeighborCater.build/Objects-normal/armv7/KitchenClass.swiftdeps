@@ -1,0 +1,228 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Kitchen"
+provides-nominal:
+- "C13NeighborCater7Kitchen"
+provides-member:
+- ["C13NeighborCater7Kitchen", ""]
+provides-dynamic-lookup:
+- "foodName"
+- "user"
+- "longitude"
+- "foodDescription"
+- "kitchenName"
+- "distance"
+- "price"
+- "latitude"
+- "kitchenAddress"
+- "addDistance"
+depends-top-level:
+- "Kitchen"
+- !private "StringLiteralType"
+- "String"
+- "Double"
+- "NSObject"
+- "FIRDataSnapshot"
+depends-member:
+- ["Ps9AnyObject", "addDistance"]
+- ["Ps9AnyObject", "distance"]
+- ["Ps9AnyObject", "foodDescription"]
+- ["Ps9AnyObject", "foodName"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "kitchenAddress"]
+- ["Ps9AnyObject", "kitchenName"]
+- ["Ps9AnyObject", "latitude"]
+- ["Ps9AnyObject", "longitude"]
+- ["Ps9AnyObject", "price"]
+- !private ["Ps9AnyObject", "subscript"]
+- ["Ps9AnyObject", "user"]
+- !private ["Ps9AnyObject", "value"]
+- ["Ps9AnyObject", ""]
+- ["Ps11CVarArgType", "addDistance"]
+- ["Ps11CVarArgType", "distance"]
+- ["Ps11CVarArgType", "foodDescription"]
+- ["Ps11CVarArgType", "foodName"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "kitchenAddress"]
+- ["Ps11CVarArgType", "kitchenName"]
+- ["Ps11CVarArgType", "latitude"]
+- ["Ps11CVarArgType", "longitude"]
+- ["Ps11CVarArgType", "price"]
+- ["Ps11CVarArgType", "user"]
+- !private ["Ps11CVarArgType", "value"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "addDistance"]
+- ["Ps28CustomDebugStringConvertible", "distance"]
+- ["Ps28CustomDebugStringConvertible", "foodDescription"]
+- ["Ps28CustomDebugStringConvertible", "foodName"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "kitchenAddress"]
+- ["Ps28CustomDebugStringConvertible", "kitchenName"]
+- ["Ps28CustomDebugStringConvertible", "latitude"]
+- ["Ps28CustomDebugStringConvertible", "longitude"]
+- ["Ps28CustomDebugStringConvertible", "price"]
+- ["Ps28CustomDebugStringConvertible", "user"]
+- !private ["Ps28CustomDebugStringConvertible", "value"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "addDistance"]
+- ["Ps23CustomStringConvertible", "distance"]
+- ["Ps23CustomStringConvertible", "foodDescription"]
+- ["Ps23CustomStringConvertible", "foodName"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "kitchenAddress"]
+- ["Ps23CustomStringConvertible", "kitchenName"]
+- ["Ps23CustomStringConvertible", "latitude"]
+- ["Ps23CustomStringConvertible", "longitude"]
+- ["Ps23CustomStringConvertible", "price"]
+- ["Ps23CustomStringConvertible", "user"]
+- !private ["Ps23CustomStringConvertible", "value"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "addDistance"]
+- ["Ps9Equatable", "distance"]
+- ["Ps9Equatable", "foodDescription"]
+- ["Ps9Equatable", "foodName"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "kitchenAddress"]
+- ["Ps9Equatable", "kitchenName"]
+- ["Ps9Equatable", "latitude"]
+- ["Ps9Equatable", "longitude"]
+- ["Ps9Equatable", "price"]
+- ["Ps9Equatable", "user"]
+- !private ["Ps9Equatable", "value"]
+- ["Ps9Equatable", ""]
+- !private ["CSo15FIRDataSnapshot", "value"]
+- ["Ps8Hashable", "addDistance"]
+- ["Ps8Hashable", "distance"]
+- ["Ps8Hashable", "foodDescription"]
+- ["Ps8Hashable", "foodName"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "kitchenAddress"]
+- ["Ps8Hashable", "kitchenName"]
+- ["Ps8Hashable", "latitude"]
+- ["Ps8Hashable", "longitude"]
+- ["Ps8Hashable", "price"]
+- ["Ps8Hashable", "user"]
+- !private ["Ps8Hashable", "value"]
+- ["Ps8Hashable", ""]
+- !private ["SQ", "deinit"]
+- !private ["Si", "deinit"]
+- ["C13NeighborCater7Kitchen", "Double"]
+- ["C13NeighborCater7Kitchen", "FIRDataSnapshot"]
+- ["C13NeighborCater7Kitchen", "String"]
+- ["C13NeighborCater7Kitchen", "addDistance"]
+- ["C13NeighborCater7Kitchen", "deinit"]
+- ["C13NeighborCater7Kitchen", "distance"]
+- ["C13NeighborCater7Kitchen", "foodDescription"]
+- ["C13NeighborCater7Kitchen", "foodName"]
+- ["C13NeighborCater7Kitchen", "init"]
+- ["C13NeighborCater7Kitchen", "kitchenAddress"]
+- ["C13NeighborCater7Kitchen", "kitchenName"]
+- ["C13NeighborCater7Kitchen", "latitude"]
+- ["C13NeighborCater7Kitchen", "longitude"]
+- ["C13NeighborCater7Kitchen", "price"]
+- ["C13NeighborCater7Kitchen", "user"]
+- !private ["PSo9NSCopying", "deinit"]
+- ["CSo8NSObject", "Double"]
+- ["CSo8NSObject", "FIRDataSnapshot"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "addDistance"]
+- ["CSo8NSObject", "distance"]
+- ["CSo8NSObject", "foodDescription"]
+- ["CSo8NSObject", "foodName"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "kitchenAddress"]
+- ["CSo8NSObject", "kitchenName"]
+- ["CSo8NSObject", "latitude"]
+- ["CSo8NSObject", "longitude"]
+- ["CSo8NSObject", "price"]
+- ["CSo8NSObject", "user"]
+- !private ["CSo8NSObject", "value"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "addDistance"]
+- ["PSo16NSObjectProtocol", "distance"]
+- ["PSo16NSObjectProtocol", "foodDescription"]
+- ["PSo16NSObjectProtocol", "foodName"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "kitchenAddress"]
+- ["PSo16NSObjectProtocol", "kitchenName"]
+- ["PSo16NSObjectProtocol", "latitude"]
+- ["PSo16NSObjectProtocol", "longitude"]
+- ["PSo16NSObjectProtocol", "price"]
+- ["PSo16NSObjectProtocol", "user"]
+- !private ["PSo16NSObjectProtocol", "value"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["Sq", "deinit"]
+- !private ["Vs12StaticString", "deinit"]
+- !private ["SS", "deinit"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "CSo15FIRDataSnapshot"
+- "Ps8Hashable"
+- !private "SQ"
+- !private "Si"
+- "C13NeighborCater7Kitchen"
+- !private "PSo9NSCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "Sq"
+- !private "Vs12StaticString"
+- !private "SS"
+depends-dynamic-lookup:
+- !private "subscript"
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIREmailPasswordAuthProvider.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/Firebase.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Modules/STZPopupView.swiftmodule/arm.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
+interface-hash: "0c6804f5b39b18dd11aab3b1867c67fc"

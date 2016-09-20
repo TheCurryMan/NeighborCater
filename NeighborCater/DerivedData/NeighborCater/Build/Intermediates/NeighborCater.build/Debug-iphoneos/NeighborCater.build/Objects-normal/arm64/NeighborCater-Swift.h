@@ -93,6 +93,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import CoreGraphics;
 @import MapKit;
 @import CoreLocation;
 @import ObjectiveC;
@@ -154,6 +155,45 @@ SWIFT_CLASS("_TtC13NeighborCater11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class Kitchen;
+@class User;
+@class UIButton;
+@class UILabel;
+@class UITableView;
+
+SWIFT_CLASS("_TtC13NeighborCater11BuyFoodView")
+@interface BuyFoodView : UIView
+@property (nonatomic, strong) Kitchen * _Nonnull kitchenSelected;
+@property (nonatomic, copy) NSArray<User *> * _Nonnull finalUser;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified buyNow;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ownerName;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified kitchenAddress;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodDescription;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ownerEmail;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified ownerNumber;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified priceButton;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified currencyTable;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull currencyNames;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull currencyValues;
+- (void)populateData;
+- (IBAction)openMaps:(id _Nonnull)sender;
+- (IBAction)changeCurrency:(id _Nonnull)sender;
+- (IBAction)placeOrder:(id _Nonnull)sender;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater21CurrencyTableViewCell")
+@interface CurrencyTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified currencyName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified currencyValue;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class GooglePlacesAutocompleteContainer;
 @class UIBarButtonItem;
 @class UINavigationItem;
@@ -174,7 +214,6 @@ SWIFT_CLASS("_TtC13NeighborCater24GooglePlacesAutocomplete")
 
 @class NSNotification;
 @class UISearchBar;
-@class UITableView;
 @class NSLayoutConstraint;
 
 SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
@@ -199,7 +238,6 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 @end
 
 @class NSIndexPath;
-@class UITableViewCell;
 
 @interface GooglePlacesAutocompleteContainer (SWIFT_EXTENSION(NeighborCater)) <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
@@ -216,29 +254,100 @@ SWIFT_CLASS("_TtC13NeighborCater33GooglePlacesAutocompleteContainer")
 @class MKOverlayRenderer;
 
 SWIFT_CLASS("_TtC13NeighborCater18HomeViewController")
-@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface HomeViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified mapView;
+@property (nonatomic, strong) BuyFoodView * _Nonnull popupView;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
+@property (nonatomic) CLLocationCoordinate2D userLocation;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull Distances;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, copy) NSArray<Kitchen *> * _Nonnull Kitchens;
+@property (nonatomic, copy) NSArray<Kitchen *> * _Nonnull Annotations;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)addAnnotation;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (MKOverlayRenderer * _Null_unspecified)mapView:(MKMapView * _Nonnull)mapView rendererForOverlay:(id <MKOverlay> _Nonnull)overlay;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class FIRDataSnapshot;
+
+SWIFT_CLASS("_TtC13NeighborCater7Kitchen")
+@interface Kitchen : NSObject
+@property (nonatomic, copy) NSString * _Nonnull kitchenName;
+@property (nonatomic, copy) NSString * _Nonnull kitchenAddress;
+@property (nonatomic, copy) NSString * _Nonnull foodName;
+@property (nonatomic, copy) NSString * _Nonnull foodDescription;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+@property (nonatomic, copy) NSString * _Nonnull user;
+@property (nonatomic) double distance;
+@property (nonatomic, copy) NSString * _Nonnull price;
+- (nonnull instancetype)initWithKitchenName:(NSString * _Nonnull)kitchenName kitchenAddress:(NSString * _Nonnull)kitchenAddress foodName:(NSString * _Nonnull)foodName foodDescription:(NSString * _Nonnull)foodDescription latitude:(double)latitude longitude:(double)longitude user:(NSString * _Nonnull)user price:(NSString * _Nonnull)price OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
+- (void)addDistance:(double)distance;
+@end
+
+@class Order;
+@class UISegmentedControl;
 
 SWIFT_CLASS("_TtC13NeighborCater25KitchenHomeViewController")
-@interface KitchenHomeViewController : UIViewController
+@interface KitchenHomeViewController : UIViewController <UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified foodName;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified foodDescription;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified price;
+@property (nonatomic, copy) NSArray<Order *> * _Nonnull orders;
 @property (nonatomic, copy) NSString * _Nonnull kitchenUID;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentedControl;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)post:(id _Nonnull)sender;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (IBAction)switchSegment:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater20KitchenTableViewCell")
+@interface KitchenTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified kitchenAddress;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified price;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified distance;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater5Order")
+@interface Order : NSObject
+@property (nonatomic, copy) NSString * _Nonnull userName;
+@property (nonatomic, copy) NSString * _Nonnull userEmail;
+@property (nonatomic, copy) NSString * _Nonnull userPhoneNumber;
+@property (nonatomic, copy) NSString * _Nonnull foodName;
+- (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater18OrderTableViewCell")
+@interface OrderTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified foodName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userEmail;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userNumber;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -260,6 +369,7 @@ SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 @property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified username;
 @property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified email;
 @property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified password;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified number;
 @property (nonatomic, strong) FIRDatabaseReference * _Null_unspecified ref;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
@@ -270,8 +380,23 @@ SWIFT_CLASS("_TtC13NeighborCater20SignUpViewController")
 @end
 
 
+@interface UIView (SWIFT_EXTENSION(NeighborCater))
++ (UIView * _Nullable)loadFromNibNamed:(NSString * _Nonnull)nibNamed bundle:(NSBundle * _Nullable)bundle;
+@end
+
+
+SWIFT_CLASS("_TtC13NeighborCater4User")
+@interface User : NSObject
+@property (nonatomic, copy) NSString * _Nonnull userName;
+@property (nonatomic, copy) NSString * _Nonnull userEmail;
+@property (nonatomic, copy) NSString * _Nonnull userPhoneNumber;
+- (nonnull instancetype)initWithSnapshot:(FIRDataSnapshot * _Nonnull)snapshot OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC13NeighborCater14ViewController")
 @interface ViewController : UIViewController
+- (IBAction)goKitchen:(id _Nonnull)sender;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

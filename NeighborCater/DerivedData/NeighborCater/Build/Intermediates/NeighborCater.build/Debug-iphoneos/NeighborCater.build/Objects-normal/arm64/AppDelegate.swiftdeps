@@ -6,24 +6,24 @@ provides-nominal:
 provides-member:
 - ["C13NeighborCater11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationWillTerminate"
-- "applicationDidBecomeActive"
-- "applicationWillResignActive"
-- "applicationDidEnterBackground"
 - "applicationWillEnterForeground"
+- "applicationDidEnterBackground"
+- "applicationWillTerminate"
 - "application"
+- "applicationWillResignActive"
 - "window"
+- "applicationDidBecomeActive"
 depends-top-level:
-- "AppDelegate"
-- "NSObject"
-- "AnyObject"
 - "UIApplicationDelegate"
-- "Bool"
-- !private "BooleanLiteralType"
+- "NSObject"
 - !private "FIRApp"
+- "AppDelegate"
+- !private "BooleanLiteralType"
 - "UIWindow"
 - "UIApplication"
+- "Bool"
 - "UIResponder"
+- "AnyObject"
 depends-member:
 - !private ["Ps9AnyObject", "FIRApp"]
 - ["Ps9AnyObject", "application"]
@@ -285,4 +285,8 @@ depends-external:
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/Pods/Firebase/Analytics/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Modules/STZPopupView.swiftmodule/arm64.swiftmodule"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Headers/STZPopupView-Swift.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Headers/STZPopupView-umbrella.h"
+- "/Users/Avinash/Documents/Code/NeighborCater/NeighborCater/DerivedData/NeighborCater/Build/Products/Debug-iphoneos/STZPopupView/STZPopupView.framework/Modules/module.modulemap"
 interface-hash: "ea95070f95b9c19da8fa433e7bcccaf6"

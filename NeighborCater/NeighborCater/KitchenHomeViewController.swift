@@ -57,6 +57,22 @@ class KitchenHomeViewController: UIViewController, UITableViewDataSource {
                     self.orders.append(order)
                 }
             }})
+        
+        let ref2 = FIRDatabase.database().reference()
+        let pathRef2 = ref2.child("kitchens")
+        
+        let y = pathRef.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+            
+            for item in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                print("TESTING")
+                var kitch = Kitchen(snapshot:item)
+                print(kitch)
+                if kitch.user == FIRAuth.auth()!.currentUser!.uid {
+                    self.kitchenUID = item.key
+                    print(item.key)
+                }
+                
+            }})
         // Do any additional setup after loading the view.
     }
 

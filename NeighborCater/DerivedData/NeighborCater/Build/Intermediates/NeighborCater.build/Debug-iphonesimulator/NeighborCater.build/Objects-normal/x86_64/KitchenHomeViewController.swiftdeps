@@ -9,53 +9,56 @@ provides-member:
 - ["C13NeighborCater18OrderTableViewCell", ""]
 - ["C13NeighborCater25KitchenHomeViewController", ""]
 provides-dynamic-lookup:
-- "numberOfSectionsInTableView"
-- "segmentedControl"
-- "didReceiveMemoryWarning"
-- "foodDescription"
-- "viewDidLoad"
 - "userNumber"
-- "orders"
-- "tableView"
-- "tableView"
-- "tableView"
-- "foodName"
-- "foodName"
-- "userEmail"
-- "switchSegment"
-- "userName"
 - "kitchenUID"
 - "price"
+- "switchSegment"
+- "foodDescription"
+- "userEmail"
+- "viewDidLoad"
+- "orders"
+- "numberOfSectionsInTableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "segmentedControl"
+- "userName"
+- "didReceiveMemoryWarning"
 - "post"
+- "foodName"
+- "foodName"
 depends-top-level:
-- !private "StringLiteralType"
-- "Order"
-- !private "FIRDataSnapshot"
-- "UITableView"
-- "UITableViewDataSource"
-- "NSIndexPath"
-- "Int"
-- "AnyObject"
-- !private "Dictionary"
-- "OrderTableViewCell"
-- !private "FIRAuth"
-- !private "~="
-- "String"
-- !private "UINib"
 - !private "BooleanLiteralType"
+- !private "UINib"
 - "UITableViewCell"
 - "UILabel"
-- "KitchenHomeViewController"
 - !private "FIRDatabase"
+- !private "FIRAuth"
+- "AnyObject"
 - !private "print"
 - !private "FIRDataEventType"
-- "UISegmentedControl"
 - "UIViewController"
+- "String"
+- "Int"
+- !private "Dictionary"
+- !private "StringLiteralType"
+- "OrderTableViewCell"
+- "UISegmentedControl"
 - "UITextField"
+- "Order"
+- "UITableView"
+- !private "=="
+- "KitchenHomeViewController"
+- "NSIndexPath"
+- "UITableViewDataSource"
+- !private "FIRDataSnapshot"
+- !private "Kitchen"
+- !private "~="
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDataEventType"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
+- !private ["Ps9AnyObject", "Kitchen"]
 - ["Ps9AnyObject", "Order"]
 - ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "UINib"]
@@ -71,6 +74,7 @@ depends-member:
 - ["Ps9AnyObject", "foodName"]
 - !private ["Ps9AnyObject", "hidden"]
 - ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "key"]
 - ["Ps9AnyObject", "kitchenUID"]
 - ["Ps9AnyObject", "numberOfSectionsInTableView"]
 - !private ["Ps9AnyObject", "observeEventType"]
@@ -90,6 +94,7 @@ depends-member:
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "uid"]
 - !private ["Ps9AnyObject", "updateChildValues"]
+- !private ["Ps9AnyObject", "user"]
 - ["Ps9AnyObject", "userEmail"]
 - ["Ps9AnyObject", "userName"]
 - ["Ps9AnyObject", "userNumber"]
@@ -129,6 +134,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "FIRDataEventType"]
 - !private ["Ps11CVarArgType", "FIRDatabase"]
 - ["Ps11CVarArgType", "IntegerLiteralType"]
+- !private ["Ps11CVarArgType", "Kitchen"]
 - ["Ps11CVarArgType", "Order"]
 - ["Ps11CVarArgType", "String"]
 - !private ["Ps11CVarArgType", "UINib"]
@@ -144,6 +150,7 @@ depends-member:
 - ["Ps11CVarArgType", "foodName"]
 - !private ["Ps11CVarArgType", "hidden"]
 - ["Ps11CVarArgType", "init"]
+- !private ["Ps11CVarArgType", "key"]
 - ["Ps11CVarArgType", "kitchenUID"]
 - ["Ps11CVarArgType", "numberOfSectionsInTableView"]
 - !private ["Ps11CVarArgType", "observeEventType"]
@@ -163,6 +170,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "text"]
 - !private ["Ps11CVarArgType", "uid"]
 - !private ["Ps11CVarArgType", "updateChildValues"]
+- !private ["Ps11CVarArgType", "user"]
 - ["Ps11CVarArgType", "userEmail"]
 - ["Ps11CVarArgType", "userName"]
 - ["Ps11CVarArgType", "userNumber"]
@@ -190,6 +198,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "Generator"]
 - ["Ps28CustomDebugStringConvertible", "Index"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "Kitchen"]
 - ["Ps28CustomDebugStringConvertible", "Order"]
 - !private ["Ps28CustomDebugStringConvertible", "Some"]
 - ["Ps28CustomDebugStringConvertible", "String"]
@@ -211,6 +220,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "foodName"]
 - !private ["Ps28CustomDebugStringConvertible", "hidden"]
 - ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "key"]
 - ["Ps28CustomDebugStringConvertible", "kitchenUID"]
 - ["Ps28CustomDebugStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps28CustomDebugStringConvertible", "observeEventType"]
@@ -231,6 +241,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "uid"]
 - !private ["Ps28CustomDebugStringConvertible", "updateChildValues"]
+- !private ["Ps28CustomDebugStringConvertible", "user"]
 - ["Ps28CustomDebugStringConvertible", "userEmail"]
 - ["Ps28CustomDebugStringConvertible", "userName"]
 - ["Ps28CustomDebugStringConvertible", "userNumber"]
@@ -246,6 +257,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "Index"]
 - ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "Kitchen"]
 - ["Ps23CustomStringConvertible", "Order"]
 - ["Ps23CustomStringConvertible", "String"]
 - ["Ps23CustomStringConvertible", "SubSequence"]
@@ -267,6 +279,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "foodName"]
 - !private ["Ps23CustomStringConvertible", "hidden"]
 - ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "key"]
 - ["Ps23CustomStringConvertible", "kitchenUID"]
 - ["Ps23CustomStringConvertible", "numberOfSectionsInTableView"]
 - !private ["Ps23CustomStringConvertible", "observeEventType"]
@@ -287,6 +300,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "uid"]
 - !private ["Ps23CustomStringConvertible", "updateChildValues"]
+- !private ["Ps23CustomStringConvertible", "user"]
 - ["Ps23CustomStringConvertible", "userEmail"]
 - ["Ps23CustomStringConvertible", "userName"]
 - ["Ps23CustomStringConvertible", "userNumber"]
@@ -304,6 +318,7 @@ depends-member:
 - !private ["Ps9Equatable", "FIRDataEventType"]
 - !private ["Ps9Equatable", "FIRDatabase"]
 - ["Ps9Equatable", "IntegerLiteralType"]
+- !private ["Ps9Equatable", "Kitchen"]
 - ["Ps9Equatable", "Order"]
 - ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "UINib"]
@@ -321,6 +336,7 @@ depends-member:
 - ["Ps9Equatable", "foodName"]
 - !private ["Ps9Equatable", "hidden"]
 - ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "key"]
 - ["Ps9Equatable", "kitchenUID"]
 - ["Ps9Equatable", "numberOfSectionsInTableView"]
 - !private ["Ps9Equatable", "observeEventType"]
@@ -340,6 +356,7 @@ depends-member:
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "uid"]
 - !private ["Ps9Equatable", "updateChildValues"]
+- !private ["Ps9Equatable", "user"]
 - ["Ps9Equatable", "userEmail"]
 - ["Ps9Equatable", "userName"]
 - ["Ps9Equatable", "userNumber"]
@@ -352,6 +369,7 @@ depends-member:
 - !private ["CSo7FIRAuth", "currentUser"]
 - !private ["OSC16FIRDataEventType", "Value"]
 - !private ["CSo15FIRDataSnapshot", "children"]
+- !private ["CSo15FIRDataSnapshot", "key"]
 - !private ["CSo15FIRDataSnapshot", "value"]
 - !private ["CSo11FIRDatabase", "database"]
 - !private ["CSo11FIRDatabase", "reference"]
@@ -372,6 +390,7 @@ depends-member:
 - !private ["Ps8Hashable", "FIRDataEventType"]
 - !private ["Ps8Hashable", "FIRDatabase"]
 - ["Ps8Hashable", "IntegerLiteralType"]
+- !private ["Ps8Hashable", "Kitchen"]
 - ["Ps8Hashable", "Order"]
 - ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "UINib"]
@@ -389,6 +408,7 @@ depends-member:
 - ["Ps8Hashable", "foodName"]
 - !private ["Ps8Hashable", "hidden"]
 - ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "key"]
 - ["Ps8Hashable", "kitchenUID"]
 - ["Ps8Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps8Hashable", "observeEventType"]
@@ -408,6 +428,7 @@ depends-member:
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "uid"]
 - !private ["Ps8Hashable", "updateChildValues"]
+- !private ["Ps8Hashable", "user"]
 - ["Ps8Hashable", "userEmail"]
 - ["Ps8Hashable", "userName"]
 - ["Ps8Hashable", "userNumber"]
@@ -439,12 +460,15 @@ depends-member:
 - ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
 - ["Ps11IntegerType", "Distance"]
 - ["Ps11IntegerType", "IntegerLiteralType"]
+- !private ["C13NeighborCater7Kitchen", "init"]
+- !private ["C13NeighborCater7Kitchen", "user"]
 - ["C13NeighborCater25KitchenHomeViewController", "AnyObject"]
 - !private ["C13NeighborCater25KitchenHomeViewController", "FIRAuth"]
 - !private ["C13NeighborCater25KitchenHomeViewController", "FIRDataEventType"]
 - !private ["C13NeighborCater25KitchenHomeViewController", "FIRDataSnapshot"]
 - !private ["C13NeighborCater25KitchenHomeViewController", "FIRDatabase"]
 - ["C13NeighborCater25KitchenHomeViewController", "Int"]
+- !private ["C13NeighborCater25KitchenHomeViewController", "Kitchen"]
 - ["C13NeighborCater25KitchenHomeViewController", "NSIndexPath"]
 - ["C13NeighborCater25KitchenHomeViewController", "Order"]
 - !private ["C13NeighborCater25KitchenHomeViewController", "OrderTableViewCell"]
@@ -500,6 +524,7 @@ depends-member:
 - !private ["PSo8NSCoding", "FIRAuth"]
 - !private ["PSo8NSCoding", "FIRDataEventType"]
 - !private ["PSo8NSCoding", "FIRDatabase"]
+- !private ["PSo8NSCoding", "Kitchen"]
 - ["PSo8NSCoding", "Order"]
 - ["PSo8NSCoding", "String"]
 - !private ["PSo8NSCoding", "UINib"]
@@ -535,6 +560,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "FIRAuth"]
 - !private ["PSo26NSExtensionRequestHandling", "FIRDataEventType"]
 - !private ["PSo26NSExtensionRequestHandling", "FIRDatabase"]
+- !private ["PSo26NSExtensionRequestHandling", "Kitchen"]
 - ["PSo26NSExtensionRequestHandling", "Order"]
 - ["PSo26NSExtensionRequestHandling", "String"]
 - !private ["PSo26NSExtensionRequestHandling", "UINib"]
@@ -564,6 +590,7 @@ depends-member:
 - !private ["CSo8NSObject", "FIRDataSnapshot"]
 - !private ["CSo8NSObject", "FIRDatabase"]
 - ["CSo8NSObject", "Int"]
+- !private ["CSo8NSObject", "Kitchen"]
 - ["CSo8NSObject", "NSIndexPath"]
 - ["CSo8NSObject", "Order"]
 - !private ["CSo8NSObject", "OrderTableViewCell"]
@@ -587,6 +614,7 @@ depends-member:
 - ["CSo8NSObject", "foodName"]
 - !private ["CSo8NSObject", "hidden"]
 - ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "key"]
 - ["CSo8NSObject", "kitchenUID"]
 - ["CSo8NSObject", "numberOfSectionsInTableView"]
 - !private ["CSo8NSObject", "observeEventType"]
@@ -606,6 +634,7 @@ depends-member:
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "uid"]
 - !private ["CSo8NSObject", "updateChildValues"]
+- !private ["CSo8NSObject", "user"]
 - ["CSo8NSObject", "userEmail"]
 - ["CSo8NSObject", "userName"]
 - ["CSo8NSObject", "userNumber"]
@@ -615,6 +644,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "FIRAuth"]
 - !private ["PSo16NSObjectProtocol", "FIRDataEventType"]
 - !private ["PSo16NSObjectProtocol", "FIRDatabase"]
+- !private ["PSo16NSObjectProtocol", "Kitchen"]
 - ["PSo16NSObjectProtocol", "Order"]
 - ["PSo16NSObjectProtocol", "String"]
 - !private ["PSo16NSObjectProtocol", "UINib"]
@@ -630,6 +660,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "foodName"]
 - !private ["PSo16NSObjectProtocol", "hidden"]
 - ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "key"]
 - ["PSo16NSObjectProtocol", "kitchenUID"]
 - ["PSo16NSObjectProtocol", "numberOfSectionsInTableView"]
 - !private ["PSo16NSObjectProtocol", "observeEventType"]
@@ -649,6 +680,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "uid"]
 - !private ["PSo16NSObjectProtocol", "updateChildValues"]
+- !private ["PSo16NSObjectProtocol", "user"]
 - ["PSo16NSObjectProtocol", "userEmail"]
 - ["PSo16NSObjectProtocol", "userName"]
 - ["PSo16NSObjectProtocol", "userNumber"]
@@ -742,6 +774,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "FIRAuth"]
 - !private ["PSo21UIAppearanceContainer", "FIRDataEventType"]
 - !private ["PSo21UIAppearanceContainer", "FIRDatabase"]
+- !private ["PSo21UIAppearanceContainer", "Kitchen"]
 - ["PSo21UIAppearanceContainer", "Order"]
 - ["PSo21UIAppearanceContainer", "String"]
 - !private ["PSo21UIAppearanceContainer", "UINib"]
@@ -773,6 +806,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "FIRAuth"]
 - !private ["PSo18UIContentContainer", "FIRDataEventType"]
 - !private ["PSo18UIContentContainer", "FIRDatabase"]
+- !private ["PSo18UIContentContainer", "Kitchen"]
 - ["PSo18UIContentContainer", "Order"]
 - ["PSo18UIContentContainer", "String"]
 - !private ["PSo18UIContentContainer", "UINib"]
@@ -821,6 +855,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "FIRAuth"]
 - !private ["PSo18UIFocusEnvironment", "FIRDataEventType"]
 - !private ["PSo18UIFocusEnvironment", "FIRDatabase"]
+- !private ["PSo18UIFocusEnvironment", "Kitchen"]
 - ["PSo18UIFocusEnvironment", "Order"]
 - ["PSo18UIFocusEnvironment", "String"]
 - !private ["PSo18UIFocusEnvironment", "UINib"]
@@ -864,6 +899,7 @@ depends-member:
 - !private ["CSo11UIResponder", "FIRDataSnapshot"]
 - !private ["CSo11UIResponder", "FIRDatabase"]
 - ["CSo11UIResponder", "Int"]
+- !private ["CSo11UIResponder", "Kitchen"]
 - ["CSo11UIResponder", "NSIndexPath"]
 - ["CSo11UIResponder", "Order"]
 - !private ["CSo11UIResponder", "OrderTableViewCell"]
@@ -906,6 +942,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "FIRAuth"]
 - !private ["PSo16UIStateRestoring", "FIRDataEventType"]
 - !private ["PSo16UIStateRestoring", "FIRDatabase"]
+- !private ["PSo16UIStateRestoring", "Kitchen"]
 - ["PSo16UIStateRestoring", "Order"]
 - ["PSo16UIStateRestoring", "String"]
 - !private ["PSo16UIStateRestoring", "UINib"]
@@ -939,6 +976,7 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "FIRAuth"]
 - !private ["PSo21UITableViewDataSource", "FIRDataEventType"]
 - !private ["PSo21UITableViewDataSource", "FIRDatabase"]
+- !private ["PSo21UITableViewDataSource", "Kitchen"]
 - ["PSo21UITableViewDataSource", "Order"]
 - ["PSo21UITableViewDataSource", "String"]
 - !private ["PSo21UITableViewDataSource", "UINib"]
@@ -959,6 +997,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "FIRAuth"]
 - !private ["PSo18UITraitEnvironment", "FIRDataEventType"]
 - !private ["PSo18UITraitEnvironment", "FIRDatabase"]
+- !private ["PSo18UITraitEnvironment", "Kitchen"]
 - ["PSo18UITraitEnvironment", "Order"]
 - ["PSo18UITraitEnvironment", "String"]
 - !private ["PSo18UITraitEnvironment", "UINib"]
@@ -1005,6 +1044,7 @@ depends-member:
 - !private ["CSo16UIViewController", "FIRDataSnapshot"]
 - !private ["CSo16UIViewController", "FIRDatabase"]
 - ["CSo16UIViewController", "Int"]
+- !private ["CSo16UIViewController", "Kitchen"]
 - ["CSo16UIViewController", "NSIndexPath"]
 - ["CSo16UIViewController", "Order"]
 - !private ["CSo16UIViewController", "OrderTableViewCell"]
@@ -1152,6 +1192,7 @@ depends-nominal:
 - "Ps21IntegerArithmeticType"
 - "Ps25IntegerLiteralConvertible"
 - "Ps11IntegerType"
+- !private "C13NeighborCater7Kitchen"
 - "C13NeighborCater25KitchenHomeViewController"
 - "Ps14MirrorPathType"
 - "Ps21MutableCollectionType"
